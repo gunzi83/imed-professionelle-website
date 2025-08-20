@@ -507,40 +507,43 @@
                 </p>
             </div>
             
-            <!-- Medical Services Flip Cards -->
+            <!-- Medical Services Cards -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
                 <!-- Herz-Kreislauf-Diagnostik -->
-                <div class="service-flip-card">
-                    <div class="service-flip-inner">
-                        <!-- Front -->
-                        <div class="service-flip-front" style="background: linear-gradient(135deg, #79ADBA 0%, #6B9CAA 100%); color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 2rem;">
-                            <div style="width: 4rem; height: 4rem; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
-                                <i class="fas fa-heartbeat" style="font-size: 1.5rem;"></i>
-                            </div>
-                            <h3 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 0.5rem;">Herz-Kreislauf-Diagnostik</h3>
-                            <p style="font-size: 0.9rem; opacity: 0.9;">Umfassende kardiologische Untersuchungen</p>
-                            <div style="margin-top: 1rem; font-size: 0.75rem; opacity: 0.8;">Klicken für Details →</div>
+                <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <!-- Header -->
+                    <div class="service-header p-6 text-white text-center cursor-pointer" style="background: linear-gradient(135deg, #79ADBA 0%, #6B9CAA 100%);" onclick="toggleService('service1')">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                            <i class="fas fa-heartbeat text-2xl"></i>
                         </div>
-                        <!-- Back -->
-                        <div class="service-flip-back" style="background: white; color: #333; padding: 1.5rem; text-align: left; overflow-y: auto;">
-                            <h4 style="color: #79ADBA; font-weight: bold; margin-bottom: 1rem; font-size: 1.1rem; border-bottom: 2px solid #79ADBA; padding-bottom: 0.5rem;">Herz-Kreislauf-Diagnostik</h4>
-                            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-                                <div style="border-left: 4px solid #79ADBA; background: #f9fafb; padding: 0.75rem; border-radius: 0 6px 6px 0;">
-                                    <h5 style="font-weight: 600; color: #79ADBA; margin-bottom: 0.5rem; font-size: 0.9rem;">Herzultraschall (Echokardiographie)</h5>
-                                    <p style="font-size: 0.8rem; line-height: 1.4; color: #4b5563;">Schnelle, schonende Untersuchung des Herzens zur Überprüfung der Herzkammern, Vorhöfe, Pumpfunktion und Herzklappen.</p>
+                        <h3 class="text-xl font-bold mb-2">Herz-Kreislauf-Diagnostik</h3>
+                        <p class="text-sm opacity-90 mb-3">Umfassende kardiologische Untersuchungen</p>
+                        <div class="flex items-center justify-center">
+                            <span class="text-xs mr-2">Details anzeigen</span>
+                            <i id="service1-icon" class="fas fa-chevron-down transition-transform duration-300"></i>
+                        </div>
+                    </div>
+                    <!-- Details -->
+                    <div id="service1" class="service-details" style="display: none;">
+                        <div class="p-6 bg-gray-50">
+                            <h4 class="font-bold text-lg mb-4" style="color: #79ADBA;">Unsere Herz-Kreislauf-Diagnostik</h4>
+                            <div class="space-y-4">
+                                <div class="border-l-4 border-blue-500 bg-white p-4 rounded-r-lg">
+                                    <h5 class="font-semibold mb-2" style="color: #79ADBA;">Herzultraschall (Echokardiographie)</h5>
+                                    <p class="text-sm text-gray-700">Schnelle, schonende Untersuchung des Herzens zur Überprüfung der Herzkammern, Vorhöfe, Pumpfunktion und Herzklappen.</p>
                                 </div>
-                                <div style="border-left: 4px solid #79ADBA; background: #f9fafb; padding: 0.75rem; border-radius: 0 6px 6px 0;">
-                                    <h5 style="font-weight: 600; color: #79ADBA; margin-bottom: 0.5rem; font-size: 0.9rem;">EKG</h5>
-                                    <p style="font-size: 0.8rem; line-height: 1.4; color: #4b5563;">Messung der elektrischen Signale des Herzens zur Erkennung von Durchblutungsstörungen und Herzrhythmusstörungen.</p>
+                                <div class="border-l-4 border-blue-500 bg-white p-4 rounded-r-lg">
+                                    <h5 class="font-semibold mb-2" style="color: #79ADBA;">EKG</h5>
+                                    <p class="text-sm text-gray-700">Messung der elektrischen Signale des Herzens zur Erkennung von Durchblutungsstörungen und Herzrhythmusstörungen.</p>
                                 </div>
-                                <div style="border-left: 4px solid #79ADBA; background: #f9fafb; padding: 0.75rem; border-radius: 0 6px 6px 0;">
-                                    <h5 style="font-weight: 600; color: #79ADBA; margin-bottom: 0.5rem; font-size: 0.9rem;">Belastungs-EKG (Ergometrie)</h5>
-                                    <p style="font-size: 0.8rem; line-height: 1.4; color: #4b5563;">Herzaktivitätsmessung während körperlicher Anstrengung auf dem Fahrradergometer.</p>
+                                <div class="border-l-4 border-blue-500 bg-white p-4 rounded-r-lg">
+                                    <h5 class="font-semibold mb-2" style="color: #79ADBA;">Belastungs-EKG (Ergometrie)</h5>
+                                    <p class="text-sm text-gray-700">Herzaktivitätsmessung während körperlicher Anstrengung auf dem Fahrradergometer.</p>
                                 </div>
-                                <div style="border-left: 4px solid #79ADBA; background: #f9fafb; padding: 0.75rem; border-radius: 0 6px 6px 0;">
-                                    <h5 style="font-weight: 600; color: #79ADBA; margin-bottom: 0.5rem; font-size: 0.9rem;">Langzeit-EKG (Holter-EKG)</h5>
-                                    <p style="font-size: 0.8rem; line-height: 1.4; color: #4b5563;">24-Stunden-Aufzeichnung des Herzrhythmus mit tragbarem Gerät.</p>
+                                <div class="border-l-4 border-blue-500 bg-white p-4 rounded-r-lg">
+                                    <h5 class="font-semibold mb-2" style="color: #79ADBA;">Langzeit-EKG (Holter-EKG)</h5>
+                                    <p class="text-sm text-gray-700">24-Stunden-Aufzeichnung des Herzrhythmus mit tragbarem Gerät.</p>
                                 </div>
                             </div>
                         </div>
@@ -548,32 +551,35 @@
                 </div>
 
                 <!-- Blutdruck & Gefäße -->
-                <div class="service-flip-card">
-                    <div class="service-flip-inner">
-                        <!-- Front -->
-                        <div class="service-flip-front" style="background: linear-gradient(135deg, #E3B497 0%, #D69D7A 100%); color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 2rem;">
-                            <div style="width: 4rem; height: 4rem; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
-                                <i class="fas fa-tint" style="font-size: 1.5rem;"></i>
-                            </div>
-                            <h3 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 0.5rem;">Blutdruck & Gefäße</h3>
-                            <p style="font-size: 0.9rem; opacity: 0.9;">Gefäß- und Durchblutungsdiagnostik</p>
-                            <div style="margin-top: 1rem; font-size: 0.75rem; opacity: 0.8;">Klicken für Details →</div>
+                <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <!-- Header -->
+                    <div class="service-header p-6 text-white text-center cursor-pointer" style="background: linear-gradient(135deg, #E3B497 0%, #D69D7A 100%);" onclick="toggleService('service2')">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                            <i class="fas fa-tint text-2xl"></i>
                         </div>
-                        <!-- Back -->
-                        <div class="service-flip-back" style="background: white; color: #333; padding: 1.5rem; text-align: left; overflow-y: auto;">
-                            <h4 style="color: #D69D7A; font-weight: bold; margin-bottom: 1rem; font-size: 1.1rem; border-bottom: 2px solid #D69D7A; padding-bottom: 0.5rem;">Blutdruck & Gefäße</h4>
-                            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-                                <div style="border-left: 4px solid #D69D7A; background: #f9fafb; padding: 0.75rem; border-radius: 0 6px 6px 0;">
-                                    <h5 style="font-weight: 600; color: #D69D7A; margin-bottom: 0.5rem; font-size: 0.9rem;">24-Stunden-Blutdruckmessung</h5>
-                                    <p style="font-size: 0.8rem; line-height: 1.4; color: #4b5563;">Erfassung der Blutdruckschwankungen über den ganzen Tag für optimale Medikation.</p>
+                        <h3 class="text-xl font-bold mb-2">Blutdruck & Gefäße</h3>
+                        <p class="text-sm opacity-90 mb-3">Gefäß- und Durchblutungsdiagnostik</p>
+                        <div class="flex items-center justify-center">
+                            <span class="text-xs mr-2">Details anzeigen</span>
+                            <i id="service2-icon" class="fas fa-chevron-down transition-transform duration-300"></i>
+                        </div>
+                    </div>
+                    <!-- Details -->
+                    <div id="service2" class="service-details" style="display: none;">
+                        <div class="p-6 bg-gray-50">
+                            <h4 class="font-bold text-lg mb-4" style="color: #D69D7A;">Blutdruck & Gefäßdiagnostik</h4>
+                            <div class="space-y-4">
+                                <div class="border-l-4 border-orange-400 bg-white p-4 rounded-r-lg">
+                                    <h5 class="font-semibold mb-2" style="color: #D69D7A;">24-Stunden-Blutdruckmessung</h5>
+                                    <p class="text-sm text-gray-700">Erfassung der Blutdruckschwankungen über den ganzen Tag für optimale Medikation.</p>
                                 </div>
-                                <div style="border-left: 4px solid #D69D7A; background: #f9fafb; padding: 0.75rem; border-radius: 0 6px 6px 0;">
-                                    <h5 style="font-weight: 600; color: #D69D7A; margin-bottom: 0.5rem; font-size: 0.9rem;">Gefäßultraschall</h5>
-                                    <p style="font-size: 0.8rem; line-height: 1.4; color: #4b5563;">Untersuchung der Halsschlagadern zur Früherkennung von Durchblutungsstörungen.</p>
+                                <div class="border-l-4 border-orange-400 bg-white p-4 rounded-r-lg">
+                                    <h5 class="font-semibold mb-2" style="color: #D69D7A;">Gefäßultraschall</h5>
+                                    <p class="text-sm text-gray-700">Untersuchung der Halsschlagadern zur Früherkennung von Durchblutungsstörungen.</p>
                                 </div>
-                                <div style="border-left: 4px solid #D69D7A; background: #f9fafb; padding: 0.75rem; border-radius: 0 6px 6px 0;">
-                                    <h5 style="font-weight: 600; color: #D69D7A; margin-bottom: 0.5rem; font-size: 0.9rem;">Knöcheldruck-Messung</h5>
-                                    <p style="font-size: 0.8rem; line-height: 1.4; color: #4b5563;">Früherkennung von Durchblutungsstörungen in den Beinarterien.</p>
+                                <div class="border-l-4 border-orange-400 bg-white p-4 rounded-r-lg">
+                                    <h5 class="font-semibold mb-2" style="color: #D69D7A;">Knöcheldruck-Messung</h5>
+                                    <p class="text-sm text-gray-700">Früherkennung von Durchblutungsstörungen in den Beinarterien.</p>
                                 </div>
                             </div>
                         </div>
@@ -581,34 +587,53 @@
                 </div>
 
                 <!-- Weitere Untersuchungen -->
-                <div class="service-flip-card">
-                    <div class="service-flip-inner">
-                        <!-- Front -->
-                        <div class="service-flip-front" style="background: linear-gradient(135deg, #79ADBA 0%, #6B9CAA 100%); color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 2rem;">
-                            <div style="width: 4rem; height: 4rem; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
-                                <i class="fas fa-lungs" style="font-size: 1.5rem;"></i>
-                            </div>
-                            <h3 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 0.5rem;">Weitere Untersuchungen</h3>
-                            <p style="font-size: 0.9rem; opacity: 0.9;">Zusätzliche Diagnostik & Laborwerte</p>
-                            <div style="margin-top: 1rem; font-size: 0.75rem; opacity: 0.8;">Klicken für Details →</div>
+                <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <!-- Header -->
+                    <div class="service-header p-6 text-white text-center cursor-pointer" style="background: linear-gradient(135deg, #79ADBA 0%, #6B9CAA 100%);" onclick="toggleService('service3')">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                            <i class="fas fa-lungs text-2xl"></i>
                         </div>
-                        <!-- Back -->
-                        <div class="service-flip-back" style="background: white; color: #333; padding: 1.5rem; text-align: left; overflow-y: auto;">
-                            <h4 style="color: #79ADBA; font-weight: bold; margin-bottom: 1rem; font-size: 1.1rem; border-bottom: 2px solid #79ADBA; padding-bottom: 0.5rem;">Weitere Untersuchungen</h4>
-                            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-                                <div style="border-left: 4px solid #79ADBA; background: #f9fafb; padding: 0.75rem; border-radius: 0 6px 6px 0;">
-                                    <h5 style="font-weight: 600; color: #79ADBA; margin-bottom: 0.5rem; font-size: 0.9rem;">Spirometrie (Lungenfunktion)</h5>
-                                    <p style="font-size: 0.8rem; line-height: 1.4; color: #4b5563;">Einfache Methode zur Messung der Lungenkapazität.</p>
+                        <h3 class="text-xl font-bold mb-2">Weitere Untersuchungen</h3>
+                        <p class="text-sm opacity-90 mb-3">Zusätzliche Diagnostik & Laborwerte</p>
+                        <div class="flex items-center justify-center">
+                            <span class="text-xs mr-2">Details anzeigen</span>
+                            <i id="service3-icon" class="fas fa-chevron-down transition-transform duration-300"></i>
+                        </div>
+                    </div>
+                    <!-- Details -->
+                    <div id="service3" class="service-details" style="display: none;">
+                        <div class="p-6 bg-gray-50">
+                            <h4 class="font-bold text-lg mb-4" style="color: #79ADBA;">Weitere Untersuchungen</h4>
+                            <div class="space-y-4">
+                                <div class="border-l-4 border-blue-500 bg-white p-4 rounded-r-lg">
+                                    <h5 class="font-semibold mb-2" style="color: #79ADBA;">Spirometrie (Lungenfunktion)</h5>
+                                    <p class="text-sm text-gray-700">Einfache Methode zur Messung der Lungenkapazität.</p>
                                 </div>
-                                <div style="border-left: 4px solid #79ADBA; background: #f9fafb; padding: 0.75rem; border-radius: 0 6px 6px 0;">
-                                    <h5 style="font-weight: 600; color: #79ADBA; margin-bottom: 0.5rem; font-size: 0.9rem;">Blutabnahme & Laboruntersuchungen</h5>
-                                    <p style="font-size: 0.8rem; line-height: 1.4; color: #4b5563;">Direkter Service in der Praxis mit Partnerlabor für weiterführende Analysen.</p>
+                                <div class="border-l-4 border-blue-500 bg-white p-4 rounded-r-lg">
+                                    <h5 class="font-semibold mb-2" style="color: #79ADBA;">Blutabnahme & Laboruntersuchungen</h5>
+                                    <p class="text-sm text-gray-700">Direkter Service in der Praxis mit Partnerlabor für weiterführende Analysen.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- JavaScript for toggle functionality -->
+            <script>
+            function toggleService(serviceId) {
+                const serviceDetails = document.getElementById(serviceId);
+                const icon = document.getElementById(serviceId + '-icon');
+                
+                if (serviceDetails.style.display === 'none' || serviceDetails.style.display === '') {
+                    serviceDetails.style.display = 'block';
+                    icon.style.transform = 'rotate(180deg)';
+                } else {
+                    serviceDetails.style.display = 'none';
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            }
+            </script>
         </div>
     </section>
 

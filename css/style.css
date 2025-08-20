@@ -1206,182 +1206,45 @@ footer a:hover {
     }
 }
 
-/* ================================
-   SERVICE FLIP CARDS - Medical Services
-   ================================ */
-
-/* Service Flip Card Container */
-.service-flip-card {
-    background-color: transparent !important;
-    width: 100% !important;
-    height: 400px !important;
-    perspective: 1000px !important;
-    cursor: pointer !important;
-    margin-bottom: 1rem;
+/* Service Cards - Accordion Style */
+.service-card {
+    transition: all 0.3s ease;
 }
 
-/* Service Flip Card Inner Container */
-.service-flip-inner {
-    position: relative !important;
-    width: 100% !important;
-    height: 100% !important;
-    text-align: center !important;
-    transition: transform 0.6s ease !important;
-    transform-style: preserve-3d !important;
+.service-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* Service Flip Animation controlled by JavaScript */
-.service-flip-inner {
-    transform: rotateY(0deg) !important;
+.service-header {
+    transition: all 0.3s ease;
 }
 
-/* Service Front and Back Common Styles */
-.service-flip-front, .service-flip-back {
-    position: absolute !important;
-    width: 100% !important;
-    height: 100% !important;
-    -webkit-backface-visibility: hidden !important;
-    backface-visibility: hidden !important;
-    border-radius: 12px !important;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.05) !important;
+.service-header:hover {
+    transform: scale(1.02);
 }
 
-/* Service Back Card Transform */
-.service-flip-back {
-    transform: rotateY(180deg) !important;
-}
-
-/* Service Card Hover Effects */
-.service-flip-card:hover {
-    transform: translateY(-5px) !important;
-}
-
-.service-flip-card:hover .service-flip-front,
-.service-flip-card:hover .service-flip-back {
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.1) !important;
-}
-
-/* Service Item Hover Effects */
-.service-flip-back > div > div:hover {
-    transform: translateX(5px) !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
-    transition: all 0.2s ease !important;
-}
-
-/* Responsive Design for Service Cards */
-@media (max-width: 768px) {
-    .service-flip-card {
-        height: 350px !important;
-        margin-bottom: 1.5rem !important;
-    }
-    
-    .service-flip-front,
-    .service-flip-back {
-        padding: 1.25rem !important;
-    }
-    
-    .service-flip-front h3 {
-        font-size: 1.1rem !important;
-        line-height: 1.3 !important;
-    }
-    
-    .service-flip-front div:first-child {
-        width: 3.5rem !important;
-        height: 3.5rem !important;
-    }
-    
-    .service-flip-front div:first-child i {
-        font-size: 1.25rem !important;
-    }
-}
-
-@media (max-width: 480px) {
-    .service-flip-card {
-        height: 320px !important;
-    }
-    
-    .service-flip-front {
-        padding: 1.5rem 1rem !important;
-    }
-    
-    .service-flip-front h3 {
-        font-size: 1rem !important;
-    }
-    
-    .service-flip-front p {
-        font-size: 0.8rem !important;
-    }
-    
-    .service-flip-back {
-        padding: 1rem !important;
-    }
-    
-    .service-flip-back h4 {
-        font-size: 1rem !important;
-        margin-bottom: 0.75rem !important;
-    }
-    
-    .service-flip-back h5 {
-        font-size: 0.85rem !important;
-        margin-bottom: 0.4rem !important;
-    }
-    
-    .service-flip-back p {
-        font-size: 0.75rem !important;
-        line-height: 1.3 !important;
-    }
+.service-details {
+    transition: all 0.3s ease;
 }
 
 /* Service Card Load Animation */
-.service-flip-card {
-    opacity: 0 !important;
-    animation: serviceFlipSlideIn 0.8s ease-out forwards !important;
+.service-card {
+    opacity: 0;
+    animation: serviceSlideIn 0.8s ease-out forwards;
 }
 
-.service-flip-card:nth-child(1) { animation-delay: 0.1s !important; }
-.service-flip-card:nth-child(2) { animation-delay: 0.3s !important; }
-.service-flip-card:nth-child(3) { animation-delay: 0.5s !important; }
+.service-card:nth-child(1) { animation-delay: 0.1s; }
+.service-card:nth-child(2) { animation-delay: 0.3s; }
+.service-card:nth-child(3) { animation-delay: 0.5s; }
 
-@keyframes serviceFlipSlideIn {
+@keyframes serviceSlideIn {
     from {
-        opacity: 0 !important;
-        transform: translateY(40px) scale(0.9) !important;
+        opacity: 0;
+        transform: translateY(40px) scale(0.9);
     }
     to {
-        opacity: 1 !important;
-        transform: translateY(0) scale(1) !important;
-    }
-}
-
-/* Touch Device Support for Service Cards */
-@media (hover: none) and (pointer: coarse) {
-    .service-flip-card:active .service-flip-inner {
-        transform: rotateY(180deg) !important;
-    }
-}
-
-/* Accessibility for Service Cards */
-.service-flip-card:focus {
-    outline: 2px solid #79ADBA !important;
-    outline-offset: 2px !important;
-}
-
-.service-flip-card:focus .service-flip-inner {
-    transform: rotateY(180deg) !important;
-}
-
-/* Reduced Motion Support for Service Cards */
-@media (prefers-reduced-motion: reduce) {
-    .service-flip-inner {
-        transition: none !important;
-    }
-    
-    .service-flip-card:hover .service-flip-inner {
-        transform: none !important;
-    }
-    
-    .service-flip-card {
-        animation: none !important;
-        opacity: 1 !important;
+        opacity: 1;
+        transform: translateY(0) scale(1);
     }
 }

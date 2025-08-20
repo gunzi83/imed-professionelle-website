@@ -785,15 +785,7 @@ footer a:hover {
     font-size: 0.875rem !important; /* Elegantly smaller subtitle */
 }
 
-#main-header.header-scrolled .heart-logo-divider {
-    width: 2.5rem !important;
-    height: 2.5rem !important;
-}
 
-#main-header.header-scrolled .heart-logo-divider svg {
-    width: 1.5rem !important;
-    height: 1.5rem !important;
-}
 
 #main-header.header-scrolled nav {
     padding-top: 0.5rem;
@@ -814,7 +806,6 @@ footer a:hover {
 #main-header img,
 #main-header h1,
 #main-header p,
-#main-header .heart-logo-divider,
 #main-header nav,
 #main-header .contact-info {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -852,36 +843,7 @@ footer a:hover {
 
 
 
-/* Heart Logo Divider in Header */
-.heart-logo-divider {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    backdrop-filter: blur(10px);
-}
 
-.heart-logo-divider:hover {
-    background: rgba(255, 255, 255, 0.3);
-    transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
-}
-
-.heart-logo-divider svg {
-    transition: all 0.3s ease;
-    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.1));
-}
-
-.heart-logo-divider:hover svg {
-    filter: drop-shadow(0 2px 8px rgba(121, 173, 186, 0.3));
-    animation: gentle-pulse 2s ease-in-out infinite;
-}
-
-@keyframes gentle-pulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-}
 
 /* Clickable Contact Info Styles */
 .address-link, .phone-link, .website-link {
@@ -1141,10 +1103,6 @@ footer a:hover {
 @media (max-width: 1024px) {
     .contact-info-desktop {
         display: none;
-    }
-    
-    .heart-logo-divider {
-        display: none !important;
     }
 }
 

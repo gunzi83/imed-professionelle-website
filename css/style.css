@@ -760,29 +760,29 @@ footer a:hover {
 }
 
 #main-header.header-scrolled {
-    background: rgba(121, 173, 186, 0.98);
-    backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(107, 156, 170, 0.5);
+    background: rgba(121, 173, 186, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(107, 156, 170, 0.3);
     box-shadow: 
-        0 4px 25px rgba(0, 0, 0, 0.2),
-        0 2px 10px rgba(121, 173, 186, 0.3);
+        0 4px 25px rgba(0, 0, 0, 0.15),
+        0 2px 10px rgba(121, 173, 186, 0.2);
 }
 
 #main-header.header-scrolled #header-content {
-    padding: 0.5rem 0;
+    padding: 0.75rem 0;
 }
 
 #main-header.header-scrolled .logo-container img {
-    height: 2rem !important; /* Much smaller logo when scrolled */
+    height: 2.5rem !important; /* Elegantly smaller logo when scrolled */
 }
 
 #main-header.header-scrolled h1 {
-    font-size: 1rem !important; /* Much smaller title */
-    margin-bottom: 0.125rem !important;
+    font-size: 1.125rem !important; /* Elegantly smaller title */
+    margin-bottom: 0.25rem !important;
 }
 
 #main-header.header-scrolled p {
-    font-size: 0.75rem !important; /* Much smaller subtitle */
+    font-size: 0.875rem !important; /* Elegantly smaller subtitle */
 }
 
 #main-header.header-scrolled .heart-logo-divider {
@@ -850,19 +850,7 @@ footer a:hover {
     pointer-events: none;
 }
 
-/* Temporary debug indicator - shows when header is scrolled */
-#main-header.header-scrolled::before {
-    content: 'SCROLLED MODE';
-    position: absolute;
-    top: 5px;
-    right: 10px;
-    background: red;
-    color: white;
-    padding: 2px 6px;
-    font-size: 10px;
-    border-radius: 3px;
-    z-index: 1000;
-}
+
 
 /* Heart Logo Divider in Header */
 .heart-logo-divider {

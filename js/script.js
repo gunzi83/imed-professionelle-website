@@ -267,10 +267,13 @@ function initializeServiceAccordions() {
     });
     
     console.log('Service accordions initialized:', serviceHeaders.length);
+    
+    // Make toggleService globally available for onclick handlers
+    window.toggleService = toggleService;
 }
 
 /**
- * Toggle Service Details Function
+ * Toggle Service Details Function - Simple and Reliable
  */
 function toggleService(serviceId) {
     console.log('Toggling service:', serviceId);
@@ -288,43 +291,32 @@ function toggleService(serviceId) {
         return;
     }
     
-    // Check current display state
-    const isHidden = serviceDetails.style.display === 'none' || serviceDetails.style.display === '' || !serviceDetails.classList.contains('show');
+    // Simple display toggle - no complex class management
+    const isCurrentlyHidden = serviceDetails.style.display === 'none' || serviceDetails.style.display === '';
     
-    if (isHidden) {
-        // Show the details with smooth animation
+    if (isCurrentlyHidden) {
+        // Show the details
         serviceDetails.style.display = 'block';
-        serviceDetails.classList.remove('hide');
-        serviceDetails.classList.add('show');
         icon.style.transform = 'rotate(180deg)';
-        console.log('Showing service:', serviceId);
+        console.log('✅ SHOWING service:', serviceId);
         
-        // Update text
+        // Update button text
         const headerText = icon.parentElement.querySelector('span');
         if (headerText) {
             headerText.textContent = 'Details verbergen';
         }
         
     } else {
-        // Hide the details with animation
-        serviceDetails.classList.remove('show');
-        serviceDetails.classList.add('hide');
+        // Hide the details
+        serviceDetails.style.display = 'none';
         icon.style.transform = 'rotate(0deg)';
-        console.log('Hiding service:', serviceId);
+        console.log('❌ HIDING service:', serviceId);
         
-        // Update text
+        // Update button text
         const headerText = icon.parentElement.querySelector('span');
         if (headerText) {
             headerText.textContent = 'Details anzeigen';
         }
-        
-        // Hide completely after animation
-        setTimeout(() => {
-            if (serviceDetails.classList.contains('hide')) {
-                serviceDetails.style.display = 'none';
-                serviceDetails.classList.remove('hide');
-            }
-        }, 300);
     }
 }
 

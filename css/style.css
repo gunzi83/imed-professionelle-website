@@ -1099,6 +1099,88 @@ footer a:hover {
     }
 }
 
+/* Quick Action Buttons for Mobile */
+.quick-action-btn {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        0 2px 8px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.quick-action-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.1), 
+        transparent);
+    transition: left 0.5s;
+}
+
+.quick-action-btn:hover::before {
+    left: 100%;
+}
+
+.quick-action-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 
+        0 4px 12px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.quick-action-btn:active {
+    transform: translateY(0);
+    transition: transform 0.1s ease;
+}
+
+/* Icon animation in quick action buttons */
+.quick-action-btn:hover .fas {
+    animation: quick-action-pulse 0.6s ease-out;
+    color: var(--brand-blue-dark);
+}
+
+@keyframes quick-action-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Quick Action Button responsiveness */
+@media (max-width: 480px) {
+    .quick-action-btn {
+        padding: 0.625rem;
+    }
+    
+    .quick-action-btn .text-sm {
+        font-size: 0.8rem;
+    }
+    
+    .quick-action-btn .text-xs {
+        font-size: 0.7rem;
+    }
+    
+    .quick-action-btn .w-8 {
+        width: 1.75rem;
+        height: 1.75rem;
+    }
+}
+
+/* Smooth grid animation */
+.quick-action-btn:nth-child(1) { animation-delay: 0s; }
+.quick-action-btn:nth-child(2) { animation-delay: 0.1s; }
+.quick-action-btn:nth-child(3) { animation-delay: 0.2s; }
+.quick-action-btn:nth-child(4) { animation-delay: 0.3s; }
+
+/* Mobile menu enhancement */
+#mobile-menu {
+    backdrop-filter: blur(10px);
+}
+
 /* Responsive Header Adjustments */
 @media (max-width: 1024px) {
     .contact-info-desktop {

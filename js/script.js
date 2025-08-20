@@ -302,7 +302,7 @@ function toggleService(serviceId) {
         // Update text
         const headerText = icon.parentElement.querySelector('span');
         if (headerText) {
-            headerText.textContent = '👆 Klicken zum Schließen';
+            headerText.textContent = 'Details verbergen';
         }
         
     } else {
@@ -315,7 +315,7 @@ function toggleService(serviceId) {
         // Update text
         const headerText = icon.parentElement.querySelector('span');
         if (headerText) {
-            headerText.textContent = '👆 Klicken für Details';
+            headerText.textContent = 'Details anzeigen';
         }
         
         // Hide completely after animation

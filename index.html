@@ -513,7 +513,7 @@
                 <!-- Herz-Kreislauf-Diagnostik -->
                 <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden">
                     <!-- Header -->
-                    <div class="service-header p-6 text-white text-center cursor-pointer" style="background: linear-gradient(135deg, #79ADBA 0%, #6B9CAA 100%);" data-service="service1" onclick="toggleService('service1')">
+                    <div class="service-header p-6 text-white text-center cursor-pointer" style="background: linear-gradient(135deg, #79ADBA 0%, #6B9CAA 100%);" onclick="directToggle('service1')" id="header-service1">
                         <div class="w-16 h-16 mx-auto mb-4 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
                             <i class="fas fa-heartbeat text-2xl"></i>
                         </div>
@@ -553,7 +553,7 @@
                 <!-- Blutdruck & Gefäße -->
                 <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden">
                     <!-- Header -->
-                    <div class="service-header p-6 text-white text-center cursor-pointer" style="background: linear-gradient(135deg, #E3B497 0%, #D69D7A 100%);" data-service="service2" onclick="toggleService('service2')">
+                    <div class="service-header p-6 text-white text-center cursor-pointer" style="background: linear-gradient(135deg, #E3B497 0%, #D69D7A 100%);" onclick="directToggle('service2')" id="header-service2">
                         <div class="w-16 h-16 mx-auto mb-4 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
                             <i class="fas fa-tint text-2xl"></i>
                         </div>
@@ -589,7 +589,7 @@
                 <!-- Weitere Untersuchungen -->
                 <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden">
                     <!-- Header -->
-                    <div class="service-header p-6 text-white text-center cursor-pointer" style="background: linear-gradient(135deg, #79ADBA 0%, #6B9CAA 100%);" data-service="service3" onclick="toggleService('service3')">
+                    <div class="service-header p-6 text-white text-center cursor-pointer" style="background: linear-gradient(135deg, #79ADBA 0%, #6B9CAA 100%);" onclick="directToggle('service3')" id="header-service3">
                         <div class="w-16 h-16 mx-auto mb-4 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
                             <i class="fas fa-lungs text-2xl"></i>
                         </div>
@@ -619,6 +619,83 @@
                 </div>
             </div>
 
+            <!-- Direct JavaScript Solution -->
+            <script>
+            function directToggle(serviceId) {
+                console.log('🔄 DIRECT TOGGLE:', serviceId);
+                
+                // Get elements directly
+                var details = document.getElementById(serviceId);
+                var icon = document.getElementById(serviceId + '-icon');
+                var header = document.getElementById('header-' + serviceId);
+                
+                console.log('Elements found:', {
+                    details: !!details,
+                    icon: !!icon,
+                    header: !!header
+                });
+                
+                if (!details) {
+                    console.error('❌ Details not found:', serviceId);
+                    alert('Details element not found: ' + serviceId);
+                    return;
+                }
+                
+                // Toggle display
+                if (details.style.display === 'none' || details.style.display === '') {
+                    // SHOW
+                    details.style.display = 'block';
+                    details.style.visibility = 'visible';
+                    details.style.opacity = '1';
+                    details.style.height = 'auto';
+                    
+                    if (icon) {
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                    
+                    if (header) {
+                        header.style.backgroundColor = '#6B9CAA';
+                    }
+                    
+                    console.log('✅ SHOWN:', serviceId);
+                    
+                } else {
+                    // HIDE
+                    details.style.display = 'none';
+                    details.style.visibility = 'hidden';
+                    details.style.opacity = '0';
+                    details.style.height = '0';
+                    
+                    if (icon) {
+                        icon.style.transform = 'rotate(0deg)';
+                    }
+                    
+                    if (header) {
+                        header.style.backgroundColor = '';
+                    }
+                    
+                    console.log('❌ HIDDEN:', serviceId);
+                }
+            }
+            
+            // Test function - call this manually
+            function testShow() {
+                console.log('🧪 TEST: Force showing service1');
+                document.getElementById('service1').style.display = 'block';
+            }
+            
+            function testHide() {
+                console.log('🧪 TEST: Force hiding service1');
+                document.getElementById('service1').style.display = 'none';
+            }
+            
+            // Make functions globally available
+            window.directToggle = directToggle;
+            window.testShow = testShow;  
+            window.testHide = testHide;
+            
+            console.log('🚀 Direct toggle functions loaded');
+            </script>
 
         </div>
     </section>

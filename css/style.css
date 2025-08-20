@@ -892,16 +892,25 @@ footer a:hover {
 }
 
 .inline-heart-logo:hover svg {
-    filter: drop-shadow(0 4px 8px rgba(227, 180, 151, 0.5));
-    animation: heartbeat-gentle 1.5s ease-in-out infinite;
+    filter: drop-shadow(0 4px 12px rgba(227, 180, 151, 0.8)) drop-shadow(0 0 8px rgba(255, 105, 135, 0.6));
+    animation: heartbeat-gentle 1.2s ease-in-out infinite;
 }
 
 @keyframes heartbeat-gentle {
-    0%, 70%, 100% {
+    0% {
         transform: scale(1);
     }
-    35% {
-        transform: scale(1.05);
+    14% {
+        transform: scale(1.15);
+    }
+    28% {
+        transform: scale(1);
+    }
+    42% {
+        transform: scale(1.12);
+    }
+    70% {
+        transform: scale(1);
     }
 }
 

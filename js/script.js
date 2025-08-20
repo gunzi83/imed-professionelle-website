@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeTerminButtons();
     initializeMobileMenu();
     initializeScrollHeader();
+    initializeFlipCards();
     
     console.log('All interactive features initialized');
 });
@@ -236,6 +237,57 @@ function updateMenuIcon(isOpen) {
             menuIcon.className = 'fas fa-bars text-xl';
         }
     }
+}
+
+/**
+ * Initialize Flip Cards Functionality
+ */
+function initializeFlipCards() {
+    const flipCards = document.querySelectorAll('.service-flip-card');
+    
+    flipCards.forEach(card => {
+        const inner = card.querySelector('.service-flip-inner');
+        let isFlipped = false;
+        
+        // Add click event listener
+        card.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            if (isFlipped) {
+                // Flip back to front
+                inner.style.transform = 'rotateY(0deg)';
+                isFlipped = false;
+            } else {
+                // Flip to back
+                inner.style.transform = 'rotateY(180deg)';
+                isFlipped = true;
+            }
+            
+            // Add visual feedback
+            card.style.transform = 'translateY(-2px)';
+            setTimeout(() => {
+                card.style.transform = '';
+            }, 200);
+        });
+        
+        // Add keyboard support
+        card.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                card.click();
+            }
+        });
+        
+        // Make cards focusable
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('role', 'button');
+        card.setAttribute('aria-label', 'Klicken Sie um Details zu sehen');
+        
+        // Add cursor pointer
+        card.style.cursor = 'pointer';
+    });
+    
+    console.log('Flip cards initialized:', flipCards.length);
 }
 
 /**

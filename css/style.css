@@ -1230,9 +1230,9 @@ footer a:hover {
     transform-style: preserve-3d !important;
 }
 
-/* Service Flip Animation on Hover */
-.service-flip-card:hover .service-flip-inner {
-    transform: rotateY(180deg) !important;
+/* Service Flip Animation controlled by JavaScript */
+.service-flip-inner {
+    transform: rotateY(0deg) !important;
 }
 
 /* Service Front and Back Common Styles */

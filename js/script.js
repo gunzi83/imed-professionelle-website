@@ -177,14 +177,59 @@ function showAppointmentInfo() {
 }
 
 /**
- * Mobile Menu Toggle (if needed)
+ * Mobile Menu Toggle
  */
 function initializeMobileMenu() {
-    // Add mobile menu functionality if needed
-    const nav = document.querySelector('nav');
-    if (nav && window.innerWidth <= 768) {
-        // Mobile-specific enhancements
-        nav.style.flexWrap = 'wrap';
+    // Mobile menu functionality is handled by toggleMobileMenu function
+    // Add smooth scrolling for mobile navigation links
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            // Close mobile menu when a link is clicked
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuButton = document.getElementById('mobile-menu-button');
+            if (mobileMenu && menuButton) {
+                mobileMenu.classList.add('hidden');
+                menuButton.setAttribute('aria-expanded', 'false');
+                updateMenuIcon(false);
+            }
+        });
+    });
+}
+
+/**
+ * Toggle Mobile Menu Function
+ */
+function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuButton = document.getElementById('mobile-menu-button');
+    
+    if (mobileMenu && menuButton) {
+        const isHidden = mobileMenu.classList.contains('hidden');
+        
+        if (isHidden) {
+            mobileMenu.classList.remove('hidden');
+            menuButton.setAttribute('aria-expanded', 'true');
+            updateMenuIcon(true);
+        } else {
+            mobileMenu.classList.add('hidden');
+            menuButton.setAttribute('aria-expanded', 'false');
+            updateMenuIcon(false);
+        }
+    }
+}
+
+/**
+ * Update Menu Icon
+ */
+function updateMenuIcon(isOpen) {
+    const menuIcon = document.getElementById('menu-icon');
+    if (menuIcon) {
+        if (isOpen) {
+            menuIcon.className = 'fas fa-times text-xl';
+        } else {
+            menuIcon.className = 'fas fa-bars text-xl';
+        }
     }
 }
 

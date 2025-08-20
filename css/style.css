@@ -621,3 +621,183 @@ footer a:hover {
 ::-webkit-scrollbar-thumb:hover {
     background: var(--brand-blue-dark);
 }
+
+/* Modern Header Styles */
+.modern-header {
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid rgba(121, 173, 186, 0.1);
+}
+
+/* Navigation Hover Effects */
+.nav-link {
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover {
+    color: var(--brand-blue) !important;
+    transform: translateY(-1px);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--brand-blue), var(--brand-blue-dark));
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    border-radius: 1px;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Mobile Menu Animations */
+#mobile-menu {
+    animation: slideDown 0.3s ease-out;
+    transform-origin: top;
+}
+
+#mobile-menu.hidden {
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px) scaleY(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scaleY(1);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 1;
+        transform: translateY(0) scaleY(1);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px) scaleY(0.9);
+    }
+}
+
+/* Modern CTA Button in Header */
+.header-cta-button {
+    background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-blue-dark) 100%);
+    box-shadow: 
+        0 4px 15px rgba(121, 173, 186, 0.25),
+        0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.header-cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.header-cta-button:hover::before {
+    left: 100%;
+}
+
+.header-cta-button:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 
+        0 8px 25px rgba(121, 173, 186, 0.35),
+        0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Logo Hover Animation */
+.logo-container img {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.1));
+}
+
+.logo-container:hover img {
+    filter: drop-shadow(0 4px 12px rgba(121, 173, 186, 0.3));
+}
+
+/* Mobile Menu Button Animation */
+#mobile-menu-button {
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+#mobile-menu-button:hover {
+    background-color: rgba(121, 173, 186, 0.1);
+    transform: scale(1.05);
+}
+
+/* Contact Info Icons */
+.contact-info-icon {
+    color: var(--brand-blue);
+    transition: all 0.3s ease;
+}
+
+.contact-info-icon:hover {
+    color: var(--brand-blue-dark);
+    transform: scale(1.2);
+}
+
+/* Sticky Header Animation */
+.sticky {
+    animation: stickySlideDown 0.3s ease-out;
+}
+
+@keyframes stickySlideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Header Shadow on Scroll */
+.header-scrolled {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(25px);
+    background: rgba(255, 255, 255, 0.98);
+}
+
+/* Responsive Header Adjustments */
+@media (max-width: 1024px) {
+    .contact-info-desktop {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-link {
+        padding: 0.75rem 1rem;
+        border-radius: 8px;
+        margin: 0.25rem 0;
+    }
+    
+    .mobile-nav-link:hover {
+        background-color: white;
+        transform: translateX(5px);
+    }
+    
+    /* Mobile Header Spacing */
+    .mobile-header-spacing {
+        padding: 1rem 0;
+    }
+}

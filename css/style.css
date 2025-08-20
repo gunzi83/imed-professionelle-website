@@ -928,6 +928,96 @@ footer a:hover {
     }
 }
 
+/* Alle Kassen Badge */
+.alle-kassen-badge {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        0 4px 12px rgba(121, 173, 186, 0.15),
+        0 2px 6px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.95) 0%, 
+        rgba(255, 255, 255, 0.90) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.alle-kassen-badge::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.3), 
+        transparent);
+    transition: left 0.5s;
+}
+
+.alle-kassen-badge:hover::before {
+    left: 100%;
+}
+
+.alle-kassen-badge:hover {
+    transform: scale(1.05) translateY(-1px);
+    box-shadow: 
+        0 6px 20px rgba(121, 173, 186, 0.25),
+        0 3px 10px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    border-color: rgba(255, 255, 255, 0.7);
+}
+
+/* Badge Icon Animations */
+.alle-kassen-badge:hover .fas.fa-shield-alt {
+    animation: shield-pulse 0.8s ease-in-out;
+}
+
+.alle-kassen-badge:hover .fas.fa-check-circle {
+    animation: check-bounce 0.6s ease-out;
+    color: #10b981;
+}
+
+@keyframes shield-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+@keyframes check-bounce {
+    0% { transform: scale(1); }
+    30% { transform: scale(1.3) rotate(10deg); }
+    60% { transform: scale(0.9) rotate(-5deg); }
+    100% { transform: scale(1) rotate(0deg); }
+}
+
+/* Badge Text Animation */
+.alle-kassen-badge:hover span {
+    color: var(--brand-blue-dark);
+    font-weight: 600;
+}
+
+/* Mobile Badge Adjustments */
+@media (max-width: 640px) {
+    .alle-kassen-badge {
+        padding: 0.5rem 1rem;
+        margin: 0 1rem;
+    }
+    
+    .alle-kassen-badge .flex {
+        gap: 0.5rem;
+    }
+    
+    .alle-kassen-badge span {
+        font-size: 0.8rem;
+    }
+    
+    .alle-kassen-badge .w-6 {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+}
+
 /* Responsive Header Adjustments */
 @media (max-width: 1024px) {
     .contact-info-desktop {

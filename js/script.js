@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeFloatingActionButton();
     initializeTerminButtons();
     initializeMobileMenu();
+    initializeScrollHeader();
     
     console.log('All interactive features initialized');
 });
@@ -231,6 +232,52 @@ function updateMenuIcon(isOpen) {
             menuIcon.className = 'fas fa-bars text-xl';
         }
     }
+}
+
+/**
+ * Initialize Scroll-based Header Shrinking
+ */
+function initializeScrollHeader() {
+    const header = document.getElementById('main-header');
+    if (!header) return;
+    
+    let lastScrollTop = 0;
+    let scrollTimeout;
+    
+    function updateHeaderOnScroll() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Add scrolled class when scrolled down more than 50px
+        if (scrollTop > 50) {
+            header.classList.add('header-scrolled');
+        } else {
+            header.classList.remove('header-scrolled');
+        }
+        
+        // Add sticky animation class when crossing the threshold
+        if (scrollTop > 100 && lastScrollTop <= 100) {
+            header.classList.add('sticky-animation');
+            setTimeout(() => {
+                header.classList.remove('sticky-animation');
+            }, 400);
+        }
+        
+        lastScrollTop = scrollTop;
+    }
+    
+    // Throttled scroll event for better performance
+    window.addEventListener('scroll', function() {
+        if (scrollTimeout) {
+            cancelAnimationFrame(scrollTimeout);
+        }
+        
+        scrollTimeout = requestAnimationFrame(updateHeaderOnScroll);
+    }, { passive: true });
+    
+    // Initial check
+    updateHeaderOnScroll();
+    
+    console.log('Scroll-based header initialized');
 }
 
 /**

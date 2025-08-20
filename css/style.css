@@ -754,12 +754,78 @@ footer a:hover {
     transform: scale(1.2);
 }
 
-/* Sticky Header Animation */
-.sticky {
-    animation: stickySlideDown 0.3s ease-out;
+/* Scroll-based Header Shrinking */
+#main-header {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@keyframes stickySlideDown {
+#main-header.header-scrolled {
+    background: rgba(121, 173, 186, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(107, 156, 170, 0.3);
+    box-shadow: 
+        0 4px 25px rgba(0, 0, 0, 0.15),
+        0 2px 10px rgba(121, 173, 186, 0.2);
+}
+
+#main-header.header-scrolled #header-content {
+    padding: 0.75rem 0;
+}
+
+#main-header.header-scrolled .logo-container img {
+    height: 2.5rem !important; /* Smaller logo when scrolled */
+}
+
+#main-header.header-scrolled h1 {
+    font-size: 1.25rem !important; /* Smaller title */
+    margin-bottom: 0.25rem !important;
+}
+
+#main-header.header-scrolled p {
+    font-size: 0.875rem !important; /* Smaller subtitle */
+}
+
+#main-header.header-scrolled .heart-logo-divider {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+}
+
+#main-header.header-scrolled .heart-logo-divider svg {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+}
+
+#main-header.header-scrolled nav {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+/* Contact info adjustments when scrolled */
+#main-header.header-scrolled .contact-info {
+    font-size: 0.75rem !important;
+}
+
+/* Mobile menu button adjustments */
+#main-header.header-scrolled #mobile-menu-button {
+    padding: 0.375rem;
+}
+
+/* Smooth transitions for all elements */
+#main-header img,
+#main-header h1,
+#main-header p,
+#main-header .heart-logo-divider,
+#main-header nav,
+#main-header .contact-info {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animation when header becomes sticky */
+.sticky-animation {
+    animation: headerSlideDown 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes headerSlideDown {
     from {
         transform: translateY(-100%);
         opacity: 0;
@@ -770,11 +836,18 @@ footer a:hover {
     }
 }
 
-/* Header Shadow on Scroll */
-.header-scrolled {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(25px);
-    background: rgba(255, 255, 255, 0.98);
+/* Enhanced shadow effect */
+#main-header.header-scrolled::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: linear-gradient(to bottom, 
+        rgba(121, 173, 186, 0.1) 0%, 
+        transparent 100%);
+    pointer-events: none;
 }
 
 /* Heart Logo Divider in Header */

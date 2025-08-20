@@ -66,13 +66,13 @@
 </head>
 <body class="bg-white">
     <!-- Header -->
-    <header class="bg-primary shadow-lg sticky top-0 z-50 border-b-2 border-primary-dark">
+    <header id="main-header" class="bg-primary shadow-lg sticky top-0 z-50 border-b-2 border-primary-dark transition-all duration-300 ease-in-out">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Top Header Bar -->
-            <div class="flex flex-col lg:flex-row items-center justify-between py-4 lg:py-6">
+            <div class="flex flex-col lg:flex-row items-center justify-between py-4 lg:py-6 transition-all duration-300 ease-in-out" id="header-content">
                 <!-- Logo Section -->
                 <div class="flex items-center space-x-4 mb-4 lg:mb-0">
-                    <div class="flex-shrink-0">
+                    <div class="flex-shrink-0 logo-container">
                         <img src="https://page.gensparksite.com/v1/base64_upload/4ac16172f4aba5b848169bac38fd5dd6" 
                              alt="imed2230 Logo" 
                              class="h-12 sm:h-14 lg:h-16 w-auto transition-transform hover:scale-105">
@@ -98,7 +98,7 @@
                 </div>
                 
                 <!-- Contact Info -->
-                <div class="hidden lg:flex items-center space-x-6 text-sm text-white opacity-90">
+                <div class="hidden lg:flex items-center space-x-6 text-sm text-white opacity-90 contact-info">
                     <a href="https://maps.google.com/maps?q=Brunnengasse+9,+2230+Gänserndorf,+Austria" 
                        target="_blank" 
                        rel="noopener noreferrer"

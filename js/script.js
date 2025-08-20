@@ -164,9 +164,13 @@ function showAppointmentInfo() {
                 <p><strong>✉️ E-Mail:</strong> <a href="mailto:office@imed2230.at" class="text-blue-600 hover:underline">office@imed2230.at</a></p>
                 <p><strong>🕒 Ordinationszeiten:</strong></p>
                 <ul class="ml-4 space-y-1 text-sm">
-                    <li>Mo, Di, Do: 08:00 - 12:00 und 15:00 - 18:00</li>
-                    <li>Mi, Fr: 08:00 - 13:00</li>
+                    <li>Montag: 10:00 - 12:00, 13:00 - 16:00</li>
+                    <li>Dienstag: 08:00 - 12:00, 13:00 - 16:00</li>
+                    <li>Mittwoch: 08:00 - 12:00</li>
+                    <li>Donnerstag: 10:00 - 12:00, 13:00 - 14:00</li>
+                    <li>Fr, Sa, So: Geschlossen</li>
                 </ul>
+                <p class="mt-2 text-sm"><strong>Termine nur nach Vereinbarung</strong></p>
             </div>
             <div class="mt-4 p-3 bg-blue-50 rounded-lg">
                 <p class="text-sm text-blue-800">💡 <strong>Tipp:</strong> Bitte bringen Sie Ihre e-card und eventuelle Vorbefunde mit.</p>

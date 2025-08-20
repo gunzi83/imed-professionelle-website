@@ -247,9 +247,10 @@ function initializeScrollHeader() {
     function updateHeaderOnScroll() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
-        // Add scrolled class when scrolled down more than 50px
-        if (scrollTop > 50) {
+        // Add scrolled class when scrolled down more than 150px
+        if (scrollTop > 150) {
             header.classList.add('header-scrolled');
+            console.log('Header shrunk at scroll:', scrollTop); // Debug log
         } else {
             header.classList.remove('header-scrolled');
         }

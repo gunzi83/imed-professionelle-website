@@ -808,6 +808,71 @@ footer a:hover {
     }
 }
 
+/* Clickable Contact Info Styles */
+.address-link, .phone-link, .website-link {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.address-link:hover, .phone-link:hover, .website-link:hover {
+    opacity: 1 !important;
+    transform: translateY(-1px);
+}
+
+.address-link:hover i, .phone-link:hover i, .website-link:hover i {
+    transform: scale(1.1);
+    color: #A8C7D5 !important;
+}
+
+.address-link:active, .phone-link:active, .website-link:active {
+    transform: translateY(0);
+}
+
+/* Mobile Contact Links */
+.mobile-address-link, .mobile-phone-link, .mobile-website-link {
+    padding: 0.25rem 0;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.mobile-address-link:hover, .mobile-phone-link:hover, .mobile-website-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    padding-left: 0.5rem;
+    transform: translateX(2px);
+}
+
+.mobile-address-link:hover i, .mobile-phone-link:hover i, .mobile-website-link:hover i {
+    transform: scale(1.1);
+    color: #A8C7D5 !important;
+}
+
+/* Interactive Feedback */
+.address-link:hover span::after {
+    content: " 📍";
+    animation: bounce 0.6s ease-in-out;
+}
+
+.phone-link:hover span::after {
+    content: " 📞";
+    animation: bounce 0.6s ease-in-out;
+}
+
+.website-link:hover span::after {
+    content: " 🌐";
+    animation: bounce 0.6s ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 20%, 60%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-3px);
+    }
+    80% {
+        transform: translateY(-1px);
+    }
+}
+
 /* Responsive Header Adjustments */
 @media (max-width: 1024px) {
     .contact-info-desktop {

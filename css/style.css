@@ -1018,6 +1018,50 @@ footer a:hover {
     }
 }
 
+/* Hero Gradient Background - Elegant brand-compliant enhancement */
+.hero-gradient-bg {
+    background: linear-gradient(135deg, 
+        #E3B497 0%,     /* Original secondary color */
+        #D69D7A 35%,    /* Slightly darker shade */
+        #E8C4A0 65%,    /* Lighter warm tone */
+        #D69D7A 100%    /* Back to darker shade */
+    );
+    position: relative;
+}
+
+/* Optional: Subtle texture overlay for extra sophistication */
+.hero-gradient-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(121, 173, 186, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Ensure content stays above the overlay */
+.hero-gradient-bg > .max-w-6xl {
+    position: relative;
+    z-index: 2;
+}
+
+/* Responsive gradient adjustments */
+@media (max-width: 768px) {
+    .hero-gradient-bg {
+        background: linear-gradient(180deg, 
+            #E3B497 0%, 
+            #D69D7A 50%, 
+            #E8C4A0 100%
+        );
+    }
+}
+
 /* Responsive Header Adjustments */
 @media (max-width: 1024px) {
     .contact-info-desktop {

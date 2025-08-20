@@ -513,7 +513,7 @@
                 <!-- Herz-Kreislauf-Diagnostik -->
                 <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden">
                     <!-- Header -->
-                    <div class="service-header p-6 text-white text-center cursor-pointer" style="background: linear-gradient(135deg, #79ADBA 0%, #6B9CAA 100%);" onclick="toggleService('service1')">
+                    <div class="service-header p-6 text-white text-center cursor-pointer" style="background: linear-gradient(135deg, #79ADBA 0%, #6B9CAA 100%);" data-service="service1">
                         <div class="w-16 h-16 mx-auto mb-4 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
                             <i class="fas fa-heartbeat text-2xl"></i>
                         </div>
@@ -553,7 +553,7 @@
                 <!-- Blutdruck & Gefäße -->
                 <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden">
                     <!-- Header -->
-                    <div class="service-header p-6 text-white text-center cursor-pointer" style="background: linear-gradient(135deg, #E3B497 0%, #D69D7A 100%);" onclick="toggleService('service2')">
+                    <div class="service-header p-6 text-white text-center cursor-pointer" style="background: linear-gradient(135deg, #E3B497 0%, #D69D7A 100%);" data-service="service2">
                         <div class="w-16 h-16 mx-auto mb-4 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
                             <i class="fas fa-tint text-2xl"></i>
                         </div>
@@ -589,7 +589,7 @@
                 <!-- Weitere Untersuchungen -->
                 <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden">
                     <!-- Header -->
-                    <div class="service-header p-6 text-white text-center cursor-pointer" style="background: linear-gradient(135deg, #79ADBA 0%, #6B9CAA 100%);" onclick="toggleService('service3')">
+                    <div class="service-header p-6 text-white text-center cursor-pointer" style="background: linear-gradient(135deg, #79ADBA 0%, #6B9CAA 100%);" data-service="service3">
                         <div class="w-16 h-16 mx-auto mb-4 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
                             <i class="fas fa-lungs text-2xl"></i>
                         </div>
@@ -619,21 +619,7 @@
                 </div>
             </div>
 
-            <!-- JavaScript for toggle functionality -->
-            <script>
-            function toggleService(serviceId) {
-                const serviceDetails = document.getElementById(serviceId);
-                const icon = document.getElementById(serviceId + '-icon');
-                
-                if (serviceDetails.style.display === 'none' || serviceDetails.style.display === '') {
-                    serviceDetails.style.display = 'block';
-                    icon.style.transform = 'rotate(180deg)';
-                } else {
-                    serviceDetails.style.display = 'none';
-                    icon.style.transform = 'rotate(0deg)';
-                }
-            }
-            </script>
+
         </div>
     </section>
 

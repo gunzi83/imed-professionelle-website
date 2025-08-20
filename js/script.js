@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeTerminButtons();
     initializeMobileMenu();
     initializeScrollHeader();
-    // Flip cards replaced with accordion-style service cards
+    initializeServiceAccordions();
     
     console.log('All interactive features initialized');
 });
@@ -240,9 +240,93 @@ function updateMenuIcon(isOpen) {
 }
 
 /**
- * Service Cards are now handled with inline JavaScript in HTML
- * Using simple accordion-style toggle functionality
+ * Initialize Service Accordion Functionality
  */
+function initializeServiceAccordions() {
+    const serviceHeaders = document.querySelectorAll('.service-header[data-service]');
+    
+    serviceHeaders.forEach(header => {
+        header.addEventListener('click', function() {
+            const serviceId = this.getAttribute('data-service');
+            toggleService(serviceId);
+        });
+        
+        // Add keyboard support
+        header.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                const serviceId = this.getAttribute('data-service');
+                toggleService(serviceId);
+            }
+        });
+        
+        // Make focusable
+        header.setAttribute('tabindex', '0');
+        header.setAttribute('role', 'button');
+        header.setAttribute('aria-label', 'Klicken Sie um Details zu sehen');
+    });
+    
+    console.log('Service accordions initialized:', serviceHeaders.length);
+}
+
+/**
+ * Toggle Service Details Function
+ */
+function toggleService(serviceId) {
+    console.log('Toggling service:', serviceId);
+    
+    const serviceDetails = document.getElementById(serviceId);
+    const icon = document.getElementById(serviceId + '-icon');
+    
+    if (!serviceDetails) {
+        console.error('Service details not found for:', serviceId);
+        return;
+    }
+    
+    if (!icon) {
+        console.error('Icon not found for:', serviceId + '-icon');
+        return;
+    }
+    
+    // Check current display state
+    const isHidden = serviceDetails.style.display === 'none' || serviceDetails.style.display === '' || !serviceDetails.classList.contains('show');
+    
+    if (isHidden) {
+        // Show the details with smooth animation
+        serviceDetails.style.display = 'block';
+        serviceDetails.classList.remove('hide');
+        serviceDetails.classList.add('show');
+        icon.style.transform = 'rotate(180deg)';
+        console.log('Showing service:', serviceId);
+        
+        // Update text
+        const headerText = icon.parentElement.querySelector('span');
+        if (headerText) {
+            headerText.textContent = 'Details verbergen';
+        }
+        
+    } else {
+        // Hide the details with animation
+        serviceDetails.classList.remove('show');
+        serviceDetails.classList.add('hide');
+        icon.style.transform = 'rotate(0deg)';
+        console.log('Hiding service:', serviceId);
+        
+        // Update text
+        const headerText = icon.parentElement.querySelector('span');
+        if (headerText) {
+            headerText.textContent = 'Details anzeigen';
+        }
+        
+        // Hide completely after animation
+        setTimeout(() => {
+            if (serviceDetails.classList.contains('hide')) {
+                serviceDetails.style.display = 'none';
+                serviceDetails.classList.remove('hide');
+            }
+        }, 300);
+    }
+}
 
 /**
  * Initialize Scroll-based Header Shrinking

@@ -873,6 +873,52 @@ footer a:hover {
     }
 }
 
+/* Inline Heart Logo in Hero Title */
+.inline-heart-logo {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(5px);
+    margin: 0 0.25rem;
+}
+
+.inline-heart-logo:hover {
+    background: rgba(121, 173, 186, 0.9);
+    transform: scale(1.1) rotate(-5deg);
+    box-shadow: 0 8px 25px rgba(121, 173, 186, 0.4);
+}
+
+.inline-heart-logo svg {
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.inline-heart-logo:hover svg {
+    filter: drop-shadow(0 4px 8px rgba(227, 180, 151, 0.5));
+    animation: heartbeat-gentle 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat-gentle {
+    0%, 70%, 100% {
+        transform: scale(1);
+    }
+    35% {
+        transform: scale(1.05);
+    }
+}
+
+/* Responsive adjustments for hero title */
+@media (max-width: 640px) {
+    .inline-heart-logo {
+        width: 3rem;
+        height: 3rem;
+        margin: 0 0.5rem;
+    }
+    
+    .inline-heart-logo svg {
+        width: 2rem;
+        height: 2rem;
+    }
+}
+
 /* Responsive Header Adjustments */
 @media (max-width: 1024px) {
     .contact-info-desktop {

@@ -507,240 +507,29 @@
                 </p>
             </div>
             
-            <!-- Flip Cards Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-                
-                <!-- Herz-Kreislauf-Diagnostik -->
-                <div class="flip-card h-80">
-                    <div class="flip-card-inner">
-                        <!-- Front -->
-                        <div class="flip-card-front bg-gradient-to-br from-primary to-primary-dark rounded-xl shadow-lg p-6 flex flex-col items-center justify-center text-white">
-                            <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mb-4">
-                                <i class="fas fa-heartbeat text-2xl"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-center mb-2">Herz-Kreislauf-Diagnostik</h3>
-                            <p class="text-sm text-center opacity-90">Umfassende kardiologische Untersuchungen</p>
-                            <div class="mt-4 text-xs opacity-75">Klicken für Details →</div>
-                        </div>
-                        <!-- Back -->
-                        <div class="flip-card-back bg-white rounded-xl shadow-lg p-6 border border-primary-light">
-                            <h4 class="font-bold text-primary mb-4 text-lg">Herz-Kreislauf-Diagnostik</h4>
-                            <div class="space-y-4 text-sm">
-                                <div class="bg-gray-50 p-3 rounded">
-                                    <h5 class="font-semibold text-primary mb-1">Herzultraschall (Echokardiographie)</h5>
-                                    <p class="text-gray-700 text-xs">Schnelle, schonende Untersuchung des Herzens zur Überprüfung der Herzkammern, Vorhöfe, Pumpfunktion und Herzklappen.</p>
-                                </div>
-                                <div class="bg-gray-50 p-3 rounded">
-                                    <h5 class="font-semibold text-primary mb-1">EKG</h5>
-                                    <p class="text-gray-700 text-xs">Messung der elektrischen Signale des Herzens zur Erkennung von Durchblutungsstörungen und Herzrhythmusstörungen.</p>
-                                </div>
-                                <div class="bg-gray-50 p-3 rounded">
-                                    <h5 class="font-semibold text-primary mb-1">Belastungs-EKG (Ergometrie)</h5>
-                                    <p class="text-gray-700 text-xs">Herzaktivitätsmessung während körperlicher Anstrengung auf dem Fahrradergometer.</p>
-                                </div>
-                                <div class="bg-gray-50 p-3 rounded">
-                                    <h5 class="font-semibold text-primary mb-1">Langzeit-EKG (Holter-EKG)</h5>
-                                    <p class="text-gray-700 text-xs">24-Stunden-Aufzeichnung des Herzrhythmus mit tragbarem Gerät.</p>
-                                </div>
-                            </div>
-                        </div>
+            <div id="services-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Services will be loaded via JavaScript -->
+            </div>
+            
+            <div class="mt-16 bg-white rounded p-8 shadow">
+                <h3 class="text-2xl font-medium text-center mb-8 text-gray-800">
+                    Behandlungsschwerpunkte
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="text-center p-6 bg-white rounded border border-secondary-light">
+                        <i class="fas fa-heartbeat text-3xl mb-4 text-primary"></i>
+                        <h4 class="font-bold mb-2 text-gray-800">Herz-Kreislauf-Erkrankungen</h4>
+                        <p class="text-sm text-gray-600">Umfassende Abklärung und Behandlung</p>
                     </div>
-                </div>
-
-                <!-- Blutdruck & Gefäße -->
-                <div class="flip-card h-80">
-                    <div class="flip-card-inner">
-                        <!-- Front -->
-                        <div class="flip-card-front bg-gradient-to-br from-secondary to-secondary-dark rounded-xl shadow-lg p-6 flex flex-col items-center justify-center text-white">
-                            <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mb-4">
-                                <i class="fas fa-tint text-2xl"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-center mb-2">Blutdruck & Gefäße</h3>
-                            <p class="text-sm text-center opacity-90">Gefäß- und Durchblutungsdiagnostik</p>
-                            <div class="mt-4 text-xs opacity-75">Klicken für Details →</div>
-                        </div>
-                        <!-- Back -->
-                        <div class="flip-card-back bg-white rounded-xl shadow-lg p-6 border border-secondary-light">
-                            <h4 class="font-bold text-secondary mb-4 text-lg">Blutdruck & Gefäße</h4>
-                            <div class="space-y-4 text-sm">
-                                <div class="bg-gray-50 p-3 rounded">
-                                    <h5 class="font-semibold text-secondary mb-1">24-Stunden-Blutdruckmessung</h5>
-                                    <p class="text-gray-700 text-xs">Erfassung der Blutdruckschwankungen über den ganzen Tag für optimale Medikation.</p>
-                                </div>
-                                <div class="bg-gray-50 p-3 rounded">
-                                    <h5 class="font-semibold text-secondary mb-1">Gefäßultraschall</h5>
-                                    <p class="text-gray-700 text-xs">Untersuchung der Halsschlagadern zur Früherkennung von Durchblutungsstörungen.</p>
-                                </div>
-                                <div class="bg-gray-50 p-3 rounded">
-                                    <h5 class="font-semibold text-secondary mb-1">Knöcheldruck-Messung</h5>
-                                    <p class="text-gray-700 text-xs">Früherkennung von Durchblutungsstörungen in den Beinarterien.</p>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="text-center p-6 bg-white rounded border border-secondary-light">
+                        <i class="fas fa-tint text-3xl mb-4 text-warning"></i>
+                        <h4 class="font-bold mb-2 text-gray-800">Stoffwechselerkrankungen</h4>
+                        <p class="text-sm text-gray-600">Diabetes, Bluthochdruck, Fettstoffwechsel</p>
                     </div>
-                </div>
-
-                <!-- Weitere Untersuchungen -->
-                <div class="flip-card h-80">
-                    <div class="flip-card-inner">
-                        <!-- Front -->
-                        <div class="flip-card-front bg-gradient-to-br from-primary to-primary-dark rounded-xl shadow-lg p-6 flex flex-col items-center justify-center text-white">
-                            <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mb-4">
-                                <i class="fas fa-lungs text-2xl"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-center mb-2">Weitere Untersuchungen</h3>
-                            <p class="text-sm text-center opacity-90">Zusätzliche Diagnostik & Laborwerte</p>
-                            <div class="mt-4 text-xs opacity-75">Klicken für Details →</div>
-                        </div>
-                        <!-- Back -->
-                        <div class="flip-card-back bg-white rounded-xl shadow-lg p-6 border border-primary-light">
-                            <h4 class="font-bold text-primary mb-4 text-lg">Weitere Untersuchungen</h4>
-                            <div class="space-y-4 text-sm">
-                                <div class="bg-gray-50 p-3 rounded">
-                                    <h5 class="font-semibold text-primary mb-1">Spirometrie (Lungenfunktion)</h5>
-                                    <p class="text-gray-700 text-xs">Einfache Methode zur Messung der Lungenkapazität.</p>
-                                </div>
-                                <div class="bg-gray-50 p-3 rounded">
-                                    <h5 class="font-semibold text-primary mb-1">Blutabnahme & Laboruntersuchungen</h5>
-                                    <p class="text-gray-700 text-xs">Direkter Service in der Praxis mit Partnerlabor für weiterführende Analysen.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Herz-Kreislauf-Erkrankungen -->
-                <div class="flip-card h-80">
-                    <div class="flip-card-inner">
-                        <!-- Front -->
-                        <div class="flip-card-front bg-gradient-to-br from-warning to-warning-light rounded-xl shadow-lg p-6 flex flex-col items-center justify-center text-white">
-                            <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mb-4">
-                                <i class="fas fa-heartbeat text-2xl"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-center mb-2">Herz-Kreislauf-Erkrankungen</h3>
-                            <p class="text-sm text-center opacity-90">Behandlungsschwerpunkt</p>
-                            <div class="mt-4 text-xs opacity-75">Klicken für Details →</div>
-                        </div>
-                        <!-- Back -->
-                        <div class="flip-card-back bg-white rounded-xl shadow-lg p-6 border border-warning-light">
-                            <h4 class="font-bold text-warning mb-4 text-lg">Herz-Kreislauf-Erkrankungen</h4>
-                            <div class="space-y-3 text-sm">
-                                <div class="flex items-start">
-                                    <i class="fas fa-check-circle text-warning mt-1 mr-2"></i>
-                                    <span class="text-gray-700">Bluthochdruck (Hypertonie)</span>
-                                </div>
-                                <div class="flex items-start">
-                                    <i class="fas fa-check-circle text-warning mt-1 mr-2"></i>
-                                    <span class="text-gray-700">Koronare Herzerkrankung</span>
-                                </div>
-                                <div class="flex items-start">
-                                    <i class="fas fa-check-circle text-warning mt-1 mr-2"></i>
-                                    <span class="text-gray-700">Herzrhythmusstörungen</span>
-                                </div>
-                                <div class="flex items-start">
-                                    <i class="fas fa-check-circle text-warning mt-1 mr-2"></i>
-                                    <span class="text-gray-700">Herzinsuffizienz</span>
-                                </div>
-                                <div class="flex items-start">
-                                    <i class="fas fa-check-circle text-warning mt-1 mr-2"></i>
-                                    <span class="text-gray-700">Arteriosklerose</span>
-                                </div>
-                                <div class="flex items-start">
-                                    <i class="fas fa-check-circle text-warning mt-1 mr-2"></i>
-                                    <span class="text-gray-700">Durchblutungsstörungen</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Stoffwechselerkrankungen -->
-                <div class="flip-card h-80">
-                    <div class="flip-card-inner">
-                        <!-- Front -->
-                        <div class="flip-card-front bg-gradient-to-br from-secondary to-secondary-dark rounded-xl shadow-lg p-6 flex flex-col items-center justify-center text-white">
-                            <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mb-4">
-                                <i class="fas fa-tint text-2xl"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-center mb-2">Stoffwechselerkrankungen</h3>
-                            <p class="text-sm text-center opacity-90">Diabetes & Metabolismus</p>
-                            <div class="mt-4 text-xs opacity-75">Klicken für Details →</div>
-                        </div>
-                        <!-- Back -->
-                        <div class="flip-card-back bg-white rounded-xl shadow-lg p-6 border border-secondary-light">
-                            <h4 class="font-bold text-secondary mb-4 text-lg">Stoffwechselerkrankungen</h4>
-                            <div class="space-y-3 text-sm">
-                                <div class="flex items-start">
-                                    <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
-                                    <span class="text-gray-700">Diabetes mellitus Typ 1 & 2</span>
-                                </div>
-                                <div class="flex items-start">
-                                    <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
-                                    <span class="text-gray-700">Fettstoffwechselstörungen</span>
-                                </div>
-                                <div class="flex items-start">
-                                    <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
-                                    <span class="text-gray-700">Schilddrüsenerkrankungen</span>
-                                </div>
-                                <div class="flex items-start">
-                                    <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
-                                    <span class="text-gray-700">Metabolisches Syndrom</span>
-                                </div>
-                                <div class="flex items-start">
-                                    <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
-                                    <span class="text-gray-700">Gicht & Harnsäure</span>
-                                </div>
-                                <div class="flex items-start">
-                                    <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
-                                    <span class="text-gray-700">Übergewicht & Adipositas</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Präventivmedizin -->
-                <div class="flip-card h-80">
-                    <div class="flip-card-inner">
-                        <!-- Front -->
-                        <div class="flip-card-front bg-gradient-to-br from-primary to-primary-dark rounded-xl shadow-lg p-6 flex flex-col items-center justify-center text-white">
-                            <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mb-4">
-                                <i class="fas fa-shield-alt text-2xl"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-center mb-2">Präventivmedizin</h3>
-                            <p class="text-sm text-center opacity-90">Vorsorge & Früherkennung</p>
-                            <div class="mt-4 text-xs opacity-75">Klicken für Details →</div>
-                        </div>
-                        <!-- Back -->
-                        <div class="flip-card-back bg-white rounded-xl shadow-lg p-6 border border-primary-light">
-                            <h4 class="font-bold text-primary mb-4 text-lg">Präventivmedizin</h4>
-                            <div class="space-y-3 text-sm">
-                                <div class="flex items-start">
-                                    <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
-                                    <span class="text-gray-700">Gesundenuntersuchung</span>
-                                </div>
-                                <div class="flex items-start">
-                                    <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
-                                    <span class="text-gray-700">Vorsorgeuntersuchungen</span>
-                                </div>
-                                <div class="flex items-start">
-                                    <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
-                                    <span class="text-gray-700">Risikofaktoren-Analyse</span>
-                                </div>
-                                <div class="flex items-start">
-                                    <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
-                                    <span class="text-gray-700">Impfberatung & -durchführung</span>
-                                </div>
-                                <div class="flex items-start">
-                                    <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
-                                    <span class="text-gray-700">Lifestyle-Beratung</span>
-                                </div>
-                                <div class="flex items-start">
-                                    <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
-                                    <span class="text-gray-700">Ernährungsberatung</span>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="text-center p-6 bg-white rounded border border-secondary-light">
+                        <i class="fas fa-lungs text-3xl mb-4 text-primary"></i>
+                        <h4 class="font-bold mb-2 text-gray-800">Präventivmedizin</h4>
+                        <p class="text-sm text-gray-600">Vorsorgeuntersuchungen und Früherkennung</p>
                     </div>
                 </div>
             </div>

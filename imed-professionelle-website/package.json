@@ -1,0 +1,34 @@
+{
+  "name": "imed2230-website",
+  "version": "1.0.0",
+  "description": "Medical practice website for Dr. Gunter Riedmüller - imed2230 Kassenordination in Gänserndorf",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "pm2 start ecosystem.dev.config.js",
+    "dev:stop": "pm2 stop imed2230-dev",
+    "dev:restart": "pm2 restart imed2230-dev",
+    "production": "pm2 start ecosystem.config.js",
+    "pm2:start": "pm2 start ecosystem.config.js",
+    "pm2:stop": "pm2 stop imed2230-website",
+    "pm2:restart": "pm2 restart imed2230-website",
+    "pm2:status": "pm2 status",
+    "pm2:logs": "pm2 logs --nostream"
+  },
+  "keywords": [
+    "medical",
+    "practice",
+    "website",
+    "austria",
+    "gänserndorf",
+    "internist"
+  ],
+  "author": "Dr. Gunter Riedmüller",
+  "license": "ISC",
+  "dependencies": {
+    "pm2": "^6.0.8"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

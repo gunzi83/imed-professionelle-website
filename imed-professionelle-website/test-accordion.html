@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Accordion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-2xl mx-auto">
+        <h1 class="text-2xl font-bold mb-8">Test Service Accordion</h1>
+        
+        <!-- Simple Test Card -->
+        <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden mb-4">
+            <div class="service-header p-6 text-white text-center cursor-pointer" 
+                 style="background: linear-gradient(135deg, #79ADBA 0%, #6B9CAA 100%);" 
+                 data-service="test1"
+                 onclick="testToggle('test1')">
+                <h3 class="text-xl font-bold mb-2">Test Service 1</h3>
+                <div class="flex items-center justify-center">
+                    <span class="text-xs mr-2">Details anzeigen</span>
+                    <i id="test1-icon" class="fas fa-chevron-down transition-transform duration-300"></i>
+                </div>
+            </div>
+            <div id="test1" class="service-details" style="display: none;">
+                <div class="p-6 bg-gray-50">
+                    <h4 class="font-bold text-lg mb-4" style="color: #79ADBA;">Test Details</h4>
+                    <p>Diese Details sollten sichtbar werden wenn Sie auf den Header klicken!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-8">
+            <button onclick="forceShow()" class="bg-blue-500 text-white px-4 py-2 rounded mr-2">Force Show</button>
+            <button onclick="forceHide()" class="bg-red-500 text-white px-4 py-2 rounded mr-2">Force Hide</button>
+            <button onclick="checkElements()" class="bg-green-500 text-white px-4 py-2 rounded">Check Elements</button>
+        </div>
+
+        <div id="debug" class="mt-4 p-4 bg-yellow-100 rounded">
+            Debug info will appear here...
+        </div>
+    </div>
+
+    <script>
+        function testToggle(serviceId) {
+            console.log('🔄 Test Toggle called for:', serviceId);
+            document.getElementById('debug').innerHTML += '<br>🔄 Toggle called for: ' + serviceId;
+            
+            const serviceDetails = document.getElementById(serviceId);
+            const icon = document.getElementById(serviceId + '-icon');
+            
+            if (!serviceDetails) {
+                console.error('❌ Service details not found for:', serviceId);
+                document.getElementById('debug').innerHTML += '<br>❌ Details element not found!';
+                return;
+            }
+            
+            if (!icon) {
+                console.error('❌ Icon not found for:', serviceId + '-icon');
+                document.getElementById('debug').innerHTML += '<br>❌ Icon element not found!';
+                return;
+            }
+            
+            const isCurrentlyHidden = serviceDetails.style.display === 'none' || serviceDetails.style.display === '';
+            
+            if (isCurrentlyHidden) {
+                serviceDetails.style.display = 'block';
+                icon.style.transform = 'rotate(180deg)';
+                console.log('✅ SHOWING service:', serviceId);
+                document.getElementById('debug').innerHTML += '<br>✅ SHOWING: ' + serviceId;
+            } else {
+                serviceDetails.style.display = 'none';
+                icon.style.transform = 'rotate(0deg)';
+                console.log('❌ HIDING service:', serviceId);
+                document.getElementById('debug').innerHTML += '<br>❌ HIDING: ' + serviceId;
+            }
+        }
+
+        function forceShow() {
+            document.getElementById('test1').style.display = 'block';
+            document.getElementById('debug').innerHTML += '<br>🔧 Forced SHOW';
+        }
+
+        function forceHide() {
+            document.getElementById('test1').style.display = 'none';
+            document.getElementById('debug').innerHTML += '<br>🔧 Forced HIDE';
+        }
+
+        function checkElements() {
+            const details = document.getElementById('test1');
+            const icon = document.getElementById('test1-icon');
+            const header = document.querySelector('[data-service="test1"]');
+            
+            let info = '<br>📋 Element Check:';
+            info += '<br>Details element: ' + (details ? '✅ Found' : '❌ Not found');
+            info += '<br>Icon element: ' + (icon ? '✅ Found' : '❌ Not found');
+            info += '<br>Header element: ' + (header ? '✅ Found' : '❌ Not found');
+            info += '<br>Current display: ' + (details ? details.style.display : 'N/A');
+            
+            document.getElementById('debug').innerHTML += info;
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('debug').innerHTML = '🚀 Test page loaded';
+            checkElements();
+        });
+    </script>
+</body>
+</html>

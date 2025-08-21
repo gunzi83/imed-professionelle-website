@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeMobileMenu();
     initializeScrollHeader();
     initializeServiceAccordions();
+    initializeNotificationSystem();
+    initializeNewsSystem();
     
     console.log('All interactive features initialized');
 });
@@ -107,14 +109,9 @@ function initializeSmoothScrolling() {
 function initializeFloatingActionButton() {
     const fab = document.getElementById('fab-termin');
     if (fab) {
-        fab.addEventListener('click', function() {
-            // Scroll to contact section or show appointment modal
-            const contactSection = document.getElementById('contact');
-            if (contactSection) {
-                contactSection.scrollIntoView({ behavior: 'smooth' });
-            }
-            
-            // Add bounce animation
+        // FAB is now a link that opens CGM Life Portal directly
+        // Add bounce animation on hover
+        fab.addEventListener('mouseenter', function() {
             fab.style.animation = 'bounce 0.5s';
             setTimeout(() => {
                 fab.style.animation = '';
@@ -138,48 +135,29 @@ function initializeFloatingActionButton() {
  * Termin (Appointment) Button Functionality
  */
 function initializeTerminButtons() {
-    const terminButtons = document.querySelectorAll('[data-action="termin"], .btn-primary-modern');
+    // All termin buttons are now direct links to CGM Life Portal
+    // Add visual feedback for links
+    const terminLinks = document.querySelectorAll('a[href*="cgmlife.com"]');
     
-    terminButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            // For demo purposes, show alert - in production, integrate with booking system
-            if (this.textContent.includes('Termin') || this.textContent.includes('Online')) {
-                e.preventDefault();
-                showAppointmentInfo();
-            }
+    terminLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Add bounce animation feedback when clicking appointment links
+            link.style.animation = 'bounce 0.3s';
+            setTimeout(() => {
+                link.style.animation = '';
+            }, 300);
         });
     });
 }
 
 /**
- * Show Appointment Information
+ * Show Appointment Information (Legacy function - now unused)
+ * All appointment buttons now link directly to CGM Life Portal
  */
 function showAppointmentInfo() {
-    const modal = createInfoModal(
-        'Online Terminvereinbarung',
-        `
-        <div class="text-left">
-            <p class="mb-4">Für die Terminvereinbarung kontaktieren Sie uns bitte:</p>
-            <div class="space-y-2">
-                <p><strong>📞 Telefon:</strong> <a href="tel:0228252827" class="text-blue-600 hover:underline">02282-52827</a></p>
-                <p><strong>✉️ E-Mail:</strong> <a href="mailto:office@imed2230.at" class="text-blue-600 hover:underline">office@imed2230.at</a></p>
-                <p><strong>🕒 Ordinationszeiten:</strong></p>
-                <ul class="ml-4 space-y-1 text-sm">
-                    <li>Montag: 10:00 - 12:00, 13:00 - 16:00</li>
-                    <li>Dienstag: 08:00 - 12:00, 13:00 - 16:00</li>
-                    <li>Mittwoch: 08:00 - 12:00</li>
-                    <li>Donnerstag: 10:00 - 12:00, 13:00 - 14:00</li>
-                    <li>Fr, Sa, So: Geschlossen</li>
-                </ul>
-                <p class="mt-2 text-sm"><strong>Termine nur nach Vereinbarung</strong></p>
-            </div>
-            <div class="mt-4 p-3 bg-blue-50 rounded-lg">
-                <p class="text-sm text-blue-800">💡 <strong>Tipp:</strong> Bitte bringen Sie Ihre e-card und eventuelle Vorbefunde mit.</p>
-            </div>
-        </div>
-        `
-    );
-    document.body.appendChild(modal);
+    // This function is no longer used as appointment buttons
+    // now link directly to the CGM Life Portal
+    console.log('Appointment info function called (legacy)');
 }
 
 /**
@@ -444,6 +422,286 @@ if (!document.querySelector('#bounce-animation-styles')) {
     document.head.appendChild(style);
 }
 
+/**
+ * Notification System - For Important Announcements
+ */
+function initializeNotificationSystem() {
+    const banner = document.getElementById('notification-banner');
+    const closeBtn = document.getElementById('close-notification');
+    
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function() {
+            hideNotification();
+        });
+    }
+    
+    // Auto-hide notification after 10 seconds for info notifications
+    setTimeout(() => {
+        if (banner && banner.style.display !== 'none' && !banner.classList.contains('urgent')) {
+            hideNotification();
+        }
+    }, 10000);
+}
+
+/**
+ * Show Notification Banner
+ * @param {string} message - Notification message
+ * @param {string} type - Type: 'info', 'warning', 'success', 'urgent'
+ * @param {string} icon - FontAwesome icon class (optional)
+ */
+function showNotification(message, type = 'info', icon = null) {
+    const banner = document.getElementById('notification-banner');
+    const textElement = document.getElementById('notification-text');
+    const iconElement = document.getElementById('notification-icon');
+    
+    if (!banner || !textElement || !iconElement) return;
+    
+    // Set content
+    textElement.innerHTML = message;
+    
+    // Set icon
+    const iconClass = icon || getDefaultIcon(type);
+    iconElement.className = `fas ${iconClass}`;
+    
+    // Set banner style
+    banner.className = `notification-banner ${type}`;
+    banner.style.display = 'block';
+    
+    // Smooth slide-in animation
+    setTimeout(() => {
+        banner.style.transform = 'translateY(0)';
+        banner.style.opacity = '1';
+    }, 50);
+}
+
+/**
+ * Hide Notification Banner
+ */
+function hideNotification() {
+    const banner = document.getElementById('notification-banner');
+    if (banner) {
+        banner.style.opacity = '0';
+        banner.style.transform = 'translateY(-100%)';
+        setTimeout(() => {
+            banner.style.display = 'none';
+        }, 300);
+    }
+}
+
+/**
+ * Get Default Icon for Notification Type
+ */
+function getDefaultIcon(type) {
+    const icons = {
+        'info': 'fa-info-circle',
+        'warning': 'fa-exclamation-triangle',
+        'success': 'fa-check-circle',
+        'urgent': 'fa-exclamation-circle'
+    };
+    return icons[type] || 'fa-info-circle';
+}
+
+/**
+ * News System - For Regular Updates and Announcements
+ */
+function initializeNewsSystem() {
+    loadNews();
+    loadHoursAlert();
+}
+
+/**
+ * Load and Display News Items
+ */
+function loadNews() {
+    // In a real implementation, this would fetch from a backend or CMS
+    // For now, we'll use a configuration-based approach
+    const newsItems = getNewsConfiguration();
+    
+    const container = document.getElementById('news-container');
+    const noNewsMessage = document.getElementById('no-news-message');
+    
+    if (!container) return;
+    
+    // Filter active news (within date range)
+    const activeNews = newsItems.filter(item => isNewsActive(item));
+    
+    if (activeNews.length === 0) {
+        container.style.display = 'none';
+        if (noNewsMessage) noNewsMessage.style.display = 'block';
+        return;
+    }
+    
+    // Show news container and hide no-news message
+    container.style.display = 'block';
+    if (noNewsMessage) noNewsMessage.style.display = 'none';
+    
+    // Sort by priority and date
+    activeNews.sort((a, b) => {
+        const priorityOrder = { 'high': 3, 'medium': 2, 'low': 1 };
+        if (priorityOrder[a.priority] !== priorityOrder[b.priority]) {
+            return priorityOrder[b.priority] - priorityOrder[a.priority];
+        }
+        return new Date(b.startDate) - new Date(a.startDate);
+    });
+    
+    // Generate HTML for news items
+    container.innerHTML = activeNews.map(item => generateNewsCardHTML(item)).join('');
+}
+
+/**
+ * Check if news item is active (within date range)
+ */
+function isNewsActive(newsItem) {
+    const now = new Date();
+    const startDate = new Date(newsItem.startDate);
+    const endDate = newsItem.endDate ? new Date(newsItem.endDate) : null;
+    
+    return now >= startDate && (!endDate || now <= endDate);
+}
+
+/**
+ * Generate HTML for News Card
+ */
+function generateNewsCardHTML(newsItem) {
+    const typeClass = `news-type-${newsItem.type}`;
+    const priorityClass = `priority-${newsItem.priority}`;
+    
+    return `
+        <div class="news-card ${priorityClass}">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="flex-shrink-0">
+                            <i class="fas ${newsItem.icon} text-2xl" style="color: ${getNewsIconColor(newsItem.type)};"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-1">${newsItem.title}</h3>
+                            <div class="news-meta">
+                                <span class="news-type-badge ${typeClass}">${getNewsTypeLabel(newsItem.type)}</span>
+                                <span><i class="fas fa-calendar text-xs mr-1"></i>${formatDate(newsItem.startDate)}</span>
+                                ${newsItem.priority === 'high' ? '<span class="text-red-600 font-semibold">WICHTIG</span>' : ''}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-gray-700 leading-relaxed">
+                    ${newsItem.content}
+                </div>
+                ${newsItem.endDate ? `<div class="mt-4 text-sm text-gray-500">
+                    <i class="fas fa-clock mr-1"></i>Gültig bis: ${formatDate(newsItem.endDate)}
+                </div>` : ''}
+            </div>
+        </div>
+    `;
+}
+
+/**
+ * Load Hours Alert for Contact Section
+ */
+function loadHoursAlert() {
+    const hoursAlert = document.getElementById('hours-alert');
+    const hoursAlertText = document.getElementById('hours-alert-text');
+    
+    if (!hoursAlert || !hoursAlertText) return;
+    
+    // Check for active hours alerts
+    const newsItems = getNewsConfiguration();
+    const hoursAlerts = newsItems.filter(item => 
+        item.type === 'hours' && isNewsActive(item) && item.showInContact
+    );
+    
+    if (hoursAlerts.length > 0) {
+        const alert = hoursAlerts[0]; // Show most recent/important
+        hoursAlertText.innerHTML = alert.content;
+        hoursAlert.style.display = 'block';
+    }
+}
+
+/**
+ * News Configuration - Easy to Update
+ * 📝 CHANGE THIS SECTION TO UPDATE NEWS AND ANNOUNCEMENTS
+ */
+function getNewsConfiguration() {
+    return [
+        // AKTUELLE PRAXIS-NEUIGKEITEN
+        {
+            id: 'vacation-august-2025',
+            type: 'vacation',
+            title: 'Urlaub',
+            content: 'Die Ordination ist vom <strong>26. August bis 28. August 2025</strong> geschlossen.',
+            startDate: '2025-08-01',
+            endDate: '2025-08-28',
+            priority: 'high',
+            icon: 'fa-plane',
+            showInContact: true
+        }
+        
+        // WEITERE NEWS KÖNNEN HIER HINZUGEFÜGT WERDEN
+        // Beispiele für andere News-Typen:
+        /*
+        {
+            id: 'new-service-example',
+            type: 'service',
+            title: 'Neue Leistung: 24h-Blutdruckmessung',
+            content: 'Ab sofort bieten wir auch 24-Stunden-Blutdruckmessungen an. Diese moderne Diagnostik ermöglicht eine präzise Beurteilung Ihres Blutdruckverlaufs. Vereinbaren Sie gerne einen Termin.',
+            startDate: '2025-01-15',
+            endDate: null,
+            priority: 'medium',
+            icon: 'fa-heartbeat',
+            showInContact: false
+        },
+        {
+            id: 'hours-change-example',
+            type: 'hours',
+            title: 'Geänderte Öffnungszeiten',
+            content: 'Aufgrund von Fortbildungen sind wir am <strong>Donnerstag, 25. Januar</strong> nur von 10:00-12:00 Uhr geöffnet.',
+            startDate: '2025-01-20',
+            endDate: '2025-01-26',
+            priority: 'medium',
+            icon: 'fa-clock',
+            showInContact: true
+        }
+        */
+    ];
+}
+
+/**
+ * Utility Functions for News System
+ */
+function getNewsTypeLabel(type) {
+    const labels = {
+        'vacation': 'Urlaub',
+        'hours': 'Öffnungszeiten',
+        'service': 'Neue Leistung',
+        'general': 'Allgemein'
+    };
+    return labels[type] || 'Info';
+}
+
+function getNewsIconColor(type) {
+    const colors = {
+        'vacation': '#F59E0B',
+        'hours': '#3B82F6',
+        'service': '#10B981',
+        'general': '#6B7280'
+    };
+    return colors[type] || '#6B7280';
+}
+
+function formatDate(dateString) {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('de-DE', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric'
+    });
+}
+
+// Global functions for easy management
+window.showNotification = showNotification;
+window.hideNotification = hideNotification;
+window.loadNews = loadNews;
+
 // Console info for developers
 console.log(`
 🏥 imed2230 - Dr. Gunter Riedmüller Website
@@ -451,7 +709,14 @@ console.log(`
 📞 02282-52827
 ✉️ office@imed2230.at
 🌐 www.imed2230.at
+🔗 Online Terminvereinbarung: CGM Life Portal
+📢 Benachrichtigungssystem: Aktiviert
+📰 News-System: Aktiviert
 
 This website serves Dr. Gunter Riedmüller's medical practice.
 All interactive features are now loaded and ready.
+Online appointment booking integrated with CGM Life Portal.
+
+📝 To add news/announcements, edit the getNewsConfiguration() function in script.js
+🚨 To show urgent notifications, use: showNotification('message', 'urgent')
 `);

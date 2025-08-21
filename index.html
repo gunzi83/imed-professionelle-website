@@ -63,6 +63,170 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Notification System Styles -->
+    <style>
+        /* Notification Banner Styles */
+        .notification-banner {
+            position: relative;
+            z-index: 40;
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .notification-banner.info {
+            background: linear-gradient(90deg, #3B82F6 0%, #1E40AF 100%);
+            color: white;
+        }
+        
+        .notification-banner.warning {
+            background: linear-gradient(90deg, #F59E0B 0%, #D97706 100%);
+            color: white;
+        }
+        
+        .notification-banner.success {
+            background: linear-gradient(90deg, #10B981 0%, #047857 100%);
+            color: white;
+        }
+        
+        .notification-banner.urgent {
+            background: linear-gradient(90deg, #EF4444 0%, #DC2626 100%);
+            color: white;
+            animation: pulse-urgent 2s infinite;
+        }
+        
+        @keyframes pulse-urgent {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.9; }
+        }
+        
+        .notification-icon {
+            display: flex;
+            align-items: center;
+            justify-center;
+            width: 24px;
+            height: 24px;
+        }
+        
+        .notification-text {
+            font-size: 14px;
+            line-height: 1.4;
+            margin: 0;
+        }
+        
+        .notification-close {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .notification-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Hero Section Styles */
+        .doctor-hero-photo-container {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .trust-signal {
+            transform: translateY(0);
+            transition: all 0.3s ease;
+        }
+        
+        .trust-signal:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Mobile Hero Optimizations */
+        @media (max-width: 1023px) {
+            .doctor-hero-photo-container {
+                margin-bottom: 2rem;
+            }
+            
+            .doctor-hero-photo-container .w-80 {
+                width: 16rem;
+                height: 16rem;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .doctor-hero-photo-container .w-80 {
+                width: 14rem;
+                height: 14rem;
+            }
+            
+            .trust-signal {
+                text-align: center;
+            }
+            
+            .trust-signal .text-left {
+                text-align: center;
+            }
+        }
+        
+        /* News Card Styles */
+        .news-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .news-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .news-card.priority-high {
+            border-left: 5px solid #EF4444;
+        }
+        
+        .news-card.priority-medium {
+            border-left: 5px solid #F59E0B;
+        }
+        
+        .news-card.priority-low {
+            border-left: 5px solid #10B981;
+        }
+        
+        .news-meta {
+            font-size: 12px;
+            color: #6B7280;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .news-type-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+        
+        .news-type-vacation { background: #FEF3C7; color: #92400E; }
+        .news-type-hours { background: #DBEAFE; color: #1E40AF; }
+        .news-type-service { background: #D1FAE5; color: #065F46; }
+        .news-type-general { background: #E5E7EB; color: #374151; }
+    </style>
 </head>
 <body class="bg-white">
     <!-- Header -->
@@ -150,7 +314,7 @@
                     </a>
                     
                     <!-- CTA Button -->
-                    <a href="#online-termin" class="ml-4 bg-white hover:bg-gray-100 text-primary hover:text-primary-dark px-6 py-2 rounded-full font-medium transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg flex items-center space-x-2">
+                    <a href="https://at.cgmlife.com/portal/#/home/?institution=d1c5e0db-2f0e-4de0-b368-5b4bbfcb93fb" target="_blank" rel="noopener noreferrer" class="ml-4 bg-white hover:bg-gray-100 text-primary hover:text-primary-dark px-6 py-2 rounded-full font-medium transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg flex items-center space-x-2">
                         <i class="fas fa-calendar-plus text-sm"></i>
                         <span>Termin buchen</span>
                     </a>
@@ -218,7 +382,7 @@
                                 </a>
                                 
                                 <!-- Appointment Button -->
-                                <a href="#online-termin" 
+                                <a href="https://at.cgmlife.com/portal/#/home/?institution=d1c5e0db-2f0e-4de0-b368-5b4bbfcb93fb" target="_blank" rel="noopener noreferrer"
                                    class="quick-action-btn bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-3 flex items-center space-x-2 hover:bg-opacity-20 transition-all duration-300 border border-white border-opacity-20">
                                     <div class="flex items-center justify-center w-8 h-8 bg-white rounded-full">
                                         <i class="fas fa-calendar-plus text-primary text-sm"></i>
@@ -267,7 +431,7 @@
                         
                         <!-- Mobile CTA Button -->
                         <div class="pt-2 border-t border-white border-opacity-20 mt-2">
-                            <a href="#online-termin" class="w-full bg-white hover:bg-gray-100 text-primary hover:text-primary-dark px-4 py-3 rounded-lg font-medium transition-all duration-300 flex items-center justify-center space-x-2 shadow-md">
+                            <a href="https://at.cgmlife.com/portal/#/home/?institution=d1c5e0db-2f0e-4de0-b368-5b4bbfcb93fb" target="_blank" rel="noopener noreferrer" class="w-full bg-white hover:bg-gray-100 text-primary hover:text-primary-dark px-4 py-3 rounded-lg font-medium transition-all duration-300 flex items-center justify-center space-x-2 shadow-md">
                                 <i class="fas fa-calendar-plus text-sm"></i>
                                 <span>Termin buchen</span>
                             </a>
@@ -278,53 +442,175 @@
         </div>
     </header>
 
+    <!-- Notification Banner for Important Announcements -->
+    <div id="notification-banner" class="notification-banner" style="display: none;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between py-3">
+                <div class="flex items-center space-x-3">
+                    <div class="notification-icon">
+                        <i id="notification-icon" class="fas fa-info-circle"></i>
+                    </div>
+                    <div class="notification-content">
+                        <p id="notification-text" class="notification-text">
+                            <!-- Notification content will be inserted here -->
+                        </p>
+                    </div>
+                </div>
+                <button id="close-notification" class="notification-close" title="Benachrichtigung schließen">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Hero Section -->
     <section id="home" class="py-16" style="background: linear-gradient(135deg, #E3B497 0%, #D69D7A 35%, #E8C4A0 65%, #D69D7A 100%); position: relative;">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="text-center">
-                <!-- Hero Title with Inline Heart Logo -->
-                <h2 class="text-4xl font-bold mb-6 text-white flex items-center justify-center gap-3 flex-wrap">
-                    <div class="w-12 h-12 sm:w-16 sm:h-16 bg-primary rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-110 inline-heart-logo">
-                        <svg class="w-8 h-8 sm:w-12 sm:h-12" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Outer heart stroke -->
-                            <path d="M50 85C50 85 15 60 15 35C15 25 25 15 35 15C42 15 47 18 50 23C53 18 58 15 65 15C75 15 85 25 85 35C85 60 50 85 50 85Z" 
-                                  fill="#E3B497" stroke="#79ADBA" stroke-width="3"/>
-                            <!-- Inner heart heart highlight -->
-                            <path d="M50 75C50 75 22 55 22 35C22 28 28 22 35 22C40 22 44 24 47 28C47 28 50 32 50 32C50 32 53 28 53 28C56 24 60 22 65 22C72 22 78 28 78 35C78 55 50 75 50 75Z" 
-                                  fill="#79ADBA"/>
-                        </svg>
-                    </div>
-                    <span>lich Willkommen</span>
-                </h2>
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[500px]">
                 
-                <!-- Alle Kassen Badge -->
-                <div class="flex justify-center mb-6">
-                    <div class="alle-kassen-badge bg-white bg-opacity-90 backdrop-blur-sm rounded-full px-4 py-2 shadow-md border border-white border-opacity-30 transform hover:scale-105 transition-all duration-300">
-                        <div class="flex items-center space-x-2">
-                            <!-- Health Insurance Icon -->
-                            <div class="flex items-center justify-center w-6 h-6 bg-primary rounded-full">
-                                <i class="fas fa-shield-alt text-white text-xs"></i>
+                <!-- Doctor Photo Section (Left) -->
+                <div class="flex justify-center lg:justify-end order-1 lg:order-1">
+                    <div class="doctor-hero-photo-container relative">
+                        <!-- Photo Frame -->
+                        <div class="relative w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-2xl bg-white border-8 border-white ring-4 ring-primary/20 transition-transform hover:scale-105 duration-300">
+                            <!-- Doctor Photo Placeholder - Replace with actual photo -->
+                            <div class="w-full h-full bg-gradient-to-br from-primary-light to-primary flex items-center justify-center">
+                                <div class="text-center text-white">
+                                    <i class="fas fa-user-md text-6xl mb-4 opacity-40"></i>
+                                    <p class="text-lg font-medium opacity-60">Dr. Riedmüller</p>
+                                    <p class="text-sm opacity-40">Foto hier einfügen</p>
+                                </div>
                             </div>
-                            <!-- Badge Text -->
-                            <span class="text-primary font-semibold text-sm">Alle Kassen</span>
-                            <!-- Checkmark -->
-                            <div class="text-green-600">
-                                <i class="fas fa-check-circle text-sm"></i>
+                            <!-- Uncomment and replace when you have the photo:
+                            <img src="path-to-your-photo.jpg" 
+                                 alt="Dr. Gunter Riedmüller - Facharzt für Innere Medizin" 
+                                 class="w-full h-full object-cover"
+                                 loading="lazy">
+                            -->
+                        </div>
+                        
+                        <!-- Floating Google Reviews Badge -->
+                        <div class="absolute -bottom-6 -right-6 bg-white rounded-xl px-4 py-3 shadow-lg border-2 border-gray-100 hover:shadow-xl transition-all duration-300 cursor-pointer" onclick="window.open('https://www.google.com/search?q=imed2230+gänserndorf&hl=de#lrd=0x476c8a7c8a8a8a8a:0x8a8a8a8a8a8a8a8a,1', '_blank')">
+                            <div class="text-center">
+                                <!-- Google Logo Colors -->
+                                <div class="flex items-center justify-center mb-1">
+                                    <span class="text-blue-500 text-xs font-bold mr-1">G</span>
+                                    <span class="text-red-500 text-xs font-bold mr-1">o</span>
+                                    <span class="text-yellow-500 text-xs font-bold mr-1">o</span>
+                                    <span class="text-blue-500 text-xs font-bold mr-1">g</span>
+                                    <span class="text-green-500 text-xs font-bold mr-1">l</span>
+                                    <span class="text-red-500 text-xs font-bold">e</span>
+                                </div>
+                                <!-- Stars Display -->
+                                <div class="flex items-center justify-center mb-1">
+                                    <span class="text-yellow-400 text-lg">⭐⭐⭐⭐⭐</span>
+                                </div>
+                                <!-- Rating -->
+                                <div class="text-gray-800 text-lg font-bold">4,6</div>
+                                <div class="text-gray-600 text-xs leading-tight">
+                                    <div>19 Bewertungen</div>
+                                    <div class="text-blue-600 text-xs hover:underline">Alle anzeigen →</div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="btn-group-modern">
-                    <button id="online-termin-btn" class="btn-primary-modern btn-ripple inline-flex items-center">
-                        <i class="fas fa-calendar-plus mr-2"></i>
-                        Online Termin vereinbaren
-                    </button>
-                    <a href="tel:02282-52827" class="btn-outline-modern btn-ripple inline-flex items-center">
-                        <i class="fas fa-phone mr-2"></i>
-                        02282-52827
-                    </a>
+                <!-- Content Section (Right) -->
+                <div class="text-center lg:text-left order-2 lg:order-2">
+                    <!-- Main Title -->
+                    <div class="mb-8">
+                        <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
+                            Dr. Gunter Riedmüller
+                        </h1>
+                        <h2 class="text-xl lg:text-2xl text-white font-medium mb-2 opacity-90">
+                            Facharzt für Innere Medizin
+                        </h2>
+                        <p class="text-lg text-white opacity-80 mb-6">
+                            Ihre Gesundheit in kompetenten Händen
+                        </p>
+                    </div>
+                    
+                    <!-- Trust Signals -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                        <!-- Alle Kassen -->
+                        <div class="trust-signal bg-white bg-opacity-90 backdrop-blur-sm rounded-lg px-4 py-3 shadow-md border border-white border-opacity-30 transition-all duration-300 hover:bg-opacity-100">
+                            <div class="flex items-center space-x-3">
+                                <div class="flex items-center justify-center w-10 h-10 bg-primary rounded-full">
+                                    <i class="fas fa-shield-alt text-white"></i>
+                                </div>
+                                <div class="text-left">
+                                    <div class="text-primary font-semibold">Alle Kassen</div>
+                                    <div class="text-primary text-xs opacity-75">Direkte Abrechnung</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Moderne Diagnostik -->
+                        <div class="trust-signal bg-white bg-opacity-90 backdrop-blur-sm rounded-lg px-4 py-3 shadow-md border border-white border-opacity-30 transition-all duration-300 hover:bg-opacity-100">
+                            <div class="flex items-center space-x-3">
+                                <div class="flex items-center justify-center w-10 h-10 bg-secondary rounded-full">
+                                    <i class="fas fa-heartbeat text-white"></i>
+                                </div>
+                                <div class="text-left">
+                                    <div class="text-secondary font-semibold">Moderne Diagnostik</div>
+                                    <div class="text-secondary text-xs opacity-75">EKG, Ultraschall & mehr</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Call to Action Buttons -->
+                    <div class="btn-group-modern flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="https://at.cgmlife.com/portal/#/home/?institution=d1c5e0db-2f0e-4de0-b368-5b4bbfcb93fb" target="_blank" rel="noopener noreferrer" id="online-termin-btn" class="btn-primary-modern btn-ripple inline-flex items-center justify-center">
+                            <i class="fas fa-calendar-plus mr-2"></i>
+                            Jetzt Termin vereinbaren
+                        </a>
+                        <a href="tel:02282-52827" class="btn-outline-modern btn-ripple inline-flex items-center justify-center">
+                            <i class="fas fa-phone mr-2"></i>
+                            02282-52827
+                        </a>
+                    </div>
+                    
+                    <!-- Quick Info -->
+                    <div class="mt-8 text-white opacity-75 text-sm">
+                        <p class="flex items-center justify-center lg:justify-start gap-2">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Brunnengasse 9, 2230 Gänserndorf
+                        </p>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News & Updates Section -->
+    <section id="news" class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <div class="mb-8">
+                    <div class="inline-flex items-center justify-center w-20 h-20 rounded-full text-white text-2xl font-bold mb-6 bg-secondary">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                </div>
+                <h2 class="text-3xl font-bold mb-4 text-gray-800">Aktuelles & Neuigkeiten</h2>
+                <div class="w-16 h-1 mx-auto mb-6 bg-primary"></div>
+                <p class="text-lg max-w-3xl mx-auto text-gray-700">
+                    Hier finden Sie aktuelle Informationen über unsere Praxis, 
+                    Öffnungszeiten und wichtige Ankündigungen.
+                </p>
+            </div>
+            
+            <!-- News Cards Container -->
+            <div id="news-container" class="space-y-6">
+                <!-- News items will be dynamically inserted here -->
+            </div>
+            
+            <!-- No News Message (shown when no active news) -->
+            <div id="no-news-message" class="text-center py-8 text-gray-500" style="display: none;">
+                <i class="fas fa-calendar-check text-4xl mb-4 text-gray-300"></i>
+                <p class="text-lg">Derzeit keine aktuellen Ankündigungen.</p>
+                <p class="text-sm">Reguläre Ordinationszeiten gelten.</p>
             </div>
         </div>
     </section>
@@ -715,6 +1001,20 @@
                 <div class="space-y-8">
                     <div>
                         <h3 class="text-2xl font-bold mb-6">Ordinationszeiten</h3>
+                        
+                        <!-- Dynamic Hours Alert -->
+                        <div id="hours-alert" class="mb-4" style="display: none;">
+                            <div class="bg-warning bg-opacity-20 border-l-4 border-warning rounded-r-lg p-4">
+                                <div class="flex items-start">
+                                    <i class="fas fa-exclamation-triangle text-warning mr-3 mt-1"></i>
+                                    <div>
+                                        <h4 class="font-semibold text-white mb-2">Geänderte Öffnungszeiten</h4>
+                                        <p id="hours-alert-text" class="text-white text-sm"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
                         <div class="space-y-4" id="contact-hours">
                             <div class="bg-primary-light rounded-lg p-4">
                                 <div class="space-y-3">
@@ -879,10 +1179,10 @@
                         <p class="text-sm mb-4">
                             Vereinbaren Sie Ihren Termin bequem online oder telefonisch.
                         </p>
-                        <button id="online-termin-btn-contact" class="btn-glass-modern btn-ripple inline-flex items-center">
+                        <a href="https://at.cgmlife.com/portal/#/home/?institution=d1c5e0db-2f0e-4de0-b368-5b4bbfcb93fb" target="_blank" rel="noopener noreferrer" id="online-termin-btn-contact" class="btn-glass-modern btn-ripple inline-flex items-center">
                             <i class="fas fa-calendar-plus mr-2"></i>
                             Online Termin buchen
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1089,9 +1389,9 @@
     </section>
 
     <!-- Floating Action Button für schnelle Terminbuchung -->
-    <button id="fab-termin" class="btn-fab-modern" title="Schneller Termin">
+    <a href="https://at.cgmlife.com/portal/#/home/?institution=d1c5e0db-2f0e-4de0-b368-5b4bbfcb93fb" target="_blank" rel="noopener noreferrer" id="fab-termin" class="btn-fab-modern" title="Schneller Termin">
         <i class="fas fa-calendar-plus text-lg"></i>
-    </button>
+    </a>
 
     <script src="js/script.js"></script>
 </body>

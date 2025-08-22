@@ -770,15 +770,17 @@
                 </p>
             </div>
             
-            <!-- CSS für Flip Cards -->
+            <!-- CSS für Flip Cards - Version 2.0 -->
             <style>
+            /* Force larger cards with cache buster */
             .flip-card {
-                background-color: transparent;
-                width: 100%;
-                height: 400px;
-                aspect-ratio: 1 / 1;
-                perspective: 1000px;
-                min-height: 400px;
+                background-color: transparent !important;
+                width: 100% !important;
+                height: 450px !important;
+                aspect-ratio: 1 / 1 !important;
+                perspective: 1000px !important;
+                min-height: 450px !important;
+                max-width: 450px !important;
             }
             
             .flip-card-inner {
@@ -839,18 +841,20 @@
             </style>
             
             <!-- Individual Examination Cards -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-12 max-w-6xl mx-auto">
                 
             
-            <!-- CSS für Flip Cards -->
+            <!-- CSS für Flip Cards - Version 2.0 -->
             <style>
+            /* Force larger cards with cache buster */
             .flip-card {
-                background-color: transparent;
-                width: 100%;
-                height: 400px;
-                aspect-ratio: 1 / 1;
-                perspective: 1000px;
-                min-height: 400px;
+                background-color: transparent !important;
+                width: 100% !important;
+                height: 450px !important;
+                aspect-ratio: 1 / 1 !important;
+                perspective: 1000px !important;
+                min-height: 450px !important;
+                max-width: 450px !important;
             }
             
             .flip-card-inner {
@@ -911,7 +915,7 @@
             </style>
             
             <!-- Individual Examination Cards -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-12 max-w-6xl mx-auto">
                 
                 <!-- 1. Herzultraschall (Echokardiographie) -->
                 <div class="flip-card">
@@ -1595,7 +1599,7 @@
                 <div class="w-16 h-1 mx-auto bg-primary"></div>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-12 max-w-6xl mx-auto">
                 <div class="bg-white p-6 rounded-xl shadow">
                     <h3 class="font-bold mb-4 text-gray-800">Primary Buttons</h3>
                     <div class="space-y-4">
@@ -1656,5 +1660,57 @@
     </a>
 
     <script src="js/script.js"></script>
+    
+    <!-- Force CSS Override for Larger Cards -->
+    <style>
+    .flip-card {
+        height: 500px !important;
+        min-height: 500px !important;
+        max-width: 500px !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+        border: 5px solid red !important;
+        box-shadow: 0 0 20px rgba(255,0,0,0.5) !important;
+    }
+    
+    .flip-card h3 {
+        font-size: 1.75rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .flip-card p {
+        font-size: 1.1rem !important;
+        line-height: 1.6 !important;
+    }
+    
+    .service-icon {
+        font-size: 5rem !important;
+        margin-bottom: 2rem !important;
+    }
+    
+    .imed-logo-back {
+        width: 140px !important;
+        height: auto !important;
+        margin-bottom: 2rem !important;
+    }
+    
+    /* Force grid to show fewer, larger cards */
+    .grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-2.xl\\:grid-cols-3 {
+        grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+    }
+    
+    @media (min-width: 768px) {
+        .grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-2.xl\\:grid-cols-3 {
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        }
+    }
+    
+    @media (min-width: 1280px) {
+        .grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-2.xl\\:grid-cols-3 {
+            grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        }
+    }
+    </style>
 </body>
 </html>

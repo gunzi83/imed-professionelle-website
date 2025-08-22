@@ -887,7 +887,31 @@
             function directToggle(serviceId) {
                 console.log('🔄 DIRECT TOGGLE:', serviceId);
                 
-                // Get elements directly
+                // First, close all other service details (accordion behavior)
+                var allServices = ['service1', 'service2', 'service3'];
+                allServices.forEach(function(id) {
+                    if (id !== serviceId) {
+                        var otherDetails = document.getElementById(id);
+                        var otherIcon = document.getElementById(id + '-icon');
+                        var otherHeader = document.getElementById('header-' + id);
+                        
+                        if (otherDetails) {
+                            otherDetails.style.display = 'none';
+                            otherDetails.style.visibility = 'hidden';
+                            otherDetails.style.opacity = '0';
+                        }
+                        
+                        if (otherIcon) {
+                            otherIcon.style.transform = 'rotate(0deg)';
+                        }
+                        
+                        if (otherHeader) {
+                            otherHeader.style.background = '';
+                        }
+                    }
+                });
+                
+                // Get elements for the clicked service
                 var details = document.getElementById(serviceId);
                 var icon = document.getElementById(serviceId + '-icon');
                 var header = document.getElementById('header-' + serviceId);
@@ -900,41 +924,62 @@
                 
                 if (!details) {
                     console.error('❌ Details not found:', serviceId);
-                    alert('Details element not found: ' + serviceId);
                     return;
                 }
                 
-                // Toggle display
-                if (details.style.display === 'none' || details.style.display === '') {
-                    // SHOW
+                // Toggle display for clicked service
+                var isCurrentlyHidden = details.style.display === 'none' || details.style.display === '';
+                
+                if (isCurrentlyHidden) {
+                    // SHOW the clicked service
                     details.style.display = 'block';
                     details.style.visibility = 'visible';
                     details.style.opacity = '1';
                     details.style.height = 'auto';
+                    details.style.maxHeight = 'none';
                     
                     if (icon) {
                         icon.style.transform = 'rotate(180deg)';
                     }
                     
                     if (header) {
-                        header.style.backgroundColor = '#6B9CAA';
+                        // Keep original gradient but make it slightly darker when active
+                        if (serviceId === 'service1') {
+                            header.style.background = 'linear-gradient(135deg, #6B9CAA 0%, #5A8A97 100%)';
+                        } else if (serviceId === 'service2') {
+                            header.style.background = 'linear-gradient(135deg, #D69D7A 0%, #C38A67 100%)';
+                        } else if (serviceId === 'service3') {
+                            header.style.background = 'linear-gradient(135deg, #6B9CAA 0%, #5A8A97 100%)';
+                        }
                     }
                     
                     console.log('✅ SHOWN:', serviceId);
                     
+                    // Smooth scroll to the opened section
+                    setTimeout(function() {
+                        header.scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'nearest' 
+                        });
+                    }, 100);
+                    
                 } else {
-                    // HIDE
+                    // HIDE the clicked service (close it)
                     details.style.display = 'none';
                     details.style.visibility = 'hidden';
                     details.style.opacity = '0';
-                    details.style.height = '0';
                     
                     if (icon) {
                         icon.style.transform = 'rotate(0deg)';
                     }
                     
                     if (header) {
-                        header.style.backgroundColor = '';
+                        // Restore original gradient
+                        if (serviceId === 'service1' || serviceId === 'service3') {
+                            header.style.background = 'linear-gradient(135deg, #79ADBA 0%, #6B9CAA 100%)';
+                        } else if (serviceId === 'service2') {
+                            header.style.background = 'linear-gradient(135deg, #E3B497 0%, #D69D7A 100%)';
+                        }
                     }
                     
                     console.log('❌ HIDDEN:', serviceId);

@@ -886,35 +886,30 @@
                 50% { opacity: 1; }
             }
             
-            /* Back side content - more compact */
+            /* Back side content - left aligned with visible text */
             .flip-card-back h4 {
                 font-size: 1rem !important;
                 font-weight: bold !important;
                 margin-bottom: 0.75rem !important;
                 line-height: 1.2 !important;
-                text-align: center !important;
+                text-align: left !important;
+                color: inherit !important;
+            }
+            
+            .flip-card-back p {
+                font-size: 0.85rem !important;
+                line-height: 1.4 !important;
+                color: #374151 !important;
+                margin-bottom: 0.5rem !important;
+                text-align: left !important;
             }
             
             .flip-card-back .text-base {
-                font-size: 0.75rem !important;
-                line-height: 1.3 !important;
+                font-size: 0.85rem !important;
+                line-height: 1.4 !important;
                 color: #374151 !important;
                 margin-bottom: 0.5rem !important;
-                text-align: center !important;
-            }
-            
-            .flip-card-back ul {
                 text-align: left !important;
-                margin: 0 !important;
-                padding-left: 0 !important;
-            }
-            
-            .flip-card-back ul li {
-                font-size: 0.7rem !important;
-                line-height: 1.2 !important;
-                margin-bottom: 0.3rem !important;
-                color: #374151 !important;
-                list-style: none !important;
             }
             
             /* imed logo on back - smaller */
@@ -1000,10 +995,12 @@
                         </div>
                         <!-- Back Side -->
                         <div class="flip-card-back bg-white">
-                            <div class="flex flex-col items-start justify-start h-full p-4">
-                                <h4 class="text-lg font-bold mb-2 text-primary border-l-4 border-primary pl-3">Herzultraschall</h4>
-                                <p class="text-sm opacity-75 mb-3 border-l-4 border-primary pl-3">(Echokardiographie)</p>
-                                <p class="text-sm leading-relaxed text-gray-700 border-l-4 border-primary pl-3">Schnelle, schonende Untersuchung des Herzens zur Überprüfung der Herzkammern, Vorhöfe, Pumpfunktion und Herzklappen.</p>
+                            <div class="flex flex-col justify-center h-full p-4">
+                                <div class="border-l-4 border-primary pl-4">
+                                    <h4 class="text-lg font-bold mb-2 text-primary">Herzultraschall</h4>
+                                    <p class="text-sm opacity-75 mb-3 text-gray-600">(Echokardiographie)</p>
+                                    <p class="text-sm leading-relaxed text-gray-700">Schnelle, schonende Untersuchung des Herzens zur Überprüfung der Herzkammern, Vorhöfe, Pumpfunktion und Herzklappen.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1025,9 +1022,11 @@
                         </div>
                         <!-- Back Side -->
                         <div class="flip-card-back bg-white">
-                            <div class="flex flex-col items-start justify-start h-full p-4">
-                                <h4 class="text-lg font-bold mb-3 text-secondary border-l-4 border-secondary pl-3">EKG</h4>
-                                <p class="text-sm leading-relaxed text-gray-700 border-l-4 border-secondary pl-3">Messung der elektrischen Signale des Herzens zur Erkennung von Durchblutungsstörungen und Herzrhythmusstörungen.</p>
+                            <div class="flex flex-col justify-center h-full p-4">
+                                <div class="border-l-4 border-secondary pl-4">
+                                    <h4 class="text-lg font-bold mb-3 text-secondary">EKG</h4>
+                                    <p class="text-sm leading-relaxed text-gray-700">Messung der elektrischen Signale des Herzens zur Erkennung von Durchblutungsstörungen und Herzrhythmusstörungen.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1049,10 +1048,12 @@
                         </div>
                         <!-- Back Side -->
                         <div class="flip-card-back bg-white">
-                            <div class="flex flex-col items-start justify-start h-full p-4">
-                                <h4 class="text-lg font-bold mb-2 text-primary border-l-4 border-primary pl-3">Belastungs-EKG</h4>
-                                <p class="text-sm opacity-75 mb-3 border-l-4 border-primary pl-3">(Ergometrie)</p>
-                                <p class="text-sm leading-relaxed text-gray-700 border-l-4 border-primary pl-3">Herzaktivitätsmessung während körperlicher Anstrengung auf dem Fahrradergometer.</p>
+                            <div class="flex flex-col justify-center h-full p-4">
+                                <div class="border-l-4 border-primary pl-4">
+                                    <h4 class="text-lg font-bold mb-2 text-primary">Belastungs-EKG</h4>
+                                    <p class="text-sm opacity-75 mb-3 text-gray-600">(Ergometrie)</p>
+                                    <p class="text-sm leading-relaxed text-gray-700">Herzaktivitätsmessung während körperlicher Anstrengung auf dem Fahrradergometer.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1074,9 +1075,11 @@
                         </div>
                         <!-- Back Side -->
                         <div class="flip-card-back bg-white">
-                            <div class="flex flex-col items-start justify-start h-full p-4">
-                                <h4 class="text-lg font-bold mb-2 text-secondary border-l-4 border-secondary pl-3">Langzeit-EKG (Holter-EKG)</h4>
-                                <p class="text-sm leading-relaxed text-gray-700 border-l-4 border-secondary pl-3">24-Stunden-Aufzeichnung des Herzrhythmus mit tragbarem Gerät.</p>
+                            <div class="flex flex-col justify-center h-full p-4">
+                                <div class="border-l-4 border-secondary pl-4">
+                                    <h4 class="text-lg font-bold mb-3 text-secondary">Langzeit-EKG (Holter-EKG)</h4>
+                                    <p class="text-sm leading-relaxed text-gray-700">24-Stunden-Aufzeichnung des Herzrhythmus mit tragbarem Gerät.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1098,9 +1101,11 @@
                         </div>
                         <!-- Back Side -->
                         <div class="flip-card-back bg-white">
-                            <div class="flex flex-col items-start justify-start h-full p-4">
-                                <h4 class="text-lg font-bold mb-3 text-warning border-l-4 border-warning pl-3">24-Stunden-Blutdruckmessung</h4>
-                                <p class="text-sm leading-relaxed text-gray-700 border-l-4 border-warning pl-3">Erfassung der Blutdruckschwankungen über den ganzen Tag für optimale Medikation.</p>
+                            <div class="flex flex-col justify-center h-full p-4">
+                                <div class="border-l-4 border-warning pl-4">
+                                    <h4 class="text-lg font-bold mb-3 text-warning">24-Stunden-Blutdruckmessung</h4>
+                                    <p class="text-sm leading-relaxed text-gray-700">Erfassung der Blutdruckschwankungen über den ganzen Tag für optimale Medikation.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1122,9 +1127,11 @@
                         </div>
                         <!-- Back Side -->
                         <div class="flip-card-back bg-white">
-                            <div class="flex flex-col items-start justify-start h-full p-4">
-                                <h4 class="text-lg font-bold mb-3 text-warning border-l-4 border-warning pl-3">Gefäßultraschall</h4>
-                                <p class="text-sm leading-relaxed text-gray-700 border-l-4 border-warning pl-3">Untersuchung der Halsschlagadern zur Früherkennung von Durchblutungsstörungen.</p>
+                            <div class="flex flex-col justify-center h-full p-4">
+                                <div class="border-l-4 border-warning pl-4">
+                                    <h4 class="text-lg font-bold mb-3 text-warning">Gefäßultraschall</h4>
+                                    <p class="text-sm leading-relaxed text-gray-700">Untersuchung der Halsschlagadern zur Früherkennung von Durchblutungsstörungen.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1146,9 +1153,11 @@
                         </div>
                         <!-- Back Side -->
                         <div class="flip-card-back bg-white">
-                            <div class="flex flex-col items-start justify-start h-full p-4">
-                                <h4 class="text-lg font-bold mb-3 text-warning border-l-4 border-warning pl-3">Knöcheldruck-Messung</h4>
-                                <p class="text-sm leading-relaxed text-gray-700 border-l-4 border-warning pl-3">Früherkennung von Durchblutungsstörungen in den Beinarterien.</p>
+                            <div class="flex flex-col justify-center h-full p-4">
+                                <div class="border-l-4 border-warning pl-4">
+                                    <h4 class="text-lg font-bold mb-3 text-warning">Knöcheldruck-Messung</h4>
+                                    <p class="text-sm leading-relaxed text-gray-700">Früherkennung von Durchblutungsstörungen in den Beinarterien.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1170,10 +1179,12 @@
                         </div>
                         <!-- Back Side -->
                         <div class="flip-card-back bg-white">
-                            <div class="flex flex-col items-start justify-start h-full p-4">
-                                <h4 class="text-lg font-bold mb-2 text-primary border-l-4 border-primary pl-3">Spirometrie</h4>
-                                <p class="text-sm opacity-75 mb-3 border-l-4 border-primary pl-3">(Lungenfunktion)</p>
-                                <p class="text-sm leading-relaxed text-gray-700 border-l-4 border-primary pl-3">Einfache Methode zur Messung der Lungenkapazität.</p>
+                            <div class="flex flex-col justify-center h-full p-4">
+                                <div class="border-l-4 border-primary pl-4">
+                                    <h4 class="text-lg font-bold mb-2 text-primary">Spirometrie</h4>
+                                    <p class="text-sm opacity-75 mb-3 text-gray-600">(Lungenfunktion)</p>
+                                    <p class="text-sm leading-relaxed text-gray-700">Einfache Methode zur Messung der Lungenkapazität.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1195,9 +1206,11 @@
                         </div>
                         <!-- Back Side -->
                         <div class="flip-card-back bg-white">
-                            <div class="flex flex-col items-start justify-start h-full p-4">
-                                <h4 class="text-lg font-bold mb-3 text-primary border-l-4 border-primary pl-3">Blutabnahme & Laboruntersuchungen</h4>
-                                <p class="text-sm leading-relaxed text-gray-700 border-l-4 border-primary pl-3">Direkter Service in der Praxis mit Partnerlabor für weiterführende Analysen.</p>
+                            <div class="flex flex-col justify-center h-full p-4">
+                                <div class="border-l-4 border-primary pl-4">
+                                    <h4 class="text-lg font-bold mb-3 text-primary">Blutabnahme & Laboruntersuchungen</h4>
+                                    <p class="text-sm leading-relaxed text-gray-700">Direkter Service in der Praxis mit Partnerlabor für weiterführende Analysen.</p>
+                                </div>
                             </div>
                         </div>
                     </div>

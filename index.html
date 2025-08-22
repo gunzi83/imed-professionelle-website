@@ -772,26 +772,26 @@
             
             <!-- Clean CSS for Flip Cards - NO OVERLAPPING -->
             <style>
-            /* Container for all flip cards - FLEXBOX LAYOUT */
+            /* Container for all flip cards - COMPACT LAYOUT */
             .flip-cards-container {
                 display: flex !important;
                 flex-wrap: wrap !important;
                 justify-content: center !important;
                 align-items: flex-start !important;
-                gap: 2rem !important;
+                gap: 1.5rem !important;
                 width: 100% !important;
-                max-width: 1200px !important;
+                max-width: 1000px !important;
                 margin: 0 auto !important;
-                padding: 2rem 1rem !important;
+                padding: 1.5rem 1rem !important;
             }
             
-            /* Individual flip card - FIXED SIZE, NO OVERLAP */
+            /* Individual flip card - SMALLER SIZE, NO OVERLAP */
             .flip-card {
                 background-color: transparent !important;
-                width: 300px !important;
-                height: 350px !important;
+                width: 240px !important;
+                height: 280px !important;
                 perspective: 1000px !important;
-                flex: 0 0 300px !important;
+                flex: 0 0 240px !important;
                 margin: 0 !important;
                 position: static !important;
                 display: block !important;
@@ -824,11 +824,11 @@
                 width: 100% !important;
                 height: 100% !important;
                 backface-visibility: hidden !important;
-                border-radius: 16px !important;
+                border-radius: 12px !important;
                 overflow: hidden !important;
-                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12) !important;
                 box-sizing: border-box !important;
-                padding: 1.5rem !important;
+                padding: 1rem !important;
             }
             
             /* Back face rotation */
@@ -837,36 +837,36 @@
                 background: white !important;
             }
             
-            /* Service icon styling */
+            /* Service icon styling - smaller */
             .service-icon {
-                font-size: 3rem !important;
-                margin-bottom: 1rem !important;
+                font-size: 2.5rem !important;
+                margin-bottom: 0.75rem !important;
                 color: rgba(255, 255, 255, 0.9) !important;
             }
             
-            /* Card title styling */
+            /* Card title styling - more compact */
             .flip-card h3 {
-                font-size: 1.25rem !important;
+                font-size: 1.1rem !important;
                 font-weight: 700 !important;
-                margin-bottom: 0.75rem !important;
+                margin-bottom: 0.5rem !important;
                 line-height: 1.2 !important;
                 color: white !important;
                 word-break: normal !important;
                 hyphens: none !important;
                 text-align: center !important;
-                padding: 0 !important;
+                padding: 0 0.5rem !important;
             }
             
-            /* Card description styling */
+            /* Card description styling - more compact */
             .flip-card p {
-                font-size: 0.9rem !important;
-                line-height: 1.4 !important;
+                font-size: 0.8rem !important;
+                line-height: 1.3 !important;
                 color: rgba(255, 255, 255, 0.9) !important;
-                margin-bottom: 0.5rem !important;
+                margin-bottom: 0.4rem !important;
                 word-break: normal !important;
                 hyphens: none !important;
                 text-align: center !important;
-                padding: 0 !important;
+                padding: 0 0.25rem !important;
             }
             
             /* Hover hint */
@@ -886,20 +886,20 @@
                 50% { opacity: 1; }
             }
             
-            /* Back side content */
+            /* Back side content - more compact */
             .flip-card-back h4 {
-                font-size: 1.1rem !important;
+                font-size: 1rem !important;
                 font-weight: bold !important;
-                margin-bottom: 1rem !important;
+                margin-bottom: 0.75rem !important;
                 line-height: 1.2 !important;
                 text-align: center !important;
             }
             
             .flip-card-back .text-base {
-                font-size: 0.85rem !important;
-                line-height: 1.4 !important;
+                font-size: 0.75rem !important;
+                line-height: 1.3 !important;
                 color: #374151 !important;
-                margin-bottom: 0.75rem !important;
+                margin-bottom: 0.5rem !important;
                 text-align: center !important;
             }
             
@@ -910,44 +910,73 @@
             }
             
             .flip-card-back ul li {
-                font-size: 0.8rem !important;
-                line-height: 1.3 !important;
-                margin-bottom: 0.5rem !important;
+                font-size: 0.7rem !important;
+                line-height: 1.2 !important;
+                margin-bottom: 0.3rem !important;
                 color: #374151 !important;
                 list-style: none !important;
             }
             
-            /* imed logo on back */
+            /* imed logo on back - smaller */
             .imed-logo-back {
-                width: 80px !important;
+                width: 60px !important;
                 height: auto !important;
-                margin-bottom: 1rem !important;
+                margin-bottom: 0.75rem !important;
                 opacity: 0.9 !important;
             }
             
-            /* Responsive design */
+            /* Responsive design - smaller sizes */
             @media (max-width: 768px) {
                 .flip-cards-container {
-                    gap: 1.5rem !important;
+                    gap: 1rem !important;
                     padding: 1rem !important;
                 }
                 
                 .flip-card {
-                    width: 280px !important;
-                    height: 320px !important;
-                    flex: 0 0 280px !important;
+                    width: 220px !important;
+                    height: 260px !important;
+                    flex: 0 0 220px !important;
+                }
+                
+                .service-icon {
+                    font-size: 2rem !important;
+                }
+                
+                .flip-card h3 {
+                    font-size: 1rem !important;
+                }
+                
+                .flip-card p {
+                    font-size: 0.75rem !important;
                 }
             }
             
             @media (max-width: 640px) {
                 .flip-cards-container {
-                    gap: 1rem !important;
+                    gap: 0.75rem !important;
+                    padding: 0.75rem !important;
                 }
                 
                 .flip-card {
-                    width: 260px !important;
-                    height: 300px !important;
-                    flex: 0 0 260px !important;
+                    width: 200px !important;
+                    height: 240px !important;
+                    flex: 0 0 200px !important;
+                }
+                
+                .service-icon {
+                    font-size: 1.8rem !important;
+                }
+                
+                .flip-card h3 {
+                    font-size: 0.9rem !important;
+                }
+                
+                .flip-card p {
+                    font-size: 0.7rem !important;
+                }
+                
+                .imed-logo-back {
+                    width: 50px !important;
                 }
             }
             </style>

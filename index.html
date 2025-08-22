@@ -794,9 +794,21 @@
                 box-sizing: border-box !important;
             }
             
-            /* Flip animation on hover */
-            .flip-card:hover .flip-card-inner {
+            /* Flip animation on hover AND touch/click */
+            .flip-card:hover .flip-card-inner,
+            .flip-card.flipped .flip-card-inner {
                 transform: rotateY(180deg) !important;
+            }
+            
+            /* Touch device support */
+            .flip-card {
+                -webkit-tap-highlight-color: transparent !important;
+                tap-highlight-color: transparent !important;
+            }
+            
+            /* Active state for touch feedback */
+            .flip-card:active .flip-card-inner {
+                transform: scale(0.98) !important;
             }
             
             /* Front and back faces of the card */
@@ -851,8 +863,8 @@
                 padding: 0 0.25rem !important;
             }
             
-            /* Hover hint */
-            .hover-hint {
+            /* Interactive hint - changes based on device */
+            .interaction-hint {
                 position: absolute !important;
                 bottom: 15px !important;
                 left: 50% !important;
@@ -861,6 +873,12 @@
                 opacity: 0.8 !important;
                 animation: pulse 2s infinite !important;
                 color: rgba(255, 255, 255, 0.8) !important;
+                pointer-events: none !important;
+            }
+            
+            /* Hide hint when card is flipped */
+            .flip-card.flipped .interaction-hint {
+                opacity: 0 !important;
             }
             
             @keyframes pulse {
@@ -902,6 +920,38 @@
                 opacity: 0.9 !important;
             }
             
+            /* Touch devices and tablets */
+            @media (max-width: 1024px) {
+                .flip-card {
+                    cursor: pointer !important;
+                }
+                
+                .flip-card-inner {
+                    transition: transform 0.6s ease-in-out !important;
+                }
+                
+                /* Disable hover effects on touch devices */
+                .flip-card:hover .flip-card-inner {
+                    transform: none !important;
+                }
+                
+                /* Only use flipped class for touch interactions */
+                .flip-card.flipped .flip-card-inner {
+                    transform: rotateY(180deg) !important;
+                }
+            }
+            
+            /* Desktop hover behavior */
+            @media (min-width: 1025px) and (hover: hover) {
+                .flip-card:hover .flip-card-inner {
+                    transform: rotateY(180deg) !important;
+                }
+                
+                .interaction-hint .hint-text::after {
+                    content: " oder hovern";
+                }
+            }
+            
             /* Responsive design - smaller sizes */
             @media (max-width: 768px) {
                 .flip-cards-container {
@@ -928,6 +978,7 @@
                 }
             }
             
+            /* Mobile devices - enhanced touch experience */
             @media (max-width: 640px) {
                 .flip-cards-container {
                     gap: 0.75rem !important;
@@ -938,6 +989,11 @@
                     width: 200px !important;
                     height: 240px !important;
                     flex: 0 0 200px !important;
+                }
+                
+                /* Faster animation on mobile */
+                .flip-card-inner {
+                    transition: transform 0.4s ease-in-out !important;
                 }
                 
                 .service-icon {
@@ -969,9 +1025,9 @@
                             <div class="flex flex-col items-center justify-center h-full text-white p-4">
                                 <i class="fas fa-heartbeat service-icon"></i>
                                 <h3 class="text-2xl font-bold">Herzultraschall</h3>
-                                <div class="hover-hint">
-                                    <i class="fas fa-mouse-pointer mr-1"></i>
-                                    Hover für mehr Info
+                                <div class="interaction-hint">
+                                    <i class="fas fa-hand-pointer mr-1"></i>
+                                    <span class="hint-text">Klicken für mehr Info</span>
                                 </div>
                             </div>
                         </div>
@@ -996,9 +1052,9 @@
                             <div class="flex flex-col items-center justify-center h-full text-white p-4">
                                 <i class="fas fa-chart-line service-icon"></i>
                                 <h3 class="text-2xl font-bold">EKG</h3>
-                                <div class="hover-hint">
-                                    <i class="fas fa-mouse-pointer mr-1"></i>
-                                    Hover für mehr Info
+                                <div class="interaction-hint">
+                                    <i class="fas fa-hand-pointer mr-1"></i>
+                                    <span class="hint-text">Klicken für mehr Info</span>
                                 </div>
                             </div>
                         </div>
@@ -1022,9 +1078,9 @@
                             <div class="flex flex-col items-center justify-center h-full text-white p-4">
                                 <i class="fas fa-bicycle service-icon"></i>
                                 <h3 class="text-2xl font-bold">Belastungs-EKG</h3>
-                                <div class="hover-hint">
-                                    <i class="fas fa-mouse-pointer mr-1"></i>
-                                    Hover für mehr Info
+                                <div class="interaction-hint">
+                                    <i class="fas fa-hand-pointer mr-1"></i>
+                                    <span class="hint-text">Klicken für mehr Info</span>
                                 </div>
                             </div>
                         </div>
@@ -1049,9 +1105,9 @@
                             <div class="flex flex-col items-center justify-center h-full text-white p-4">
                                 <i class="fas fa-clock service-icon"></i>
                                 <h3 class="text-2xl font-bold">Langzeit-EKG</h3>
-                                <div class="hover-hint">
-                                    <i class="fas fa-mouse-pointer mr-1"></i>
-                                    Hover für mehr Info
+                                <div class="interaction-hint">
+                                    <i class="fas fa-hand-pointer mr-1"></i>
+                                    <span class="hint-text">Klicken für mehr Info</span>
                                 </div>
                             </div>
                         </div>
@@ -1075,9 +1131,9 @@
                             <div class="flex flex-col items-center justify-center h-full text-white p-4">
                                 <i class="fas fa-tachometer-alt service-icon"></i>
                                 <h3 class="text-2xl font-bold">24h-Blutdruck</h3>
-                                <div class="hover-hint">
-                                    <i class="fas fa-mouse-pointer mr-1"></i>
-                                    Hover für mehr Info
+                                <div class="interaction-hint">
+                                    <i class="fas fa-hand-pointer mr-1"></i>
+                                    <span class="hint-text">Klicken für mehr Info</span>
                                 </div>
                             </div>
                         </div>
@@ -1101,9 +1157,9 @@
                             <div class="flex flex-col items-center justify-center h-full text-white p-4">
                                 <i class="fas fa-search service-icon"></i>
                                 <h3 class="text-2xl font-bold">Gefäßultraschall</h3>
-                                <div class="hover-hint">
-                                    <i class="fas fa-mouse-pointer mr-1"></i>
-                                    Hover für mehr Info
+                                <div class="interaction-hint">
+                                    <i class="fas fa-hand-pointer mr-1"></i>
+                                    <span class="hint-text">Klicken für mehr Info</span>
                                 </div>
                             </div>
                         </div>
@@ -1127,9 +1183,9 @@
                             <div class="flex flex-col items-center justify-center h-full text-white p-4">
                                 <i class="fas fa-shoe-prints service-icon"></i>
                                 <h3 class="text-2xl font-bold">Knöcheldruck</h3>
-                                <div class="hover-hint">
-                                    <i class="fas fa-mouse-pointer mr-1"></i>
-                                    Hover für mehr Info
+                                <div class="interaction-hint">
+                                    <i class="fas fa-hand-pointer mr-1"></i>
+                                    <span class="hint-text">Klicken für mehr Info</span>
                                 </div>
                             </div>
                         </div>
@@ -1153,9 +1209,9 @@
                             <div class="flex flex-col items-center justify-center h-full text-white p-4">
                                 <i class="fas fa-lungs service-icon"></i>
                                 <h3 class="text-2xl font-bold">Spirometrie</h3>
-                                <div class="hover-hint">
-                                    <i class="fas fa-mouse-pointer mr-1"></i>
-                                    Hover für mehr Info
+                                <div class="interaction-hint">
+                                    <i class="fas fa-hand-pointer mr-1"></i>
+                                    <span class="hint-text">Klicken für mehr Info</span>
                                 </div>
                             </div>
                         </div>
@@ -1180,9 +1236,9 @@
                             <div class="flex flex-col items-center justify-center h-full text-white p-4">
                                 <i class="fas fa-vial service-icon"></i>
                                 <h3 class="text-2xl font-bold">Labordiagnostik</h3>
-                                <div class="hover-hint">
-                                    <i class="fas fa-mouse-pointer mr-1"></i>
-                                    Hover für mehr Info
+                                <div class="interaction-hint">
+                                    <i class="fas fa-hand-pointer mr-1"></i>
+                                    <span class="hint-text">Klicken für mehr Info</span>
                                 </div>
                             </div>
                         </div>
@@ -1609,6 +1665,110 @@
 
     <script src="js/script.js"></script>
     
+    <!-- Responsive Flip Cards JavaScript -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize responsive flip cards
+        const flipCards = document.querySelectorAll('.flip-card');
+        let activeCard = null;
+        
+        // Detect touch device
+        const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+        
+        // Update hints based on device type
+        const hints = document.querySelectorAll('.hint-text');
+        hints.forEach(hint => {
+            if (isTouchDevice) {
+                hint.textContent = 'Tippen für mehr Info';
+            } else {
+                hint.textContent = 'Klicken für mehr Info';
+            }
+        });
+        
+        flipCards.forEach(card => {
+            const cardInner = card.querySelector('.flip-card-inner');
+            
+            // Handle click/touch events  
+            card.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                // Check if this card is already flipped
+                const isFlipped = card.classList.contains('flipped');
+                
+                // Close any other open cards
+                flipCards.forEach(otherCard => {
+                    if (otherCard !== card) {
+                        otherCard.classList.remove('flipped');
+                    }
+                });
+                
+                // Toggle current card
+                if (isFlipped) {
+                    card.classList.remove('flipped');
+                    activeCard = null;
+                } else {
+                    card.classList.add('flipped');
+                    activeCard = card;
+                }
+            });
+            
+            // Handle touch events for better mobile experience
+            if (isTouchDevice) {
+                card.addEventListener('touchstart', function(e) {
+                    // Add touch feedback
+                    card.style.transform = 'scale(0.98)';
+                }, { passive: true });
+                
+                card.addEventListener('touchend', function(e) {
+                    // Remove touch feedback
+                    setTimeout(() => {
+                        card.style.transform = '';
+                    }, 150);
+                }, { passive: true });
+            }
+        });
+        
+        // Close cards when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.flip-card') && activeCard) {
+                activeCard.classList.remove('flipped');
+                activeCard = null;
+            }
+        });
+        
+        // Handle escape key to close cards
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && activeCard) {
+                activeCard.classList.remove('flipped');
+                activeCard = null;
+            }
+        });
+        
+        // Auto-close cards after 10 seconds on mobile (optional)
+        if (isTouchDevice) {
+            let autoCloseTimer = null;
+            
+            flipCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    if (autoCloseTimer) {
+                        clearTimeout(autoCloseTimer);
+                    }
+                    
+                    if (card.classList.contains('flipped')) {
+                        autoCloseTimer = setTimeout(() => {
+                            card.classList.remove('flipped');
+                            activeCard = null;
+                        }, 10000); // Auto-close after 10 seconds
+                    }
+                });
+            });
+        }
+        
+        console.log('📱 Responsive flip cards initialized for', isTouchDevice ? 'touch device' : 'desktop');
+        console.log('🎯', flipCards.length, 'service cards ready for interaction');
+    });
+    </script>
 
 </body>
 </html>

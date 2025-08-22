@@ -775,8 +775,10 @@
             .flip-card {
                 background-color: transparent;
                 width: 100%;
-                height: 350px;
+                height: 400px;
+                aspect-ratio: 1 / 1;
                 perspective: 1000px;
+                min-height: 400px;
             }
             
             .flip-card-inner {
@@ -808,8 +810,8 @@
             }
             
             .service-icon {
-                font-size: 3rem;
-                margin-bottom: 1rem;
+                font-size: 4rem;
+                margin-bottom: 1.5rem;
                 color: rgba(255, 255, 255, 0.9);
             }
             
@@ -829,15 +831,15 @@
             }
             
             .imed-logo-back {
-                width: 100px;
+                width: 120px;
                 height: auto;
                 opacity: 0.9;
-                margin-bottom: 2rem;
+                margin-bottom: 1.5rem;
             }
             </style>
             
             <!-- Individual Examination Cards -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
             
             <!-- CSS für Flip Cards -->
@@ -845,8 +847,10 @@
             .flip-card {
                 background-color: transparent;
                 width: 100%;
-                height: 350px;
+                height: 400px;
+                aspect-ratio: 1 / 1;
                 perspective: 1000px;
+                min-height: 400px;
             }
             
             .flip-card-inner {
@@ -878,8 +882,8 @@
             }
             
             .service-icon {
-                font-size: 3rem;
-                margin-bottom: 1rem;
+                font-size: 4rem;
+                margin-bottom: 1.5rem;
                 color: rgba(255, 255, 255, 0.9);
             }
             
@@ -899,26 +903,26 @@
             }
             
             .imed-logo-back {
-                width: 100px;
+                width: 120px;
                 height: auto;
                 opacity: 0.9;
-                margin-bottom: 2rem;
+                margin-bottom: 1.5rem;
             }
             </style>
             
             <!-- Individual Examination Cards -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
                 <!-- 1. Herzultraschall (Echokardiographie) -->
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <!-- Front Side -->
                         <div class="flip-card-front" style="background: linear-gradient(135deg, #79ADBA 0%, #6B9CAA 100%);">
-                            <div class="flex flex-col items-center justify-center h-full text-white p-6">
+                            <div class="flex flex-col items-center justify-center h-full text-white p-8">
                                 <i class="fas fa-heartbeat service-icon"></i>
-                                <h3 class="text-xl font-bold mb-3">Herzultraschall</h3>
-                                <p class="text-center text-sm opacity-90 mb-4">(Echokardiographie)</p>
-                                <p class="text-center text-xs leading-relaxed">Schonende Untersuchung des Herzens zur Überprüfung der Pumpfunktion und Herzklappen</p>
+                                <h3 class="text-2xl font-bold mb-4">Herzultraschall</h3>
+                                <p class="text-center text-base opacity-90 mb-6">(Echokardiographie)</p>
+                                <p class="text-center text-sm leading-relaxed">Schonende Untersuchung des Herzens zur Überprüfung der Pumpfunktion und Herzklappen</p>
                                 <div class="hover-hint">
                                     <i class="fas fa-mouse-pointer mr-1"></i>
                                     Hover für mehr Info
@@ -927,14 +931,14 @@
                         </div>
                         <!-- Back Side -->
                         <div class="flip-card-back bg-white">
-                            <div class="flex flex-col items-center justify-center h-full p-6">
+                            <div class="flex flex-col items-center justify-center h-full p-8">
                                 <img src="https://page.gensparksite.com/v1/base64_upload/4ac16172f4aba5b848169bac38fd5dd6" alt="imed2230 Logo" class="imed-logo-back">
-                                <h4 class="text-lg font-bold mb-4 text-primary">Herzultraschall Details</h4>
-                                <div class="text-sm text-gray-700 space-y-3">
+                                <h4 class="text-xl font-bold mb-4 text-primary">Herzultraschall Details</h4>
+                                <div class="text-base text-gray-700 space-y-3">
                                     <p class="font-medium">🔍 Untersuchung:</p>
                                     <p>Schnelle, schmerzfreie Darstellung des Herzens</p>
                                     <p class="font-medium">📊 Prüfung von:</p>
-                                    <ul class="text-xs space-y-1">
+                                    <ul class="text-sm space-y-1">
                                         <li>• Herzkammern & Vorhöfe</li>
                                         <li>• Pumpfunktion</li>
                                         <li>• Herzklappen</li>
@@ -951,11 +955,11 @@
                     <div class="flip-card-inner">
                         <!-- Front Side -->
                         <div class="flip-card-front" style="background: linear-gradient(135deg, #E3B497 0%, #D69D7A 100%);">
-                            <div class="flex flex-col items-center justify-center h-full text-white p-6">
+                            <div class="flex flex-col items-center justify-center h-full text-white p-8">
                                 <i class="fas fa-chart-line service-icon"></i>
-                                <h3 class="text-xl font-bold mb-3">EKG</h3>
-                                <p class="text-center text-sm opacity-90 mb-4">Elektrokardiogramm</p>
-                                <p class="text-center text-xs leading-relaxed">Messung der elektrischen Herzaktivität zur Erkennung von Rhythmus- und Durchblutungsstörungen</p>
+                                <h3 class="text-2xl font-bold mb-4">EKG</h3>
+                                <p class="text-center text-base opacity-90 mb-6">Elektrokardiogramm</p>
+                                <p class="text-center text-sm leading-relaxed">Messung der elektrischen Herzaktivität zur Erkennung von Rhythmus- und Durchblutungsstörungen</p>
                                 <div class="hover-hint">
                                     <i class="fas fa-mouse-pointer mr-1"></i>
                                     Hover für mehr Info
@@ -964,14 +968,14 @@
                         </div>
                         <!-- Back Side -->
                         <div class="flip-card-back bg-white">
-                            <div class="flex flex-col items-center justify-center h-full p-6">
+                            <div class="flex flex-col items-center justify-center h-full p-8">
                                 <img src="https://page.gensparksite.com/v1/base64_upload/4ac16172f4aba5b848169bac38fd5dd6" alt="imed2230 Logo" class="imed-logo-back">
-                                <h4 class="text-lg font-bold mb-4 text-secondary">EKG Details</h4>
-                                <div class="text-sm text-gray-700 space-y-3">
+                                <h4 class="text-xl font-bold mb-4 text-secondary">EKG Details</h4>
+                                <div class="text-base text-gray-700 space-y-3">
                                     <p class="font-medium">⚡ Messung:</p>
                                     <p>Elektrische Signale des Herzens</p>
                                     <p class="font-medium">🔍 Erkennung von:</p>
-                                    <ul class="text-xs space-y-1">
+                                    <ul class="text-sm space-y-1">
                                         <li>• Herzrhythmusstörungen</li>
                                         <li>• Durchblutungsstörungen</li>
                                         <li>• Herzinfarkt-Zeichen</li>
@@ -988,11 +992,11 @@
                     <div class="flip-card-inner">
                         <!-- Front Side -->
                         <div class="flip-card-front" style="background: linear-gradient(135deg, #79ADBA 0%, #6B9CAA 100%);">
-                            <div class="flex flex-col items-center justify-center h-full text-white p-6">
+                            <div class="flex flex-col items-center justify-center h-full text-white p-8">
                                 <i class="fas fa-bicycle service-icon"></i>
-                                <h3 class="text-xl font-bold mb-3">Belastungs-EKG</h3>
-                                <p class="text-center text-sm opacity-90 mb-4">(Ergometrie)</p>
-                                <p class="text-center text-xs leading-relaxed">Herzaktivitätsmessung während körperlicher Anstrengung auf dem Fahrradergometer</p>
+                                <h3 class="text-2xl font-bold mb-4">Belastungs-EKG</h3>
+                                <p class="text-center text-base opacity-90 mb-6">(Ergometrie)</p>
+                                <p class="text-center text-sm leading-relaxed">Herzaktivitätsmessung während körperlicher Anstrengung auf dem Fahrradergometer</p>
                                 <div class="hover-hint">
                                     <i class="fas fa-mouse-pointer mr-1"></i>
                                     Hover für mehr Info
@@ -1001,14 +1005,14 @@
                         </div>
                         <!-- Back Side -->
                         <div class="flip-card-back bg-white">
-                            <div class="flex flex-col items-center justify-center h-full p-6">
+                            <div class="flex flex-col items-center justify-center h-full p-8">
                                 <img src="https://page.gensparksite.com/v1/base64_upload/4ac16172f4aba5b848169bac38fd5dd6" alt="imed2230 Logo" class="imed-logo-back">
-                                <h4 class="text-lg font-bold mb-4 text-primary">Ergometrie Details</h4>
-                                <div class="text-sm text-gray-700 space-y-3">
+                                <h4 class="text-xl font-bold mb-4 text-primary">Ergometrie Details</h4>
+                                <div class="text-base text-gray-700 space-y-3">
                                     <p class="font-medium">🚴 Ablauf:</p>
                                     <p>EKG während Fahrradfahren</p>
                                     <p class="font-medium">📈 Überwachung von:</p>
-                                    <ul class="text-xs space-y-1">
+                                    <ul class="text-sm space-y-1">
                                         <li>• Belastbarkeit des Herzens</li>
                                         <li>• Blutdruck unter Belastung</li>
                                         <li>• Herzrhythmus-Veränderungen</li>
@@ -1025,11 +1029,11 @@
                     <div class="flip-card-inner">
                         <!-- Front Side -->
                         <div class="flip-card-front" style="background: linear-gradient(135deg, #E3B497 0%, #D69D7A 100%);">
-                            <div class="flex flex-col items-center justify-center h-full text-white p-6">
+                            <div class="flex flex-col items-center justify-center h-full text-white p-8">
                                 <i class="fas fa-clock service-icon"></i>
-                                <h3 class="text-xl font-bold mb-3">Langzeit-EKG</h3>
-                                <p class="text-center text-sm opacity-90 mb-4">(Holter-EKG)</p>
-                                <p class="text-center text-xs leading-relaxed">24-Stunden-Aufzeichnung des Herzrhythmus mit tragbarem Gerät</p>
+                                <h3 class="text-2xl font-bold mb-4">Langzeit-EKG</h3>
+                                <p class="text-center text-base opacity-90 mb-6">(Holter-EKG)</p>
+                                <p class="text-center text-sm leading-relaxed">24-Stunden-Aufzeichnung des Herzrhythmus mit tragbarem Gerät</p>
                                 <div class="hover-hint">
                                     <i class="fas fa-mouse-pointer mr-1"></i>
                                     Hover für mehr Info
@@ -1038,16 +1042,16 @@
                         </div>
                         <!-- Back Side -->
                         <div class="flip-card-back bg-white">
-                            <div class="flex flex-col items-center justify-center h-full p-6">
+                            <div class="flex flex-col items-center justify-center h-full p-8">
                                 <img src="https://page.gensparksite.com/v1/base64_upload/4ac16172f4aba5b848169bac38fd5dd6" alt="imed2230 Logo" class="imed-logo-back">
-                                <h4 class="text-lg font-bold mb-4 text-secondary">Holter-EKG Details</h4>
-                                <div class="text-sm text-gray-700 space-y-3">
+                                <h4 class="text-xl font-bold mb-4 text-secondary">Holter-EKG Details</h4>
+                                <div class="text-base text-gray-700 space-y-3">
                                     <p class="font-medium">⏰ Dauer:</p>
                                     <p>24 Stunden Aufzeichnung</p>
                                     <p class="font-medium">📱 Gerät:</p>
                                     <p>Kleines tragbares EKG-Gerät</p>
                                     <p class="font-medium">🔍 Analyse von:</p>
-                                    <ul class="text-xs space-y-1">
+                                    <ul class="text-sm space-y-1">
                                         <li>• Herzrhythmus-Schwankungen</li>
                                         <li>• Nächtliche Rhythmusstörungen</li>
                                     </ul>
@@ -1062,11 +1066,11 @@
                     <div class="flip-card-inner">
                         <!-- Front Side -->
                         <div class="flip-card-front" style="background: linear-gradient(135deg, #79ADBA 0%, #6B9CAA 100%);">
-                            <div class="flex flex-col items-center justify-center h-full text-white p-6">
+                            <div class="flex flex-col items-center justify-center h-full text-white p-8">
                                 <i class="fas fa-tachometer-alt service-icon"></i>
-                                <h3 class="text-xl font-bold mb-3">24h-Blutdruck</h3>
-                                <p class="text-center text-sm opacity-90 mb-4">Langzeitmessung</p>
-                                <p class="text-center text-xs leading-relaxed">Erfassung der Blutdruckschwankungen über den ganzen Tag für optimale Medikation</p>
+                                <h3 class="text-2xl font-bold mb-4">24h-Blutdruck</h3>
+                                <p class="text-center text-base opacity-90 mb-6">Langzeitmessung</p>
+                                <p class="text-center text-sm leading-relaxed">Erfassung der Blutdruckschwankungen über den ganzen Tag für optimale Medikation</p>
                                 <div class="hover-hint">
                                     <i class="fas fa-mouse-pointer mr-1"></i>
                                     Hover für mehr Info
@@ -1075,14 +1079,14 @@
                         </div>
                         <!-- Back Side -->
                         <div class="flip-card-back bg-white">
-                            <div class="flex flex-col items-center justify-center h-full p-6">
+                            <div class="flex flex-col items-center justify-center h-full p-8">
                                 <img src="https://page.gensparksite.com/v1/base64_upload/4ac16172f4aba5b848169bac38fd5dd6" alt="imed2230 Logo" class="imed-logo-back">
-                                <h4 class="text-lg font-bold mb-4 text-primary">Blutdruck-Monitoring</h4>
-                                <div class="text-sm text-gray-700 space-y-3">
+                                <h4 class="text-xl font-bold mb-4 text-primary">Blutdruck-Monitoring</h4>
+                                <div class="text-base text-gray-700 space-y-3">
                                     <p class="font-medium">📊 Messung:</p>
                                     <p>Automatisch alle 15-30 Min.</p>
                                     <p class="font-medium">🎯 Ziele:</p>
-                                    <ul class="text-xs space-y-1">
+                                    <ul class="text-sm space-y-1">
                                         <li>• Tages-/Nachtrhythmus</li>
                                         <li>• Medikamenten-Wirkung</li>
                                         <li>• Belastungs-Blutdruck</li>
@@ -1099,11 +1103,11 @@
                     <div class="flip-card-inner">
                         <!-- Front Side -->
                         <div class="flip-card-front" style="background: linear-gradient(135deg, #E3B497 0%, #D69D7A 100%);">
-                            <div class="flex flex-col items-center justify-center h-full text-white p-6">
+                            <div class="flex flex-col items-center justify-center h-full text-white p-8">
                                 <i class="fas fa-search service-icon"></i>
-                                <h3 class="text-xl font-bold mb-3">Gefäßultraschall</h3>
-                                <p class="text-center text-sm opacity-90 mb-4">Halsschlagadern</p>
-                                <p class="text-center text-xs leading-relaxed">Untersuchung der Halsschlagadern zur Früherkennung von Durchblutungsstörungen</p>
+                                <h3 class="text-2xl font-bold mb-4">Gefäßultraschall</h3>
+                                <p class="text-center text-base opacity-90 mb-6">Halsschlagadern</p>
+                                <p class="text-center text-sm leading-relaxed">Untersuchung der Halsschlagadern zur Früherkennung von Durchblutungsstörungen</p>
                                 <div class="hover-hint">
                                     <i class="fas fa-mouse-pointer mr-1"></i>
                                     Hover für mehr Info
@@ -1112,14 +1116,14 @@
                         </div>
                         <!-- Back Side -->
                         <div class="flip-card-back bg-white">
-                            <div class="flex flex-col items-center justify-center h-full p-6">
+                            <div class="flex flex-col items-center justify-center h-full p-8">
                                 <img src="https://page.gensparksite.com/v1/base64_upload/4ac16172f4aba5b848169bac38fd5dd6" alt="imed2230 Logo" class="imed-logo-back">
-                                <h4 class="text-lg font-bold mb-4 text-secondary">Gefäß-Diagnostik</h4>
-                                <div class="text-sm text-gray-700 space-y-3">
+                                <h4 class="text-xl font-bold mb-4 text-secondary">Gefäß-Diagnostik</h4>
+                                <div class="text-base text-gray-700 space-y-3">
                                     <p class="font-medium">🔍 Untersuchung:</p>
                                     <p>Karotis-Doppler-Sonografie</p>
                                     <p class="font-medium">🎯 Früherkennung:</p>
-                                    <ul class="text-xs space-y-1">
+                                    <ul class="text-sm space-y-1">
                                         <li>• Gefäßverengungen</li>
                                         <li>• Arterienverkalkung</li>
                                         <li>• Schlaganfall-Risiko</li>
@@ -1136,11 +1140,11 @@
                     <div class="flip-card-inner">
                         <!-- Front Side -->
                         <div class="flip-card-front" style="background: linear-gradient(135deg, #79ADBA 0%, #6B9CAA 100%);">
-                            <div class="flex flex-col items-center justify-center h-full text-white p-6">
+                            <div class="flex flex-col items-center justify-center h-full text-white p-8">
                                 <i class="fas fa-shoe-prints service-icon"></i>
-                                <h3 class="text-xl font-bold mb-3">Knöcheldruck</h3>
-                                <p class="text-center text-sm opacity-90 mb-4">ABI-Messung</p>
-                                <p class="text-center text-xs leading-relaxed">Früherkennung von Durchblutungsstörungen in den Beinarterien</p>
+                                <h3 class="text-2xl font-bold mb-4">Knöcheldruck</h3>
+                                <p class="text-center text-base opacity-90 mb-6">ABI-Messung</p>
+                                <p class="text-center text-sm leading-relaxed">Früherkennung von Durchblutungsstörungen in den Beinarterien</p>
                                 <div class="hover-hint">
                                     <i class="fas fa-mouse-pointer mr-1"></i>
                                     Hover für mehr Info
@@ -1149,14 +1153,14 @@
                         </div>
                         <!-- Back Side -->
                         <div class="flip-card-back bg-white">
-                            <div class="flex flex-col items-center justify-center h-full p-6">
+                            <div class="flex flex-col items-center justify-center h-full p-8">
                                 <img src="https://page.gensparksite.com/v1/base64_upload/4ac16172f4aba5b848169bac38fd5dd6" alt="imed2230 Logo" class="imed-logo-back">
-                                <h4 class="text-lg font-bold mb-4 text-primary">ABI-Index</h4>
-                                <div class="text-sm text-gray-700 space-y-3">
+                                <h4 class="text-xl font-bold mb-4 text-primary">ABI-Index</h4>
+                                <div class="text-base text-gray-700 space-y-3">
                                     <p class="font-medium">📐 Messung:</p>
                                     <p>Knöchel-Arm-Index (ABI)</p>
                                     <p class="font-medium">🦵 Prüfung:</p>
-                                    <ul class="text-xs space-y-1">
+                                    <ul class="text-sm space-y-1">
                                         <li>• Beindurchblutung</li>
                                         <li>• Arterienverengung</li>
                                         <li>• Schaufensterkrankheit</li>
@@ -1173,11 +1177,11 @@
                     <div class="flip-card-inner">
                         <!-- Front Side -->
                         <div class="flip-card-front" style="background: linear-gradient(135deg, #E3B497 0%, #D69D7A 100%);">
-                            <div class="flex flex-col items-center justify-center h-full text-white p-6">
+                            <div class="flex flex-col items-center justify-center h-full text-white p-8">
                                 <i class="fas fa-lungs service-icon"></i>
-                                <h3 class="text-xl font-bold mb-3">Spirometrie</h3>
-                                <p class="text-center text-sm opacity-90 mb-4">Lungenfunktion</p>
-                                <p class="text-center text-xs leading-relaxed">Einfache Methode zur Messung der Lungenkapazität und Atemfunktion</p>
+                                <h3 class="text-2xl font-bold mb-4">Spirometrie</h3>
+                                <p class="text-center text-base opacity-90 mb-6">Lungenfunktion</p>
+                                <p class="text-center text-sm leading-relaxed">Einfache Methode zur Messung der Lungenkapazität und Atemfunktion</p>
                                 <div class="hover-hint">
                                     <i class="fas fa-mouse-pointer mr-1"></i>
                                     Hover für mehr Info
@@ -1186,14 +1190,14 @@
                         </div>
                         <!-- Back Side -->
                         <div class="flip-card-back bg-white">
-                            <div class="flex flex-col items-center justify-center h-full p-6">
+                            <div class="flex flex-col items-center justify-center h-full p-8">
                                 <img src="https://page.gensparksite.com/v1/base64_upload/4ac16172f4aba5b848169bac38fd5dd6" alt="imed2230 Logo" class="imed-logo-back">
-                                <h4 class="text-lg font-bold mb-4 text-secondary">Lungenfunktion</h4>
-                                <div class="text-sm text-gray-700 space-y-3">
+                                <h4 class="text-xl font-bold mb-4 text-secondary">Lungenfunktion</h4>
+                                <div class="text-base text-gray-700 space-y-3">
                                     <p class="font-medium">💨 Messung:</p>
                                     <p>Atemvolumen & -geschwindigkeit</p>
                                     <p class="font-medium">🔍 Erkennung:</p>
-                                    <ul class="text-xs space-y-1">
+                                    <ul class="text-sm space-y-1">
                                         <li>• Asthma bronchiale</li>
                                         <li>• COPD</li>
                                         <li>• Lungenkapazität</li>
@@ -1210,11 +1214,11 @@
                     <div class="flip-card-inner">
                         <!-- Front Side -->
                         <div class="flip-card-front" style="background: linear-gradient(135deg, #79ADBA 0%, #6B9CAA 100%);">
-                            <div class="flex flex-col items-center justify-center h-full text-white p-6">
+                            <div class="flex flex-col items-center justify-center h-full text-white p-8">
                                 <i class="fas fa-vial service-icon"></i>
-                                <h3 class="text-xl font-bold mb-3">Labordiagnostik</h3>
-                                <p class="text-center text-sm opacity-90 mb-4">Blutuntersuchung</p>
-                                <p class="text-center text-xs leading-relaxed">Direkter Service in der Praxis mit Partnerlabor für weiterführende Analysen</p>
+                                <h3 class="text-2xl font-bold mb-4">Labordiagnostik</h3>
+                                <p class="text-center text-base opacity-90 mb-6">Blutuntersuchung</p>
+                                <p class="text-center text-sm leading-relaxed">Direkter Service in der Praxis mit Partnerlabor für weiterführende Analysen</p>
                                 <div class="hover-hint">
                                     <i class="fas fa-mouse-pointer mr-1"></i>
                                     Hover für mehr Info
@@ -1223,14 +1227,14 @@
                         </div>
                         <!-- Back Side -->
                         <div class="flip-card-back bg-white">
-                            <div class="flex flex-col items-center justify-center h-full p-6">
+                            <div class="flex flex-col items-center justify-center h-full p-8">
                                 <img src="https://page.gensparksite.com/v1/base64_upload/4ac16172f4aba5b848169bac38fd5dd6" alt="imed2230 Logo" class="imed-logo-back">
-                                <h4 class="text-lg font-bold mb-4 text-primary">Labor-Service</h4>
-                                <div class="text-sm text-gray-700 space-y-3">
+                                <h4 class="text-xl font-bold mb-4 text-primary">Labor-Service</h4>
+                                <div class="text-base text-gray-700 space-y-3">
                                     <p class="font-medium">🩸 Service:</p>
                                     <p>Blutabnahme vor Ort</p>
                                     <p class="font-medium">🔬 Analysen:</p>
-                                    <ul class="text-xs space-y-1">
+                                    <ul class="text-sm space-y-1">
                                         <li>• Cholesterin & Lipide</li>
                                         <li>• Blutzucker & HbA1c</li>
                                         <li>• Nieren- & Leberwerte</li>

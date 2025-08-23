@@ -86,18 +86,30 @@ function initializeSmoothScrolling() {
     
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
             const targetId = this.getAttribute('href');
+            
+            // Skip empty anchors
+            if (targetId === '#') {
+                return;
+            }
+            
+            console.log(`🖱️ Smooth scroll to: ${targetId}`);
+            e.preventDefault();
+            
             const targetElement = document.querySelector(targetId);
             
             if (targetElement) {
                 const headerHeight = document.querySelector('header').offsetHeight;
                 const targetPosition = targetElement.offsetTop - headerHeight - 20;
                 
+                console.log(`📍 Scrolling to position: ${targetPosition}`);
+                
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
                 });
+            } else {
+                console.error(`❌ Target element not found: ${targetId}`);
             }
         });
     });
@@ -167,10 +179,15 @@ function initializeMobileMenu() {
     // Mobile menu functionality is handled by toggleMobileMenu function
     // Add smooth scrolling for mobile navigation links AND quick action buttons
     const mobileNavLinks = document.querySelectorAll('.mobile-nav-link, .quick-action-btn');
+    
     mobileNavLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        
         // Only handle internal links (starting with #)
-        if (link.getAttribute('href') && link.getAttribute('href').startsWith('#')) {
-            link.addEventListener('click', function() {
+        if (href && href.startsWith('#')) {
+            link.addEventListener('click', function(e) {
+                console.log(`🖱️ Mobile link clicked: ${href} (${link.classList.contains('quick-action-btn') ? 'quick-action' : 'nav-link'})`);
+                
                 // Close mobile menu when a link is clicked
                 const mobileMenu = document.getElementById('mobile-menu');
                 const menuButton = document.getElementById('mobile-menu-button');
@@ -178,7 +195,11 @@ function initializeMobileMenu() {
                     mobileMenu.classList.add('hidden');
                     menuButton.setAttribute('aria-expanded', 'false');
                     updateMenuIcon(false);
+                    console.log('📲 Mobile menu closed');
                 }
+                
+                // Let smooth scrolling handle the navigation
+                // Don't prevent default - let initializeSmoothScrolling handle it
             });
         }
     });

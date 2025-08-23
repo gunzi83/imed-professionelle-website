@@ -952,7 +952,7 @@
                 }
             }
             
-            /* Responsive design - smaller sizes */
+            /* Responsive design - tablet and larger mobile */
             @media (max-width: 768px) {
                 .flip-cards-container {
                     gap: 1rem !important;
@@ -960,35 +960,60 @@
                 }
                 
                 .flip-card {
-                    width: 220px !important;
-                    height: 260px !important;
-                    flex: 0 0 220px !important;
+                    width: 240px !important;
+                    height: 280px !important;
+                    flex: 0 0 240px !important;
                 }
                 
                 .service-icon {
-                    font-size: 2rem !important;
+                    font-size: 2.2rem !important;
+                    margin-bottom: 0.5rem !important;
                 }
                 
                 .flip-card h3 {
-                    font-size: 1rem !important;
+                    font-size: 1.1rem !important;
+                    line-height: 1.3 !important;
+                    margin-bottom: 0.5rem !important;
+                    padding: 0 0.75rem !important;
                 }
                 
                 .flip-card p {
-                    font-size: 0.75rem !important;
+                    font-size: 0.85rem !important;
+                    line-height: 1.4 !important;
+                    padding: 0 0.5rem !important;
+                }
+                
+                /* Back side text improvements for tablet */
+                .flip-card-back h4 {
+                    font-size: 1.1rem !important;
+                    margin-bottom: 0.5rem !important;
+                    padding-right: 0.5rem !important;
+                }
+                
+                .flip-card-back p {
+                    font-size: 0.9rem !important;
+                    line-height: 1.5 !important;
+                    padding-right: 0.5rem !important;
+                }
+                
+                .flip-card-back .text-base {
+                    font-size: 0.9rem !important;
+                    line-height: 1.5 !important;
                 }
             }
             
-            /* Mobile devices - enhanced touch experience */
+            /* Mobile devices - enhanced touch experience and larger text */
             @media (max-width: 640px) {
                 .flip-cards-container {
-                    gap: 0.75rem !important;
-                    padding: 0.75rem !important;
+                    gap: 1rem !important;
+                    padding: 1rem !important;
                 }
                 
                 .flip-card {
-                    width: 200px !important;
-                    height: 240px !important;
-                    flex: 0 0 200px !important;
+                    width: 280px !important;
+                    height: 320px !important;
+                    flex: 0 0 280px !important;
+                    max-width: calc(100vw - 2rem) !important;
                 }
                 
                 /* Faster animation on mobile */
@@ -997,20 +1022,115 @@
                 }
                 
                 .service-icon {
-                    font-size: 1.8rem !important;
+                    font-size: 2.5rem !important;
+                    margin-bottom: 0.75rem !important;
                 }
                 
+                /* Front side - larger, more readable text */
                 .flip-card h3 {
-                    font-size: 0.9rem !important;
+                    font-size: 1.25rem !important;
+                    line-height: 1.2 !important;
+                    margin-bottom: 0.75rem !important;
+                    padding: 0 1rem !important;
+                    word-wrap: break-word !important;
+                    overflow-wrap: break-word !important;
                 }
                 
                 .flip-card p {
-                    font-size: 0.7rem !important;
+                    font-size: 0.95rem !important;
+                    line-height: 1.4 !important;
+                    padding: 0 0.75rem !important;
+                    margin-bottom: 0.5rem !important;
+                }
+                
+                /* Back side - improved readability */
+                .flip-card-back {
+                    padding: 1.25rem !important;
+                }
+                
+                .flip-card-back h4 {
+                    font-size: 1.2rem !important;
+                    line-height: 1.3 !important;
+                    margin-bottom: 0.75rem !important;
+                    padding-right: 0.5rem !important;
+                    word-wrap: break-word !important;
+                    overflow-wrap: break-word !important;
+                }
+                
+                .flip-card-back p {
+                    font-size: 1rem !important;
+                    line-height: 1.5 !important;
+                    margin-bottom: 0.75rem !important;
+                    padding-right: 0.5rem !important;
+                    word-wrap: break-word !important;
+                    overflow-wrap: break-word !important;
+                }
+                
+                .flip-card-back .text-base {
+                    font-size: 1rem !important;
+                    line-height: 1.5 !important;
+                }
+                
+                .flip-card-back .text-sm {
+                    font-size: 0.9rem !important;
+                    line-height: 1.4 !important;
                 }
                 
                 .imed-logo-back {
-                    width: 50px !important;
+                    width: 55px !important;
+                    margin-bottom: 1rem !important;
                 }
+                
+                /* Interaction hint adjustments */
+                .interaction-hint {
+                    font-size: 0.85rem !important;
+                    bottom: 20px !important;
+                }
+            }
+            
+            /* Extra small mobile devices */
+            @media (max-width: 380px) {
+                .flip-card {
+                    width: calc(100vw - 2rem) !important;
+                    min-width: 260px !important;
+                    height: 300px !important;
+                }
+                
+                .flip-card h3 {
+                    font-size: 1.1rem !important;
+                    padding: 0 0.75rem !important;
+                }
+                
+                .flip-card-back {
+                    padding: 1rem !important;
+                }
+                
+                .flip-card-back h4 {
+                    font-size: 1.1rem !important;
+                }
+                
+                .flip-card-back p {
+                    font-size: 0.95rem !important;
+                }
+            }
+            
+            /* Text overflow prevention for all sizes */
+            .flip-card h3,
+            .flip-card-back h4 {
+                word-break: break-word !important;
+                overflow-wrap: break-word !important;
+                hyphens: auto !important;
+                -webkit-hyphens: auto !important;
+                -ms-hyphens: auto !important;
+            }
+            
+            .flip-card p,
+            .flip-card-back p {
+                word-break: break-word !important;
+                overflow-wrap: break-word !important;
+                hyphens: auto !important;
+                -webkit-hyphens: auto !important;
+                -ms-hyphens: auto !important;
             }
             </style>
             

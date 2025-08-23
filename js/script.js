@@ -177,13 +177,13 @@ function showAppointmentInfo() {
  */
 function initializeMobileMenu() {
     // Mobile menu functionality is handled by toggleMobileMenu function
-    // Add smooth scrolling for mobile navigation links AND quick action buttons
+    // Add click handlers for mobile navigation links AND quick action buttons to close menu
     const mobileNavLinks = document.querySelectorAll('.mobile-nav-link, .quick-action-btn');
     
     mobileNavLinks.forEach(link => {
         const href = link.getAttribute('href');
         
-        // Only handle internal links (starting with #)
+        // Only handle internal links (starting with #) - close menu when clicked
         if (href && href.startsWith('#')) {
             link.addEventListener('click', function(e) {
                 console.log(`🖱️ Mobile link clicked: ${href} (${link.classList.contains('quick-action-btn') ? 'quick-action' : 'nav-link'})`);
@@ -198,8 +198,8 @@ function initializeMobileMenu() {
                     console.log('📲 Mobile menu closed');
                 }
                 
-                // Let smooth scrolling handle the navigation
-                // Don't prevent default - let initializeSmoothScrolling handle it
+                // DON'T prevent default or stop propagation - let normal link behavior work
+                // The smooth scrolling will be handled by initializeSmoothScrolling
             });
         }
     });

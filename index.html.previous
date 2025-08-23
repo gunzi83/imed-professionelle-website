@@ -24,21 +24,7 @@
                         'secondary-light': '#F0C8AB',
                         'secondary-dark': '#D69D7A',
                         
-                        // Elegant Medical Color Palette
-                        'medical': {
-                            'white': '#FFFFFF',
-                            'gray-50': '#F9FAFB', 
-                            'gray-100': '#F3F4F6',
-                            'gray-200': '#E5E7EB',
-                            'gray-300': '#D1D5DB',
-                            'gray-600': '#4B5563',
-                            'gray-700': '#374151',
-                            'gray-800': '#1F2937',
-                            'blue': '#3B82F6',
-                            'blue-light': '#DBEAFE'
-                        },
-                        
-                        // Utility Colors (reduced usage)
+                        // Utility Colors
                         'success': '#10B981',
                         'success-light': '#34D399',
                         'warning': '#D4A574',
@@ -75,9 +61,6 @@
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Preload critical hero image -->
-    <link rel="preload" href="images/dr_riedmuller_hero.jpg" as="image" type="image/jpeg">
     
     <link rel="stylesheet" href="css/style.css">
     
@@ -155,35 +138,6 @@
         
         .trust-signal {
             /* Hover effects removed for static display */
-        }
-        
-
-        
-        /* Hero Section Name Optimization - Harmonious Sizing */
-        @media (min-width: 1024px) {
-            .hero-doctor-name {
-                white-space: nowrap !important;
-                overflow: visible !important;
-                text-overflow: clip !important;
-                display: block !important;
-                font-size: 36px !important;
-                line-height: 1.2 !important;
-                letter-spacing: -0.5px !important;
-            }
-        }
-        
-        @media (min-width: 1280px) {
-            .hero-doctor-name {
-                font-size: 42px !important;
-                letter-spacing: -0.3px !important;
-            }
-        }
-        
-        @media (min-width: 1536px) {
-            .hero-doctor-name {
-                font-size: 48px !important;
-                letter-spacing: 0px !important;
-            }
         }
         
         /* Mobile Hero Optimizations */
@@ -265,7 +219,7 @@
 </head>
 <body class="bg-white">
     <!-- Header -->
-    <header id="main-header" class="bg-primary shadow-lg sticky top-0 z-50 border-b-2 border-blue-500-dark transition-all duration-300 ease-in-out">
+    <header id="main-header" class="bg-primary shadow-lg sticky top-0 z-50 border-b-2 border-primary-dark transition-all duration-300 ease-in-out">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Top Header Bar -->
             <div class="flex flex-col lg:flex-row items-center justify-between py-4 lg:py-6 transition-all duration-300 ease-in-out" id="header-content">
@@ -277,7 +231,7 @@
                              class="h-12 sm:h-14 lg:h-16 w-auto">
                     </div>
                     <div class="text-center lg:text-left">
-                        <h1 class="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1 lg:whitespace-nowrap">Dr. Gunter Riedmüller</h1>
+                        <h1 class="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1">Dr. Gunter Riedmüller</h1>
                         <p class="text-sm sm:text-base lg:text-lg text-white font-medium">Facharzt für Innere Medizin</p>
                     </div>
                 </div>
@@ -349,7 +303,7 @@
                     </a>
                     
                     <!-- CTA Button -->
-                    <a href="https://at.cgmlife.com/portal/#/home/?institution=d1c5e0db-2f0e-4de0-b368-5b4bbfcb93fb" target="_blank" rel="noopener noreferrer" class="ml-4 bg-white hover:bg-gray-100 text-gray-800 hover:text-gray-800-dark px-6 py-2 rounded-full font-medium transition-all duration-300 shadow-md hover:shadow-lg flex items-center space-x-2">
+                    <a href="https://at.cgmlife.com/portal/#/home/?institution=d1c5e0db-2f0e-4de0-b368-5b4bbfcb93fb" target="_blank" rel="noopener noreferrer" class="ml-4 bg-white hover:bg-gray-100 text-primary hover:text-primary-dark px-6 py-2 rounded-full font-medium transition-all duration-300 shadow-md hover:shadow-lg flex items-center space-x-2">
                         <i class="fas fa-calendar-plus text-sm"></i>
                         <span>Termin buchen</span>
                     </a>
@@ -394,7 +348,7 @@
                                 <a href="tel:+43228252827" 
                                    class="quick-action-btn bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-3 flex items-center space-x-2 hover:bg-opacity-20 transition-all duration-300 border border-white border-opacity-20">
                                     <div class="flex items-center justify-center w-8 h-8 bg-white rounded-full">
-                                        <i class="fas fa-phone text-gray-800 text-sm"></i>
+                                        <i class="fas fa-phone text-primary text-sm"></i>
                                     </div>
                                     <div class="text-left">
                                         <div class="text-white text-sm font-medium">Anrufen</div>
@@ -403,14 +357,16 @@
                                 </a>
                                 
                                 <!-- Route Button -->
-                                <a href="#anfahrt" 
+                                <a href="https://maps.google.com/maps?q=Brunnengasse+9,+2230+Gänserndorf,+Austria" 
+                                   target="_blank" 
+                                   rel="noopener noreferrer"
                                    class="quick-action-btn bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-3 flex items-center space-x-2 hover:bg-opacity-20 transition-all duration-300 border border-white border-opacity-20">
                                     <div class="flex items-center justify-center w-8 h-8 bg-white rounded-full">
-                                        <i class="fas fa-route text-gray-800 text-sm"></i>
+                                        <i class="fas fa-route text-primary text-sm"></i>
                                     </div>
                                     <div class="text-left">
                                         <div class="text-white text-sm font-medium">Route</div>
-                                        <div class="text-white text-xs opacity-75">Anfahrt-Info</div>
+                                        <div class="text-white text-xs opacity-75">Navigation</div>
                                     </div>
                                 </a>
                                 
@@ -418,7 +374,7 @@
                                 <a href="https://at.cgmlife.com/portal/#/home/?institution=d1c5e0db-2f0e-4de0-b368-5b4bbfcb93fb" target="_blank" rel="noopener noreferrer"
                                    class="quick-action-btn bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-3 flex items-center space-x-2 hover:bg-opacity-20 transition-all duration-300 border border-white border-opacity-20">
                                     <div class="flex items-center justify-center w-8 h-8 bg-white rounded-full">
-                                        <i class="fas fa-calendar-plus text-gray-800 text-sm"></i>
+                                        <i class="fas fa-calendar-plus text-primary text-sm"></i>
                                     </div>
                                     <div class="text-left">
                                         <div class="text-white text-sm font-medium">Termin</div>
@@ -430,7 +386,7 @@
                                 <a href="#contact" 
                                    class="quick-action-btn bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-3 flex items-center space-x-2 hover:bg-opacity-20 transition-all duration-300 border border-white border-opacity-20">
                                     <div class="flex items-center justify-center w-8 h-8 bg-white rounded-full">
-                                        <i class="fas fa-clock text-gray-800 text-sm"></i>
+                                        <i class="fas fa-clock text-primary text-sm"></i>
                                     </div>
                                     <div class="text-left">
                                         <div class="text-white text-sm font-medium">Zeiten</div>
@@ -464,7 +420,7 @@
                         
                         <!-- Mobile CTA Button -->
                         <div class="pt-2 border-t border-white border-opacity-20 mt-2">
-                            <a href="https://at.cgmlife.com/portal/#/home/?institution=d1c5e0db-2f0e-4de0-b368-5b4bbfcb93fb" target="_blank" rel="noopener noreferrer" class="w-full bg-white hover:bg-gray-100 text-gray-800 hover:text-gray-800-dark px-4 py-3 rounded-lg font-medium transition-all duration-300 flex items-center justify-center space-x-2 shadow-md">
+                            <a href="https://at.cgmlife.com/portal/#/home/?institution=d1c5e0db-2f0e-4de0-b368-5b4bbfcb93fb" target="_blank" rel="noopener noreferrer" class="w-full bg-white hover:bg-gray-100 text-primary hover:text-primary-dark px-4 py-3 rounded-lg font-medium transition-all duration-300 flex items-center justify-center space-x-2 shadow-md">
                                 <i class="fas fa-calendar-plus text-sm"></i>
                                 <span>Termin buchen</span>
                             </a>
@@ -506,11 +462,20 @@
                     <div class="doctor-hero-photo-container relative">
                         <!-- Photo Frame -->
                         <div class="relative w-80 h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden shadow-2xl bg-white border-8 border-white ring-4 ring-primary/20">
-                            <!-- Doctor Photo -->
-                            <img src="images/dr_riedmuller_hero.jpg" 
+                            <!-- Doctor Photo Placeholder - Replace with actual photo -->
+                            <div class="w-full h-full bg-gradient-to-br from-primary-light to-primary flex items-center justify-center">
+                                <div class="text-center text-white">
+                                    <i class="fas fa-user-md text-6xl mb-4 opacity-40"></i>
+                                    <p class="text-lg font-medium opacity-60">Dr. Riedmüller</p>
+                                    <p class="text-sm opacity-40">Foto hier einfügen</p>
+                                </div>
+                            </div>
+                            <!-- Uncomment and replace when you have the photo:
+                            <img src="path-to-your-photo.jpg" 
                                  alt="Dr. Gunter Riedmüller - Facharzt für Innere Medizin" 
                                  class="w-full h-full object-cover"
-                                 loading="eager">
+                                 loading="lazy">
+                            -->
                         </div>
                         
 
@@ -521,13 +486,13 @@
                 <div class="text-center lg:text-left order-2 lg:order-2">
                     <!-- Main Title -->
                     <div class="mb-8">
-                        <h1 class="hero-doctor-name text-3xl sm:text-4xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 leading-tight">
+                        <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
                             Dr. Gunter Riedmüller
                         </h1>
-                        <h2 class="text-xl sm:text-2xl lg:text-2xl xl:text-3xl text-white font-medium mb-4 opacity-95">
+                        <h2 class="text-xl lg:text-2xl text-white font-medium mb-2 opacity-90">
                             Facharzt für Innere Medizin
                         </h2>
-                        <p class="text-lg sm:text-xl lg:text-xl xl:text-2xl text-white opacity-90 mb-8 leading-relaxed">
+                        <p class="text-lg text-white opacity-80 mb-6">
                             Ihre Gesundheit in kompetenten Händen
                         </p>
                     </div>
@@ -541,8 +506,8 @@
                                     <i class="fas fa-shield-alt text-white"></i>
                                 </div>
                                 <div class="text-left">
-                                    <div class="text-gray-800 font-semibold">Alle Kassen</div>
-                                    <div class="text-gray-800 text-xs opacity-75">Direkte Abrechnung</div>
+                                    <div class="text-primary font-semibold">Alle Kassen</div>
+                                    <div class="text-primary text-xs opacity-75">Direkte Abrechnung</div>
                                 </div>
                             </div>
                         </div>
@@ -554,8 +519,8 @@
                                     <i class="fas fa-heartbeat text-white"></i>
                                 </div>
                                 <div class="text-left">
-                                    <div class="text-gray-800 font-semibold">Moderne Diagnostik</div>
-                                    <div class="text-gray-800 text-xs opacity-75">EKG, Ultraschall & mehr</div>
+                                    <div class="text-secondary font-semibold">Moderne Diagnostik</div>
+                                    <div class="text-secondary text-xs opacity-75">EKG, Ultraschall & mehr</div>
                                 </div>
                             </div>
                         </div>
@@ -574,8 +539,8 @@
                     </div>
                     
                     <!-- Quick Info -->
-                    <div class="mt-8 text-white opacity-90 text-base sm:text-lg">
-                        <p class="flex items-center justify-center lg:justify-start gap-2 leading-relaxed">
+                    <div class="mt-8 text-white opacity-75 text-sm">
+                        <p class="flex items-center justify-center lg:justify-start gap-2">
                             <i class="fas fa-map-marker-alt"></i>
                             Brunnengasse 9, 2230 Gänserndorf
                         </p>
@@ -627,8 +592,8 @@
             <!-- Praxis Beschreibung -->
             <div class="mb-16">
                 <div class="max-w-4xl mx-auto text-center space-y-6">
-                    <h3 class="text-2xl sm:text-3xl font-medium text-gray-900 mb-4">Willkommen bei imed2230</h3>
-                    <p class="text-gray-700 leading-relaxed text-lg sm:text-xl max-w-4xl mx-auto">
+                    <h3 class="text-2xl font-medium text-gray-800">Willkommen bei imed2230</h3>
+                    <p class="text-gray-600 leading-relaxed text-lg">
                         Bei uns steht Ihre Gesundheit im Mittelpunkt. Unter der Leitung von Dr. Gunter Riedmüller, 
                         Facharzt für Innere Medizin, bieten wir Ihnen eine umfassende internistische Betreuung – 
                         fundiert, persönlich und auf dem neuesten Stand der medizinischen Erkenntnisse.
@@ -639,8 +604,8 @@
                             <div class="w-16 h-16 mx-auto mb-4 bg-primary rounded-full flex items-center justify-center">
                                 <i class="fas fa-heart text-white text-xl"></i>
                             </div>
-                            <h4 class="text-lg sm:text-xl font-medium text-gray-900 mb-3">Medizin mit Kompetenz und Herz</h4>
-                            <p class="text-gray-700 text-base sm:text-lg leading-relaxed">
+                            <h4 class="text-lg font-medium text-primary mb-2">Medizin mit Kompetenz und Herz</h4>
+                            <p class="text-gray-600 text-sm">
                                 Persönliche Zuwendung, fachliche Sorgfalt und verständliche Erklärungen
                             </p>
                         </div>
@@ -649,8 +614,8 @@
                             <div class="w-16 h-16 mx-auto mb-4 bg-secondary rounded-full flex items-center justify-center">
                                 <i class="fas fa-handshake text-white text-xl"></i>
                             </div>
-                            <h4 class="text-lg sm:text-xl font-medium text-gray-900 mb-3">Vertrauensvolle Atmosphäre</h4>
-                            <p class="text-gray-700 text-base sm:text-lg leading-relaxed">
+                            <h4 class="text-lg font-medium text-secondary mb-2">Vertrauensvolle Atmosphäre</h4>
+                            <p class="text-gray-600 text-sm">
                                 Klare Kommunikation und respektvoller, empathischer Umgang
                             </p>
                         </div>
@@ -659,8 +624,8 @@
                             <div class="w-16 h-16 mx-auto mb-4 bg-primary rounded-full flex items-center justify-center">
                                 <i class="fas fa-users text-white text-xl"></i>
                             </div>
-                            <h4 class="text-lg sm:text-xl font-medium text-gray-900 mb-3">Kassenordination</h4>
-                            <p class="text-gray-700 text-base sm:text-lg leading-relaxed">
+                            <h4 class="text-lg font-medium text-primary mb-2">Kassenordination</h4>
+                            <p class="text-gray-600 text-sm">
                                 Offen für alle Patientinnen und Patienten - Alle Kassen
                             </p>
                         </div>
@@ -677,34 +642,35 @@
                 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
                     <!-- Dr. Gunter Riedmüller - Hauptarzt -->
-                    <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                    <div class="bg-primary-light rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
                         <div class="text-center mb-6">
                             <div class="doctor-photo-container w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden shadow-xl bg-white border-4 border-white ring-2 ring-primary/20">
-                                <img src="images/dr_riedmuller.png" 
+                                <img src="https://page.gensparksite.com/v1/base64_upload/e2818a0fd4e7b552ca0edfc752dfe68a" 
                                      alt="Dr. Gunter Riedmüller - Facharzt für Innere Medizin in Gänserndorf" 
                                      class="doctor-photo w-full h-full object-cover"
+                                     style="transform: scale(1.3) translateX(-15px) translateY(20px);"
                                      loading="lazy">
                             </div>
                             <h4 class="text-xl font-bold text-gray-800">Dr. Gunter Riedmüller</h4>
-                            <p class="text-gray-800 font-medium">Facharzt für Innere Medizin</p>
+                            <p class="text-primary font-medium">Facharzt für Innere Medizin</p>
                             <p class="text-sm text-gray-600 mt-1">Ordinationsleiter</p>
                         </div>
                         
-                        <div class="space-y-4">
-                            <div class="flex items-center text-gray-900 text-base leading-relaxed">
+                        <div class="space-y-3">
+                            <div class="flex items-center text-gray-800 text-sm">
                                 <i class="fas fa-graduation-cap w-5 mr-3 text-primary"></i>
                                 <span>Spezialisiert auf Diabetes und Herz-Kreislauf-Erkrankungen</span>
                             </div>
-                            <div class="flex items-center text-gray-900 text-base leading-relaxed">
-                                <i class="fas fa-heart w-5 mr-3 text-primary"></i>
+                            <div class="flex items-center text-gray-800 text-sm">
+                                <i class="fas fa-heart w-5 mr-3 text-secondary"></i>
                                 <span>Schwerpunkt Diabetes und Herz-Kreislauf-Erkrankungen</span>
                             </div>
-                            <div class="flex items-center text-gray-900 text-base leading-relaxed">
+                            <div class="flex items-center text-gray-800 text-sm">
                                 <i class="fas fa-microscope w-5 mr-3 text-primary"></i>
                                 <span>Moderne Diagnostik und Therapie</span>
                             </div>
-                            <div class="flex items-center text-gray-900 text-base leading-relaxed">
-                                <i class="fas fa-stethoscope w-5 mr-3 text-primary"></i>
+                            <div class="flex items-center text-gray-800 text-sm">
+                                <i class="fas fa-stethoscope w-5 mr-3 text-secondary"></i>
                                 <span>Langjährige internistische Erfahrung</span>
                             </div>
                         </div>
@@ -728,25 +694,25 @@
                                 -->
                             </div>
                             <h4 class="text-xl font-bold text-gray-800">Dr. Marek Koudelka</h4>
-                            <p class="text-gray-800 font-medium">Facharzt für Innere Medizin</p>
+                            <p class="text-secondary font-medium">Facharzt für Innere Medizin</p>
                             <p class="text-sm text-gray-600 mt-1">Vertretungsarzt - Mittwoch Nachmittag</p>
                         </div>
                         
-                        <div class="space-y-4">
-                            <div class="flex items-center text-gray-900 text-base leading-relaxed">
+                        <div class="space-y-3">
+                            <div class="flex items-center text-gray-800 text-sm">
                                 <i class="fas fa-user-shield w-5 mr-3 text-secondary"></i>
                                 <span>Erfahrener Vertretungsarzt</span>
                             </div>
-                            <div class="flex items-center text-gray-900 text-base leading-relaxed">
-                                <i class="fas fa-heartbeat w-5 mr-3 text-secondary"></i>
+                            <div class="flex items-center text-gray-800 text-sm">
+                                <i class="fas fa-heartbeat w-5 mr-3 text-primary"></i>
                                 <span>Spezialist Herz-Kreislauf-Erkrankungen</span>
                             </div>
-                            <div class="flex items-center text-gray-900 text-base leading-relaxed">
+                            <div class="flex items-center text-gray-800 text-sm">
                                 <i class="fas fa-calendar-check w-5 mr-3 text-secondary"></i>
                                 <span>Ordination Mittwoch Nachmittag</span>
                             </div>
-                            <div class="flex items-center text-gray-900 text-base leading-relaxed">
-                                <i class="fas fa-clock w-5 mr-3 text-secondary"></i>
+                            <div class="flex items-center text-gray-800 text-sm">
+                                <i class="fas fa-clock w-5 mr-3 text-primary"></i>
                                 <span>Regelmäßige wöchentliche Sprechstunde</span>
                             </div>
                         </div>
@@ -756,10 +722,10 @@
             
             <!-- Zusätzliche Info über Vertretung -->
             <div class="max-w-4xl mx-auto">
-                <div class="bg-gray-50 rounded-lg p-6 border-l-4 border-blue-500">
+                <div class="bg-gray-50 rounded-lg p-6 border-l-4 border-primary">
                     <div class="flex items-start">
                         <div class="flex-shrink-0">
-                            <i class="fas fa-info-circle text-gray-800 text-xl mt-1"></i>
+                            <i class="fas fa-info-circle text-primary text-xl mt-1"></i>
                         </div>
                         <div class="ml-4">
                             <h4 class="text-lg font-medium text-gray-900 mb-2">Ordination Mittwoch Nachmittag</h4>
@@ -777,7 +743,7 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-16 bg-gray-50">
+    <section id="services" class="py-16 bg-primary-light">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-12">
                 <div class="mb-8">
@@ -835,21 +801,9 @@
                 box-sizing: border-box !important;
             }
             
-            /* Flip animation on hover AND touch/click */
-            .flip-card:hover .flip-card-inner,
-            .flip-card.flipped .flip-card-inner {
+            /* Flip animation on hover */
+            .flip-card:hover .flip-card-inner {
                 transform: rotateY(180deg) !important;
-            }
-            
-            /* Touch device support */
-            .flip-card {
-                -webkit-tap-highlight-color: transparent !important;
-                tap-highlight-color: transparent !important;
-            }
-            
-            /* Active state for touch feedback */
-            .flip-card:active .flip-card-inner {
-                transform: scale(0.98) !important;
             }
             
             /* Front and back faces of the card */
@@ -872,54 +826,48 @@
                 background: white !important;
             }
             
-            /* Service icon styling - elegant and professional */
+            /* Service icon styling - smaller */
             .service-icon {
                 font-size: 2.5rem !important;
                 margin-bottom: 0.75rem !important;
-                color: #6B7280 !important; /* Professional gray */
+                color: rgba(255, 255, 255, 0.9) !important;
             }
             
-            /* Card title styling - elegant and readable - OPTIMIZED */
+            /* Card title styling - more compact */
             .flip-card h3 {
-                font-size: 1.2rem !important; /* Vergrößert von 1.1rem */
+                font-size: 1.1rem !important;
                 font-weight: 700 !important;
-                margin-bottom: 0.75rem !important; /* Mehr Abstand */
-                line-height: 1.3 !important; /* Bessere Zeilenhöhe */
-                color: #111827 !important; /* Höherer Kontrast - war #1F2937 */
+                margin-bottom: 0.5rem !important;
+                line-height: 1.2 !important;
+                color: white !important;
                 word-break: normal !important;
                 hyphens: none !important;
                 text-align: center !important;
                 padding: 0 0.5rem !important;
             }
             
-            /* Card description styling - professional and readable - OPTIMIZED */
+            /* Card description styling - more compact */
             .flip-card p {
-                font-size: 0.95rem !important; /* Vergrößert von 0.8rem */
-                line-height: 1.5 !important; /* Bessere Lesbarkeit - war 1.3 */
-                color: #374151 !important; /* Höherer Kontrast - war #6B7280 */
-                margin-bottom: 0.5rem !important; /* Mehr Abstand */
+                font-size: 0.8rem !important;
+                line-height: 1.3 !important;
+                color: rgba(255, 255, 255, 0.9) !important;
+                margin-bottom: 0.4rem !important;
                 word-break: normal !important;
                 hyphens: none !important;
                 text-align: center !important;
                 padding: 0 0.25rem !important;
             }
             
-            /* Interactive hint - elegant and professional */
-            .interaction-hint {
+            /* Hover hint */
+            .hover-hint {
                 position: absolute !important;
                 bottom: 15px !important;
                 left: 50% !important;
                 transform: translateX(-50%) !important;
                 font-size: 0.75rem !important;
-                opacity: 0.6 !important;
+                opacity: 0.8 !important;
                 animation: pulse 2s infinite !important;
-                color: #9CA3AF !important; /* Professional light gray */
-                pointer-events: none !important;
-            }
-            
-            /* Hide hint when card is flipped */
-            .flip-card.flipped .interaction-hint {
-                opacity: 0 !important;
+                color: rgba(255, 255, 255, 0.8) !important;
             }
             
             @keyframes pulse {
@@ -927,29 +875,29 @@
                 50% { opacity: 1; }
             }
             
-            /* Back side content - left aligned with visible text - OPTIMIZED */
+            /* Back side content - left aligned with visible text */
             .flip-card-back h4 {
-                font-size: 1.1rem !important; /* Vergrößert von 1rem */
+                font-size: 1rem !important;
                 font-weight: bold !important;
                 margin-bottom: 0.75rem !important;
-                line-height: 1.3 !important; /* Bessere Zeilenhöhe */
+                line-height: 1.2 !important;
                 text-align: left !important;
-                color: #111827 !important; /* Höherer Kontrast */
+                color: inherit !important;
             }
             
             .flip-card-back p {
-                font-size: 1rem !important; /* Vergrößert von 0.85rem */
-                line-height: 1.6 !important; /* Bessere Lesbarkeit - war 1.4 */
-                color: #1F2937 !important; /* Höherer Kontrast - war #374151 */
-                margin-bottom: 0.75rem !important; /* Mehr Abstand */
+                font-size: 0.85rem !important;
+                line-height: 1.4 !important;
+                color: #374151 !important;
+                margin-bottom: 0.5rem !important;
                 text-align: left !important;
             }
             
             .flip-card-back .text-base {
-                font-size: 1rem !important; /* Vergrößert von 0.85rem */
-                line-height: 1.6 !important; /* Bessere Lesbarkeit */
-                color: #1F2937 !important; /* Höherer Kontrast */
-                margin-bottom: 0.75rem !important;
+                font-size: 0.85rem !important;
+                line-height: 1.4 !important;
+                color: #374151 !important;
+                margin-bottom: 0.5rem !important;
                 text-align: left !important;
             }
             
@@ -961,39 +909,7 @@
                 opacity: 0.9 !important;
             }
             
-            /* Touch devices and tablets */
-            @media (max-width: 1024px) {
-                .flip-card {
-                    cursor: pointer !important;
-                }
-                
-                .flip-card-inner {
-                    transition: transform 0.6s ease-in-out !important;
-                }
-                
-                /* Disable hover effects on touch devices */
-                .flip-card:hover .flip-card-inner {
-                    transform: none !important;
-                }
-                
-                /* Only use flipped class for touch interactions */
-                .flip-card.flipped .flip-card-inner {
-                    transform: rotateY(180deg) !important;
-                }
-            }
-            
-            /* Desktop hover behavior */
-            @media (min-width: 1025px) and (hover: hover) {
-                .flip-card:hover .flip-card-inner {
-                    transform: rotateY(180deg) !important;
-                }
-                
-                .interaction-hint .hint-text::after {
-                    content: " oder hovern";
-                }
-            }
-            
-            /* Responsive design - tablet and larger mobile */
+            /* Responsive design - smaller sizes */
             @media (max-width: 768px) {
                 .flip-cards-container {
                     gap: 1rem !important;
@@ -1001,177 +917,51 @@
                 }
                 
                 .flip-card {
-                    width: 240px !important;
-                    height: 280px !important;
-                    flex: 0 0 240px !important;
+                    width: 220px !important;
+                    height: 260px !important;
+                    flex: 0 0 220px !important;
                 }
                 
                 .service-icon {
-                    font-size: 2.2rem !important;
-                    margin-bottom: 0.5rem !important;
+                    font-size: 2rem !important;
                 }
                 
                 .flip-card h3 {
-                    font-size: 1.1rem !important;
-                    line-height: 1.3 !important;
-                    margin-bottom: 0.5rem !important;
-                    padding: 0 0.75rem !important;
+                    font-size: 1rem !important;
                 }
                 
                 .flip-card p {
-                    font-size: 0.85rem !important;
-                    line-height: 1.4 !important;
-                    padding: 0 0.5rem !important;
-                }
-                
-                /* Back side text improvements for tablet */
-                .flip-card-back h4 {
-                    font-size: 1.1rem !important;
-                    margin-bottom: 0.5rem !important;
-                    padding-right: 0.5rem !important;
-                }
-                
-                .flip-card-back p {
-                    font-size: 0.9rem !important;
-                    line-height: 1.5 !important;
-                    padding-right: 0.5rem !important;
-                }
-                
-                .flip-card-back .text-base {
-                    font-size: 0.9rem !important;
-                    line-height: 1.5 !important;
+                    font-size: 0.75rem !important;
                 }
             }
             
-            /* Mobile devices - enhanced touch experience and larger text */
             @media (max-width: 640px) {
                 .flip-cards-container {
-                    gap: 1rem !important;
-                    padding: 1rem !important;
+                    gap: 0.75rem !important;
+                    padding: 0.75rem !important;
                 }
                 
                 .flip-card {
-                    width: 280px !important;
-                    height: 320px !important;
-                    flex: 0 0 280px !important;
-                    max-width: calc(100vw - 2rem) !important;
-                }
-                
-                /* Faster animation on mobile */
-                .flip-card-inner {
-                    transition: transform 0.4s ease-in-out !important;
+                    width: 200px !important;
+                    height: 240px !important;
+                    flex: 0 0 200px !important;
                 }
                 
                 .service-icon {
-                    font-size: 2.5rem !important;
-                    margin-bottom: 0.75rem !important;
+                    font-size: 1.8rem !important;
                 }
                 
-                /* Front side - larger, more readable text - OPTIMIZED */
                 .flip-card h3 {
-                    font-size: 1.4rem !important; /* Vergrößert von 1.25rem */
-                    line-height: 1.3 !important; /* Bessere Zeilenhöhe */
-                    margin-bottom: 1rem !important; /* Mehr Abstand */
-                    padding: 0 1rem !important;
-                    word-wrap: break-word !important;
-                    overflow-wrap: break-word !important;
+                    font-size: 0.9rem !important;
                 }
                 
                 .flip-card p {
-                    font-size: 1.1rem !important; /* Vergrößert von 0.95rem */
-                    line-height: 1.5 !important; /* Bessere Lesbarkeit */
-                    padding: 0 0.75rem !important;
-                    margin-bottom: 0.75rem !important; /* Mehr Abstand */
-                }
-                
-                /* Back side - improved readability */
-                .flip-card-back {
-                    padding: 1.25rem !important;
-                }
-                
-                .flip-card-back h4 {
-                    font-size: 1.2rem !important;
-                    line-height: 1.3 !important;
-                    margin-bottom: 0.75rem !important;
-                    padding-right: 0.5rem !important;
-                    word-wrap: break-word !important;
-                    overflow-wrap: break-word !important;
-                }
-                
-                .flip-card-back p {
-                    font-size: 1.15rem !important; /* Vergrößert für Mobile */
-                    line-height: 1.6 !important; /* Bessere Lesbarkeit */
-                    margin-bottom: 1rem !important; /* Mehr Abstand */
-                    padding-right: 0.5rem !important;
-                    word-wrap: break-word !important;
-                    overflow-wrap: break-word !important;
-                }
-                
-                .flip-card-back .text-base {
-                    font-size: 1.15rem !important; /* Vergrößert für Mobile */
-                    line-height: 1.6 !important; /* Bessere Lesbarkeit */
-                }
-                
-                .flip-card-back .text-sm {
-                    font-size: 0.9rem !important;
-                    line-height: 1.4 !important;
+                    font-size: 0.7rem !important;
                 }
                 
                 .imed-logo-back {
-                    width: 55px !important;
-                    margin-bottom: 1rem !important;
+                    width: 50px !important;
                 }
-                
-                /* Interaction hint adjustments */
-                .interaction-hint {
-                    font-size: 0.85rem !important;
-                    bottom: 20px !important;
-                }
-            }
-            
-            /* Extra small mobile devices */
-            @media (max-width: 380px) {
-                .flip-card {
-                    width: calc(100vw - 2rem) !important;
-                    min-width: 260px !important;
-                    height: 300px !important;
-                }
-                
-                .flip-card h3 {
-                    font-size: 1.1rem !important;
-                    padding: 0 0.75rem !important;
-                }
-                
-                .flip-card-back {
-                    padding: 1rem !important;
-                }
-                
-                .flip-card-back h4 {
-                    font-size: 1.1rem !important;
-                }
-                
-                .flip-card-back p {
-                    font-size: 0.95rem !important;
-                }
-            }
-            
-            /* Text overflow prevention for all sizes */
-            .flip-card h3,
-            .flip-card-back h4 {
-                word-break: break-word !important;
-                overflow-wrap: break-word !important;
-                hyphens: auto !important;
-                -webkit-hyphens: auto !important;
-                -ms-hyphens: auto !important;
-            }
-            
-            .flip-card p,
-            .flip-card-back p {
-                word-break: break-word !important;
-                overflow-wrap: break-word !important;
-                hyphens: auto !important;
-                -webkit-hyphens: auto !important;
-                -ms-hyphens: auto !important;
             }
             </style>
             
@@ -1182,22 +972,23 @@
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <!-- Front Side -->
-                        <div class="flip-card-front bg-white border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-                            <div class="flex flex-col items-center justify-center h-full p-4">
-                                <i class="fas fa-heartbeat service-icon text-gray-600"></i>
-                                <h3 class="text-2xl font-bold text-gray-800">Herzultraschall</h3>
-                                <div class="interaction-hint">
-                                    <i class="fas fa-hand-pointer mr-1 text-gray-400"></i>
-                                    <span class="hint-text text-gray-500">Klicken für mehr Info</span>
+                        <div class="flip-card-front" style="background: linear-gradient(135deg, #79ADBA 0%, #6B9CAA 100%);">
+                            <div class="flex flex-col items-center justify-center h-full text-white p-4">
+                                <i class="fas fa-heartbeat service-icon"></i>
+                                <h3 class="text-2xl font-bold">Herzultraschall</h3>
+                                <div class="hover-hint">
+                                    <i class="fas fa-mouse-pointer mr-1"></i>
+                                    Hover für mehr Info
                                 </div>
                             </div>
                         </div>
                         <!-- Back Side -->
-                        <div class="flip-card-back bg-white border border-gray-200 shadow-sm">
+                        <div class="flip-card-back bg-white">
                             <div class="flex flex-col justify-center h-full p-4">
-                                <div class="border-l-4 border-blue-500 pl-4">
-                                    <h4 class="text-lg font-bold mb-2 text-gray-800">Herzecho</h4>
-                                    <p class="text-sm leading-relaxed text-gray-700">Schonende Untersuchung zur Überprüfung der Herzfunktion.</p>
+                                <div class="border-l-4 border-primary pl-4">
+                                    <h4 class="text-lg font-bold mb-2 text-primary">Herzultraschall</h4>
+                                    <p class="text-sm opacity-75 mb-3 text-gray-600">(Echokardiographie)</p>
+                                    <p class="text-sm leading-relaxed text-gray-700">Schnelle, schonende Untersuchung des Herzens zur Überprüfung der Herzkammern, Vorhöfe, Pumpfunktion und Herzklappen.</p>
                                 </div>
                             </div>
                         </div>
@@ -1208,22 +999,22 @@
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <!-- Front Side -->
-                        <div class="flip-card-front bg-white border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-                            <div class="flex flex-col items-center justify-center h-full p-4">
-                                <i class="fas fa-chart-line service-icon text-gray-600"></i>
-                                <h3 class="text-2xl font-bold text-gray-800">EKG</h3>
-                                <div class="interaction-hint">
-                                    <i class="fas fa-hand-pointer mr-1 text-gray-400"></i>
-                                    <span class="hint-text text-gray-500">Klicken für mehr Info</span>
+                        <div class="flip-card-front" style="background: linear-gradient(135deg, #E3B497 0%, #D69D7A 100%);">
+                            <div class="flex flex-col items-center justify-center h-full text-white p-4">
+                                <i class="fas fa-chart-line service-icon"></i>
+                                <h3 class="text-2xl font-bold">EKG</h3>
+                                <div class="hover-hint">
+                                    <i class="fas fa-mouse-pointer mr-1"></i>
+                                    Hover für mehr Info
                                 </div>
                             </div>
                         </div>
                         <!-- Back Side -->
-                        <div class="flip-card-back bg-white border border-gray-200 shadow-sm">
+                        <div class="flip-card-back bg-white">
                             <div class="flex flex-col justify-center h-full p-4">
-                                <div class="border-l-4 border-blue-500 pl-4">
-                                    <h4 class="text-lg font-bold mb-3 text-gray-800">EKG</h4>
-                                    <p class="text-sm leading-relaxed text-gray-700">Zur Erkennung von Rhythmus- und Durchblutungsstörungen des Herzens.</p>
+                                <div class="border-l-4 border-secondary pl-4">
+                                    <h4 class="text-lg font-bold mb-3 text-secondary">EKG</h4>
+                                    <p class="text-sm leading-relaxed text-gray-700">Messung der elektrischen Signale des Herzens zur Erkennung von Durchblutungsstörungen und Herzrhythmusstörungen.</p>
                                 </div>
                             </div>
                         </div>
@@ -1234,48 +1025,49 @@
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <!-- Front Side -->
-                        <div class="flip-card-front" class="bg-white border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-                            <div class="flex flex-col items-center justify-center h-full p-4">
-                                <i class="fas fa-bicycle service-icon text-gray-600"></i>
-                                <h3 class="text-2xl font-bold text-gray-800">Belastungs-EKG</h3>
-                                <div class="interaction-hint">
-                                    <i class="fas fa-hand-pointer mr-1"></i>
-                                    <span class="hint-text">Klicken für mehr Info</span>
+                        <div class="flip-card-front" style="background: linear-gradient(135deg, #79ADBA 0%, #6B9CAA 100%);">
+                            <div class="flex flex-col items-center justify-center h-full text-white p-4">
+                                <i class="fas fa-bicycle service-icon"></i>
+                                <h3 class="text-2xl font-bold">Belastungs-EKG</h3>
+                                <div class="hover-hint">
+                                    <i class="fas fa-mouse-pointer mr-1"></i>
+                                    Hover für mehr Info
                                 </div>
                             </div>
                         </div>
                         <!-- Back Side -->
-                        <div class="flip-card-back bg-white border border-gray-200 shadow-sm">
+                        <div class="flip-card-back bg-white">
                             <div class="flex flex-col justify-center h-full p-4">
-                                <div class="border-l-4 border-blue-500 pl-4">
-                                    <h4 class="text-lg font-bold mb-2 text-gray-800">Ergometrie</h4>
-                                    <p class="text-sm leading-relaxed text-gray-700">Früherkennung von Herzinfarkt und Rhythmusstörungen.</p>
+                                <div class="border-l-4 border-primary pl-4">
+                                    <h4 class="text-lg font-bold mb-2 text-primary">Belastungs-EKG</h4>
+                                    <p class="text-sm opacity-75 mb-3 text-gray-600">(Ergometrie)</p>
+                                    <p class="text-sm leading-relaxed text-gray-700">Herzaktivitätsmessung während körperlicher Anstrengung auf dem Fahrradergometer.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- 4. 24h-EKG (Holter-EKG) -->
+                <!-- 4. Langzeit-EKG (Holter-EKG) -->
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <!-- Front Side -->
-                        <div class="flip-card-front" class="bg-white border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-                            <div class="flex flex-col items-center justify-center h-full p-4">
+                        <div class="flip-card-front" style="background: linear-gradient(135deg, #E3B497 0%, #D69D7A 100%);">
+                            <div class="flex flex-col items-center justify-center h-full text-white p-4">
                                 <i class="fas fa-clock service-icon"></i>
-                                <h3 class="text-2xl font-bold">24h-EKG</h3>
-                                <div class="interaction-hint">
-                                    <i class="fas fa-hand-pointer mr-1"></i>
-                                    <span class="hint-text">Klicken für mehr Info</span>
+                                <h3 class="text-2xl font-bold">Langzeit-EKG</h3>
+                                <div class="hover-hint">
+                                    <i class="fas fa-mouse-pointer mr-1"></i>
+                                    Hover für mehr Info
                                 </div>
                             </div>
                         </div>
                         <!-- Back Side -->
-                        <div class="flip-card-back bg-white border border-gray-200 shadow-sm">
+                        <div class="flip-card-back bg-white">
                             <div class="flex flex-col justify-center h-full p-4">
-                                <div class="border-l-4 border-blue-500 pl-4">
-                                    <h4 class="text-lg font-bold mb-3 text-gray-800">Holter-EKG</h4>
-                                    <p class="text-sm leading-relaxed text-gray-700">Zur Erkennung von Herzrhythmusstörungen.</p>
+                                <div class="border-l-4 border-secondary pl-4">
+                                    <h4 class="text-lg font-bold mb-3 text-secondary">Langzeit-EKG (Holter-EKG)</h4>
+                                    <p class="text-sm leading-relaxed text-gray-700">24-Stunden-Aufzeichnung des Herzrhythmus mit tragbarem Gerät.</p>
                                 </div>
                             </div>
                         </div>
@@ -1286,27 +1078,22 @@
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <!-- Front Side -->
-                        <div class="flip-card-front" class="bg-white border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-                            <div class="flex flex-col items-center justify-center h-full p-4">
+                        <div class="flip-card-front" style="background: linear-gradient(135deg, #79ADBA 0%, #6B9CAA 100%);">
+                            <div class="flex flex-col items-center justify-center h-full text-white p-4">
                                 <i class="fas fa-tachometer-alt service-icon"></i>
                                 <h3 class="text-2xl font-bold">24h-Blutdruck</h3>
-                                <div class="interaction-hint">
-                                    <i class="fas fa-hand-pointer mr-1"></i>
-                                    <span class="hint-text">Klicken für mehr Info</span>
+                                <div class="hover-hint">
+                                    <i class="fas fa-mouse-pointer mr-1"></i>
+                                    Hover für mehr Info
                                 </div>
                             </div>
                         </div>
                         <!-- Back Side -->
-                        <div class="flip-card-back bg-white border border-gray-200 shadow-sm">
+                        <div class="flip-card-back bg-white">
                             <div class="flex flex-col justify-center h-full p-4">
-                                <div class="border-l-4 border-blue-500 pl-4">
-                                    <h4 class="text-lg font-bold mb-3 text-gray-800">24-Stunden-Blutdruckmessung</h4>
-                                    <p class="text-sm leading-relaxed text-gray-700 mb-2">Überprüfung zur optimalen Medikationsanpassung.</p>
-                                    <div class="mt-3 inline-block">
-                                        <span class="px-2 py-1 bg-orange-100 text-orange-800 text-xs font-medium rounded-full">
-                                            ÖGK: tws. Refundierung
-                                        </span>
-                                    </div>
+                                <div class="border-l-4 border-warning pl-4">
+                                    <h4 class="text-lg font-bold mb-3 text-warning">24-Stunden-Blutdruckmessung</h4>
+                                    <p class="text-sm leading-relaxed text-gray-700">Erfassung der Blutdruckschwankungen über den ganzen Tag für optimale Medikation.</p>
                                 </div>
                             </div>
                         </div>
@@ -1317,21 +1104,21 @@
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <!-- Front Side -->
-                        <div class="flip-card-front" class="bg-white border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-                            <div class="flex flex-col items-center justify-center h-full p-4">
+                        <div class="flip-card-front" style="background: linear-gradient(135deg, #E3B497 0%, #D69D7A 100%);">
+                            <div class="flex flex-col items-center justify-center h-full text-white p-4">
                                 <i class="fas fa-search service-icon"></i>
                                 <h3 class="text-2xl font-bold">Gefäßultraschall</h3>
-                                <div class="interaction-hint">
-                                    <i class="fas fa-hand-pointer mr-1"></i>
-                                    <span class="hint-text">Klicken für mehr Info</span>
+                                <div class="hover-hint">
+                                    <i class="fas fa-mouse-pointer mr-1"></i>
+                                    Hover für mehr Info
                                 </div>
                             </div>
                         </div>
                         <!-- Back Side -->
-                        <div class="flip-card-back bg-white border border-gray-200 shadow-sm">
+                        <div class="flip-card-back bg-white">
                             <div class="flex flex-col justify-center h-full p-4">
-                                <div class="border-l-4 border-blue-500 pl-4">
-                                    <h4 class="text-lg font-bold mb-3 text-gray-800">Carotisultraschall</h4>
+                                <div class="border-l-4 border-warning pl-4">
+                                    <h4 class="text-lg font-bold mb-3 text-warning">Gefäßultraschall</h4>
                                     <p class="text-sm leading-relaxed text-gray-700">Untersuchung der Halsschlagadern zur Früherkennung von Durchblutungsstörungen.</p>
                                 </div>
                             </div>
@@ -1343,21 +1130,21 @@
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <!-- Front Side -->
-                        <div class="flip-card-front" class="bg-white border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-                            <div class="flex flex-col items-center justify-center h-full p-4">
+                        <div class="flip-card-front" style="background: linear-gradient(135deg, #79ADBA 0%, #6B9CAA 100%);">
+                            <div class="flex flex-col items-center justify-center h-full text-white p-4">
                                 <i class="fas fa-shoe-prints service-icon"></i>
                                 <h3 class="text-2xl font-bold">Knöcheldruck</h3>
-                                <div class="interaction-hint">
-                                    <i class="fas fa-hand-pointer mr-1"></i>
-                                    <span class="hint-text">Klicken für mehr Info</span>
+                                <div class="hover-hint">
+                                    <i class="fas fa-mouse-pointer mr-1"></i>
+                                    Hover für mehr Info
                                 </div>
                             </div>
                         </div>
                         <!-- Back Side -->
-                        <div class="flip-card-back bg-white border border-gray-200 shadow-sm">
+                        <div class="flip-card-back bg-white">
                             <div class="flex flex-col justify-center h-full p-4">
-                                <div class="border-l-4 border-blue-500 pl-4">
-                                    <h4 class="text-lg font-bold mb-3 text-gray-800">Knöcheldruck-Messung</h4>
+                                <div class="border-l-4 border-warning pl-4">
+                                    <h4 class="text-lg font-bold mb-3 text-warning">Knöcheldruck-Messung</h4>
                                     <p class="text-sm leading-relaxed text-gray-700">Früherkennung von Durchblutungsstörungen in den Beinarterien.</p>
                                 </div>
                             </div>
@@ -1369,21 +1156,22 @@
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <!-- Front Side -->
-                        <div class="flip-card-front" class="bg-white border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-                            <div class="flex flex-col items-center justify-center h-full p-4">
+                        <div class="flip-card-front" style="background: linear-gradient(135deg, #E3B497 0%, #D69D7A 100%);">
+                            <div class="flex flex-col items-center justify-center h-full text-white p-4">
                                 <i class="fas fa-lungs service-icon"></i>
                                 <h3 class="text-2xl font-bold">Spirometrie</h3>
-                                <div class="interaction-hint">
-                                    <i class="fas fa-hand-pointer mr-1"></i>
-                                    <span class="hint-text">Klicken für mehr Info</span>
+                                <div class="hover-hint">
+                                    <i class="fas fa-mouse-pointer mr-1"></i>
+                                    Hover für mehr Info
                                 </div>
                             </div>
                         </div>
                         <!-- Back Side -->
-                        <div class="flip-card-back bg-white border border-gray-200 shadow-sm">
+                        <div class="flip-card-back bg-white">
                             <div class="flex flex-col justify-center h-full p-4">
-                                <div class="border-l-4 border-blue-500 pl-4">
-                                    <h4 class="text-lg font-bold mb-2 text-gray-800">Spirometrie</h4>
+                                <div class="border-l-4 border-primary pl-4">
+                                    <h4 class="text-lg font-bold mb-2 text-primary">Spirometrie</h4>
+                                    <p class="text-sm opacity-75 mb-3 text-gray-600">(Lungenfunktion)</p>
                                     <p class="text-sm leading-relaxed text-gray-700">Einfache Methode zur Messung der Lungenkapazität.</p>
                                 </div>
                             </div>
@@ -1395,119 +1183,27 @@
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <!-- Front Side -->
-                        <div class="flip-card-front" class="bg-white border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-                            <div class="flex flex-col items-center justify-center h-full p-4">
+                        <div class="flip-card-front" style="background: linear-gradient(135deg, #79ADBA 0%, #6B9CAA 100%);">
+                            <div class="flex flex-col items-center justify-center h-full text-white p-4">
                                 <i class="fas fa-vial service-icon"></i>
                                 <h3 class="text-2xl font-bold">Labordiagnostik</h3>
-                                <div class="interaction-hint">
-                                    <i class="fas fa-hand-pointer mr-1"></i>
-                                    <span class="hint-text">Klicken für mehr Info</span>
+                                <div class="hover-hint">
+                                    <i class="fas fa-mouse-pointer mr-1"></i>
+                                    Hover für mehr Info
                                 </div>
                             </div>
                         </div>
                         <!-- Back Side -->
-                        <div class="flip-card-back bg-white border border-gray-200 shadow-sm">
+                        <div class="flip-card-back bg-white">
                             <div class="flex flex-col justify-center h-full p-4">
-                                <div class="border-l-4 border-blue-500 pl-4">
-                                    <h4 class="text-lg font-bold mb-3 text-gray-800">Blutabnahme & Laboruntersuchungen</h4>
+                                <div class="border-l-4 border-primary pl-4">
+                                    <h4 class="text-lg font-bold mb-3 text-primary">Blutabnahme & Laboruntersuchungen</h4>
                                     <p class="text-sm leading-relaxed text-gray-700">Direkter Service in der Praxis mit Partnerlabor für weiterführende Analysen.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- 10. Bauchultraschall (Abdomen Sonographie) -->
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <!-- Front Side -->
-                        <div class="flip-card-front bg-white border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-                            <div class="flex flex-col items-center justify-center h-full p-4">
-                                <i class="fas fa-procedures service-icon text-gray-600"></i>
-                                <h3 class="text-2xl font-bold text-gray-800">Bauchultraschall</h3>
-                                <div class="interaction-hint">
-                                    <i class="fas fa-hand-pointer mr-1 text-gray-400"></i>
-                                    <span class="hint-text text-gray-500">Klicken für mehr Info</span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Back Side -->
-                        <div class="flip-card-back bg-white border border-gray-200 shadow-sm">
-                            <div class="flex flex-col justify-center h-full p-4">
-                                <div class="border-l-4 border-blue-500 pl-4">
-                                    <h4 class="text-lg font-bold mb-3 text-gray-800">Abdomen Sonographie</h4>
-                                    <p class="text-sm leading-relaxed text-gray-700 mb-2">Untersuchung der Bauchorgane:</p>
-                                    <p class="text-xs leading-relaxed text-gray-600">• Leber • Pankreas • Nieren • Bauchaorta</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 11. FIT-Test (IFOb Test) - Darmkrebs-Früherkennung -->
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <!-- Front Side -->
-                        <div class="flip-card-front bg-white border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-                            <div class="flex flex-col items-center justify-center h-full p-4">
-                                <i class="fas fa-search-plus service-icon text-gray-600"></i>
-                                <h3 class="text-2xl font-bold text-gray-800">FIT-Test</h3>
-                                <div class="interaction-hint">
-                                    <i class="fas fa-hand-pointer mr-1 text-gray-400"></i>
-                                    <span class="hint-text text-gray-500">Klicken für mehr Info</span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Back Side -->
-                        <div class="flip-card-back bg-white border border-gray-200 shadow-sm">
-                            <div class="flex flex-col justify-center h-full p-4">
-                                <div class="border-l-4 border-blue-500 pl-4">
-                                    <h4 class="text-lg font-bold mb-2 text-gray-800">FIT-Test</h4>
-                                    <p class="text-sm opacity-75 mb-3 text-gray-600">(IFOB Test)</p>
-                                    <p class="text-sm leading-relaxed text-gray-700 mb-2">Früherkennung von Darmkrebs</p>
-                                    <div class="mt-3 inline-block">
-                                        <span class="px-2 py-1 bg-orange-100 text-orange-800 text-xs font-medium rounded-full">
-                                            Privatleistung
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 12. Schilddrüsenultraschall (SD-Sono) -->
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <!-- Front Side -->
-                        <div class="flip-card-front bg-white border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-                            <div class="flex flex-col items-center justify-center h-full p-4">
-                                <i class="fas fa-user-md service-icon text-gray-600"></i>
-                                <h3 class="text-2xl font-bold text-gray-800">Schilddrüsen-<br>ultraschall</h3>
-                                <div class="interaction-hint">
-                                    <i class="fas fa-hand-pointer mr-1 text-gray-400"></i>
-                                    <span class="hint-text text-gray-500">Klicken für mehr Info</span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Back Side -->
-                        <div class="flip-card-back bg-white border border-gray-200 shadow-sm">
-                            <div class="flex flex-col justify-center h-full p-4">
-                                <div class="border-l-4 border-blue-500 pl-4">
-                                    <h4 class="text-lg font-bold mb-2 text-gray-800">SD-Sono</h4>
-                                    <p class="text-sm leading-relaxed text-gray-700 mb-2">Früherkennung und Kontrolle von Vergrößerungen und potenziell bösartigen Knoten der Schilddrüse.</p>
-                                    <div class="mt-3 inline-block">
-                                        <span class="px-2 py-1 bg-orange-100 text-orange-800 text-xs font-medium rounded-full">
-                                            ÖGK: Privatleistung
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
 
     </section>
 
@@ -1529,47 +1225,45 @@
                         
                         <!-- Dynamic Hours Alert -->
                         <div id="hours-alert" class="mb-4" style="display: none;">
-                            <div class="bg-blue-50 border-l-4 border-blue-500 rounded-r-lg p-4">
+                            <div class="bg-warning bg-opacity-20 border-l-4 border-warning rounded-r-lg p-4">
                                 <div class="flex items-start">
-                                    <i class="fas fa-exclamation-triangle text-blue-600 mr-3 mt-1"></i>
+                                    <i class="fas fa-exclamation-triangle text-warning mr-3 mt-1"></i>
                                     <div>
-                                        <h4 class="font-semibold text-gray-800 mb-2">Geänderte Öffnungszeiten</h4>
-                                        <p id="hours-alert-text" class="text-gray-700 text-sm"></p>
+                                        <h4 class="font-semibold text-white mb-2">Geänderte Öffnungszeiten</h4>
+                                        <p id="hours-alert-text" class="text-white text-sm"></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         
                         <div class="space-y-4" id="contact-hours">
-                            <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                            <div class="bg-primary-light rounded-lg p-4">
                                 <div class="space-y-3">
-                                    <div class="flex justify-between items-center py-2">
-                                        <span class="font-semibold text-gray-900 text-base">Montag</span>
-                                        <span class="text-gray-800 text-base">10:00 - 12:00, 13:00 - 16:00</span>
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-semibold text-white">Montag</span>
+                                        <span class="text-white">10:00 - 12:00, 13:00 - 16:00</span>
                                     </div>
-                                    <div class="flex justify-between items-center py-2">
-                                        <span class="font-semibold text-gray-900 text-base">Dienstag</span>
-                                        <span class="text-gray-800 text-base">08:00 - 12:00, 13:00 - 16:00</span>
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-semibold text-white">Dienstag</span>
+                                        <span class="text-white">08:00 - 12:00, 13:00 - 16:00</span>
                                     </div>
-                                    <div class="flex justify-between items-center py-2">
-                                        <span class="font-semibold text-gray-900 text-base">Mittwoch</span>
-                                        <span class="text-gray-800 text-base">08:00 - 12:00</span>
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-semibold text-white">Mittwoch</span>
+                                        <span class="text-white">08:00 - 12:00</span>
                                     </div>
-                                    <div class="flex justify-between items-center py-2">
-                                        <span class="font-semibold text-gray-900 text-base">Donnerstag</span>
-                                        <span class="text-gray-800 text-base">10:00 - 14:00</span>
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-semibold text-white">Donnerstag</span>
+                                        <span class="text-white">10:00 - 12:00, 13:00 - 14:00</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-semibold text-white">Fr, Sa, So</span>
+                                        <span class="text-white opacity-75">Geschlossen</span>
                                     </div>
                                 </div>
-                                <div class="mt-4 pt-3 border-t border-gray-300">
-                                    <p class="text-gray-800 text-base leading-relaxed">
-                                        <i class="fas fa-calendar-check mr-2 text-blue-500"></i>
+                                <div class="mt-4 pt-3 border-t border-white border-opacity-30">
+                                    <p class="text-white text-sm">
+                                        <i class="fas fa-calendar-check mr-2"></i>
                                         Termine nur nach Vereinbarung
-                                    </p>
-                                </div>
-                                <div class="mt-3 pt-3 border-t border-gray-200">
-                                    <p class="text-gray-800 text-base leading-relaxed">
-                                        <i class="fas fa-plus-circle mr-2 text-green-600"></i>
-                                        <strong>Zusätzlich:</strong> Mittwoch 15:00-18:00 (Dr. Koudelka)
                                     </p>
                                 </div>
                             </div>
@@ -1605,17 +1299,6 @@
                                 </div>
                             </div>
                         </div>
-                        
-                        <!-- Online Terminvereinbarung -->
-                        <div class="mt-6 pt-6 border-t border-white border-opacity-20">
-                            <a href="https://at.cgmlife.com/portal/#/home/?institution=d1c5e0db-2f0e-4de0-b368-5b4bbfcb93fb" target="_blank" rel="noopener noreferrer" id="online-termin-btn-contact" class="btn-glass-modern btn-ripple inline-flex items-center justify-center w-full">
-                                <i class="fas fa-calendar-plus mr-2"></i>
-                                Online Termin buchen
-                            </a>
-                            <p class="text-xs opacity-75 mt-2 text-center">
-                                Vereinbaren Sie Ihren Termin bequem online oder telefonisch.
-                            </p>
-                        </div>
                     </div>
                 </div>
                 
@@ -1642,7 +1325,7 @@
                     <!-- Wichtige Patienteninformationen -->
                     <div class="bg-white bg-opacity-10 rounded p-6">
                         <h3 class="text-xl font-bold mb-4 flex items-center">
-                            <i class="fas fa-info-circle mr-3 text-gray-800"></i>
+                            <i class="fas fa-info-circle mr-3 text-secondary"></i>
                             Wichtige Informationen für Patienten
                         </h3>
                         
@@ -1653,18 +1336,18 @@
                                     <i class="fas fa-clipboard-list mr-2 text-white"></i>
                                     Bitte mitbringen zum Termin:
                                 </h4>
-                                <ul class="text-base space-y-3 pl-4 leading-relaxed">
+                                <ul class="text-sm space-y-2 pl-4">
                                     <li class="flex items-start">
-                                        <i class="fas fa-credit-card mr-3 mt-1 text-success text-sm"></i>
-                                        <span class="text-gray-100">E-Card</span>
+                                        <i class="fas fa-credit-card mr-2 mt-1 text-success text-xs"></i>
+                                        <span>E-Card</span>
                                     </li>
                                     <li class="flex items-start">
-                                        <i class="fas fa-pills mr-3 mt-1 text-success text-sm"></i>
-                                        <span class="text-gray-100">Aktuelle Medikamentenliste</span>
+                                        <i class="fas fa-pills mr-2 mt-1 text-success text-xs"></i>
+                                        <span>Aktuelle Medikamentenliste</span>
                                     </li>
                                     <li class="flex items-start">
-                                        <i class="fas fa-file-medical mr-3 mt-1 text-success text-sm"></i>
-                                        <span class="text-gray-100">Relevante Vorbefunde und Laborwerte</span>
+                                        <i class="fas fa-file-medical mr-2 mt-1 text-success text-xs"></i>
+                                        <span>Vorbefunde und Laborwerte</span>
                                     </li>
                                 </ul>
                             </div>
@@ -1675,14 +1358,14 @@
                                     <i class="fas fa-clock mr-2 text-white"></i>
                                     Terminzeiten:
                                 </h4>
-                                <ul class="text-base space-y-3 pl-4 leading-relaxed">
+                                <ul class="text-sm space-y-2 pl-4">
                                     <li class="flex items-start">
-                                        <i class="fas fa-user-plus mr-3 mt-1 text-blue-400 text-sm"></i>
-                                        <span class="text-gray-100">Ersttermin: ca. 20 Minuten</span>
+                                        <i class="fas fa-user-plus mr-2 mt-1 text-warning text-xs"></i>
+                                        <span>Ersttermin: ca. 20 Minuten</span>
                                     </li>
                                     <li class="flex items-start">
-                                        <i class="fas fa-redo mr-3 mt-1 text-blue-400 text-sm"></i>
-                                        <span class="text-gray-100">Folgetermin: ca. 10 Minuten</span>
+                                        <i class="fas fa-redo mr-2 mt-1 text-warning text-xs"></i>
+                                        <span>Folgetermin: ca. 10 Minuten</span>
                                     </li>
                                 </ul>
                             </div>
@@ -1693,29 +1376,35 @@
                                     <i class="fas fa-exclamation-triangle mr-2 text-white"></i>
                                     Wichtige Hinweise:
                                 </h4>
-                                <ul class="text-base space-y-4 pl-4 leading-relaxed">
+                                <ul class="text-sm space-y-2 pl-4">
                                     <li class="flex items-start">
-                                        <i class="fas fa-clock mr-3 mt-1 text-blue-300 text-sm"></i>
-                                        <span class="text-gray-100">Maximal 10 Min. vor Termin - Behandlung nach Terminplan</span>
+                                        <i class="fas fa-clock mr-2 mt-1 text-info text-xs"></i>
+                                        <span>Bitte 10 Minuten vor Ihrem Termin erscheinen</span>
                                     </li>
                                     <li class="flex items-start">
-                                        <i class="fas fa-users mr-3 mt-1 text-blue-300 text-sm"></i>
-                                        <span class="text-gray-100">Begleitpersonen bitte nur bei Bedarf mitbringen - Wartezimmer-Kapazität begrenzt</span>
+                                        <i class="fas fa-users mr-2 mt-1 text-info text-xs"></i>
+                                        <span>Begleitpersonen nur nach Absprache</span>
                                     </li>
                                     <li class="flex items-start">
-                                        <i class="fas fa-calendar-times mr-3 mt-1 text-yellow-300 text-sm"></i>
-                                        <span class="text-gray-100">Bei Verhinderung bitten wir um Absage spätestens zwei Werktage vorher (per Mail an <a href="mailto:office@imed2230.at" class="text-white hover:text-blue-200 underline font-medium">office@imed2230.at</a> oder telefonisch). Bei kurzfristiger Absage oder Nichterscheinen: Ausfallshonorar 100€.</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <i class="fas fa-times-circle mr-3 mt-1 text-red-300 text-sm"></i>
-                                        <span class="text-gray-100">Keine Gastroskopie/Koloskopie in der Praxis</span>
+                                        <i class="fas fa-times-circle mr-2 mt-1 text-error text-xs"></i>
+                                        <span>Keine Gastroskopie/Koloskopie in der Praxis</span>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     
-
+                    <!-- Online Terminvereinbarung -->
+                    <div class="bg-white bg-opacity-10 rounded p-6">
+                        <h4 class="font-bold mb-2">Online Terminvereinbarung</h4>
+                        <p class="text-sm mb-4">
+                            Vereinbaren Sie Ihren Termin bequem online oder telefonisch.
+                        </p>
+                        <a href="https://at.cgmlife.com/portal/#/home/?institution=d1c5e0db-2f0e-4de0-b368-5b4bbfcb93fb" target="_blank" rel="noopener noreferrer" id="online-termin-btn-contact" class="btn-glass-modern btn-ripple inline-flex items-center">
+                            <i class="fas fa-calendar-plus mr-2"></i>
+                            Online Termin buchen
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1734,7 +1423,7 @@
                     <h3 class="text-2xl font-medium text-gray-800">So finden Sie uns</h3>
                     <div class="space-y-4">
                         <div class="flex items-start">
-                            <i class="fas fa-map-marker-alt w-6 mr-4 mt-1 text-gray-800"></i>
+                            <i class="fas fa-map-marker-alt w-6 mr-4 mt-1 text-primary"></i>
                             <div>
                                 <h4 class="font-bold mb-1 text-gray-800">Adresse</h4>
                                 <p class="text-gray-600">
@@ -1745,7 +1434,7 @@
                         </div>
                         
                         <div class="flex items-start">
-                            <i class="fas fa-car w-6 mr-4 mt-1 text-gray-800"></i>
+                            <i class="fas fa-car w-6 mr-4 mt-1 text-secondary"></i>
                             <div>
                                 <h4 class="font-bold mb-1 text-gray-800">Anfahrt mit dem Auto</h4>
                                 <p class="text-gray-600">
@@ -1756,7 +1445,7 @@
                         </div>
                         
                         <div class="flex items-start">
-                            <i class="fas fa-train w-6 mr-4 mt-1 text-gray-800"></i>
+                            <i class="fas fa-train w-6 mr-4 mt-1 text-primary"></i>
                             <div>
                                 <h4 class="font-bold mb-1 text-gray-800">Öffentliche Verkehrsmittel</h4>
                                 <p class="text-gray-600">
@@ -1768,15 +1457,15 @@
                     </div>
                     
                     <!-- Zusätzliche Anfahrt-Hinweise -->
-                    <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
+                    <div class="bg-blue-50 border-l-4 border-primary p-4 rounded">
                         <h4 class="font-bold text-gray-800 mb-2 flex items-center">
-                            <i class="fas fa-info-circle text-gray-800 mr-2"></i>
+                            <i class="fas fa-info-circle text-primary mr-2"></i>
                             Hinweise für Ihren Besuch
                         </h4>
                         <ul class="text-gray-600 text-sm space-y-1">
                             <li>🅿️ <strong>Parkplätze:</strong> Kostenlose Parkplätze direkt vor der Praxis</li>
-                            <li>🕐 <strong>Terminplan:</strong> Bitte kommen Sie maximal 10 Min. vor Ihrem Termin. Die Reihenfolge richtet sich nach dem Terminplan, nicht nach dem Eintreffen.</li>
-                            <li>👥 <strong>Begleitpersonen:</strong> Nur bei Bedarf - begrenzte Wartezimmer-Kapazität</li>
+                            <li>♿ <strong>Barrierefrei:</strong> Ebenerdig zugänglich</li>
+                            <li>🕐 <strong>Pünktlichkeit:</strong> Bitte erscheinen Sie 10 Min. vor Ihrem Termin</li>
                             <li>💳 <strong>E-Card:</strong> Bitte e-card mitbringen</li>
                         </ul>
                     </div>
@@ -1797,7 +1486,7 @@
                 <div class="space-y-6">
                     <!-- Ordinations-Foto -->
                     <div class="ordination-photo-container rounded-lg overflow-hidden shadow-lg">
-                        <img src="images/practice_exterior.png" 
+                        <img src="https://page.gensparksite.com/v1/base64_upload/b714ed816cd45d233581ced0276ebb54" 
                              alt="imed2230 Ordination - Dr. Gunter Riedmüller - Brunnengasse 9, Gänserndorf - Außenansicht der Praxis" 
                              class="ordination-photo w-full h-full object-cover aspect-video"
                              loading="lazy">
@@ -1806,12 +1495,12 @@
                     <!-- Praxis-Info unter dem Foto -->
                     <div class="bg-gray-50 p-6 rounded-lg">
                         <h4 class="font-bold text-gray-800 mb-3 flex items-center">
-                            <i class="fas fa-clinic-medical text-gray-800 mr-2"></i>
+                            <i class="fas fa-clinic-medical text-primary mr-2"></i>
                             Unsere Praxis
                         </h4>
                         <p class="text-gray-600 text-sm leading-relaxed">
                             Modern ausgestattete Kassenordination im Zentrum von Gänserndorf. 
-                            Kostenlose Parkplätze direkt vor der Praxis. 
+                            Barrierefrei zugänglich mit Parkplätzen direkt vor der Praxis. 
                             Helle, freundliche Räumlichkeiten für Ihre Behandlung.
                         </p>
                     </div>
@@ -1837,7 +1526,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-8 border-t-2 bg-secondary border-blue-500">
+    <footer class="py-8 border-t-2 bg-secondary border-secondary">
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center">
                 <div class="flex items-center justify-center mb-4">
@@ -1927,110 +1616,6 @@
 
     <script src="js/script.js"></script>
     
-    <!-- Responsive Flip Cards JavaScript -->
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Initialize responsive flip cards
-        const flipCards = document.querySelectorAll('.flip-card');
-        let activeCard = null;
-        
-        // Detect touch device
-        const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-        
-        // Update hints based on device type
-        const hints = document.querySelectorAll('.hint-text');
-        hints.forEach(hint => {
-            if (isTouchDevice) {
-                hint.textContent = 'Tippen für mehr Info';
-            } else {
-                hint.textContent = 'Klicken für mehr Info';
-            }
-        });
-        
-        flipCards.forEach(card => {
-            const cardInner = card.querySelector('.flip-card-inner');
-            
-            // Handle click/touch events  
-            card.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                
-                // Check if this card is already flipped
-                const isFlipped = card.classList.contains('flipped');
-                
-                // Close any other open cards
-                flipCards.forEach(otherCard => {
-                    if (otherCard !== card) {
-                        otherCard.classList.remove('flipped');
-                    }
-                });
-                
-                // Toggle current card
-                if (isFlipped) {
-                    card.classList.remove('flipped');
-                    activeCard = null;
-                } else {
-                    card.classList.add('flipped');
-                    activeCard = card;
-                }
-            });
-            
-            // Handle touch events for better mobile experience
-            if (isTouchDevice) {
-                card.addEventListener('touchstart', function(e) {
-                    // Add touch feedback
-                    card.style.transform = 'scale(0.98)';
-                }, { passive: true });
-                
-                card.addEventListener('touchend', function(e) {
-                    // Remove touch feedback
-                    setTimeout(() => {
-                        card.style.transform = '';
-                    }, 150);
-                }, { passive: true });
-            }
-        });
-        
-        // Close cards when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!e.target.closest('.flip-card') && activeCard) {
-                activeCard.classList.remove('flipped');
-                activeCard = null;
-            }
-        });
-        
-        // Handle escape key to close cards
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && activeCard) {
-                activeCard.classList.remove('flipped');
-                activeCard = null;
-            }
-        });
-        
-        // Auto-close cards after 10 seconds on mobile (optional)
-        if (isTouchDevice) {
-            let autoCloseTimer = null;
-            
-            flipCards.forEach(card => {
-                card.addEventListener('click', function() {
-                    if (autoCloseTimer) {
-                        clearTimeout(autoCloseTimer);
-                    }
-                    
-                    if (card.classList.contains('flipped')) {
-                        autoCloseTimer = setTimeout(() => {
-                            card.classList.remove('flipped');
-                            activeCard = null;
-                        }, 10000); // Auto-close after 10 seconds
-                    }
-                });
-            });
-        }
-        
-        console.log('📱 Responsive flip cards initialized for', isTouchDevice ? 'touch device' : 'desktop');
-        console.log('🎯', flipCards.length, 'service cards ready for interaction');
-    });
-    </script>
 
 </body>
 </html>

@@ -83,24 +83,59 @@ function initializeRippleEffects() {
  */
 function initializeSmoothScrolling() {
     const navLinks = document.querySelectorAll('a[href^="#"]');
+    console.log(`🔧 Initializing smooth scrolling for ${navLinks.length} links`);
     
-    navLinks.forEach(link => {
+    navLinks.forEach((link, index) => {
+        const href = link.getAttribute('href');
+        console.log(`🔗 Adding smooth scroll to link ${index + 1}: ${href}`);
+        
         link.addEventListener('click', function(e) {
-            e.preventDefault();
             const targetId = this.getAttribute('href');
+            
+            // Skip empty anchors
+            if (targetId === '#') {
+                console.log('⏭️ Skipping empty anchor');
+                return;
+            }
+            
+            console.log(`🎯 SMOOTH SCROLL TRIGGERED: ${targetId}`);
+            e.preventDefault();
+            
+            // Close mobile menu if this is a mobile navigation link or quick action button
+            if (link.classList.contains('mobile-nav-link') || link.classList.contains('quick-action-btn')) {
+                const mobileMenu = document.getElementById('mobile-menu');
+                const menuButton = document.getElementById('mobile-menu-button');
+                
+                if (mobileMenu && menuButton) {
+                    mobileMenu.classList.add('hidden');
+                    menuButton.setAttribute('aria-expanded', 'false');
+                    updateMenuIcon(false);
+                    console.log('📲 Mobile menu closed via smooth scroll');
+                }
+            }
+            
             const targetElement = document.querySelector(targetId);
             
             if (targetElement) {
-                const headerHeight = document.querySelector('header').offsetHeight;
+                const header = document.querySelector('header');
+                const headerHeight = header ? header.offsetHeight : 0;
                 const targetPosition = targetElement.offsetTop - headerHeight - 20;
+                
+                console.log(`📍 Scrolling to position: ${targetPosition} (header height: ${headerHeight})`);
                 
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
                 });
+                
+                console.log('✅ Smooth scroll executed');
+            } else {
+                console.error(`❌ Target element not found: ${targetId}`);
             }
         });
     });
+    
+    console.log('🔧 Smooth scrolling initialization completed');
 }
 
 /**
@@ -164,21 +199,9 @@ function showAppointmentInfo() {
  * Mobile Menu Toggle
  */
 function initializeMobileMenu() {
-    // Mobile menu functionality is handled by toggleMobileMenu function
-    // Add smooth scrolling for mobile navigation links
-    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-    mobileNavLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            // Close mobile menu when a link is clicked
-            const mobileMenu = document.getElementById('mobile-menu');
-            const menuButton = document.getElementById('mobile-menu-button');
-            if (mobileMenu && menuButton) {
-                mobileMenu.classList.add('hidden');
-                menuButton.setAttribute('aria-expanded', 'false');
-                updateMenuIcon(false);
-            }
-        });
-    });
+    console.log('🔧 Mobile menu initialization - menu close functionality now handled in smooth scrolling');
+    // Mobile menu close functionality is now integrated into initializeSmoothScrolling
+    // to avoid duplicate event listeners and conflicts
 }
 
 /**

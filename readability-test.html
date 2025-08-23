@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>imed2230 - Lesbarkeitstest</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#79ADBA',
+                        'secondary': '#E3B497'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+        }
+        
+        /* Readability Test Styles */
+        .readability-section {
+            margin: 2rem 0;
+            padding: 2rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+        }
+        
+        .size-test-16 { font-size: 16px !important; }
+        .size-test-18 { font-size: 18px !important; }
+        .size-test-20 { font-size: 20px !important; }
+        .size-test-14 { font-size: 14px !important; }
+        .size-test-12 { font-size: 12px !important; }
+        
+        .line-height-normal { line-height: 1.4 !important; }
+        .line-height-relaxed { line-height: 1.6 !important; }
+        .line-height-loose { line-height: 1.8 !important; }
+        
+        .contrast-test-low { color: #9CA3AF !important; }
+        .contrast-test-medium { color: #6B7280 !important; }
+        .contrast-test-high { color: #374151 !important; }
+        .contrast-test-max { color: #111827 !important; }
+        
+        .bg-test-white { background-color: #ffffff !important; }
+        .bg-test-gray-50 { background-color: #f9fafb !important; }
+        .bg-test-gray-100 { background-color: #f3f4f6 !important; }
+        
+        /* Mobile breakpoints visualization */
+        .breakpoint-indicator {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 0.5rem;
+            background: #1f2937;
+            color: white;
+            border-radius: 4px;
+            font-size: 12px;
+            z-index: 1000;
+        }
+        
+        @media (max-width: 640px) {
+            .breakpoint-indicator::after { content: "Mobile (≤640px)"; }
+        }
+        
+        @media (min-width: 641px) and (max-width: 768px) {
+            .breakpoint-indicator::after { content: "Tablet (641-768px)"; }
+        }
+        
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .breakpoint-indicator::after { content: "Desktop SM (769-1024px)"; }
+        }
+        
+        @media (min-width: 1025px) {
+            .breakpoint-indicator::after { content: "Desktop LG (≥1025px)"; }
+        }
+        
+        /* Text measurement helper */
+        .text-measure {
+            max-width: 65ch; /* Optimal reading width */
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="breakpoint-indicator"></div>
+    
+    <div class="max-w-6xl mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold text-center mb-8 text-gray-900">
+            Lesbarkeitstest - imed2230 Website
+        </h1>
+        
+        <!-- Original Website Text Samples -->
+        <div class="readability-section bg-white">
+            <h2 class="text-2xl font-bold mb-4 text-primary">1. Original Header Text</h2>
+            <div class="space-y-4">
+                <h1 class="text-xl sm:text-2xl lg:text-3xl font-bold text-white bg-primary p-4 rounded">Dr. Gunter Riedmüller</h1>
+                <p class="text-sm sm:text-base lg:text-lg text-gray-600">Facharzt für Innere Medizin</p>
+            </div>
+        </div>
+        
+        <!-- Font Size Tests -->
+        <div class="readability-section bg-white">
+            <h2 class="text-2xl font-bold mb-4 text-primary">2. Schriftgrößen-Test</h2>
+            <div class="space-y-4">
+                <p class="size-test-12 text-gray-700">12px: Bei uns steht Ihre Gesundheit im Mittelpunkt. Unter der Leitung von Dr. Gunter Riedmüller bieten wir umfassende internistische Betreuung.</p>
+                <p class="size-test-14 text-gray-700">14px: Bei uns steht Ihre Gesundheit im Mittelpunkt. Unter der Leitung von Dr. Gunter Riedmüller bieten wir umfassende internistische Betreuung.</p>
+                <p class="size-test-16 text-gray-700">16px: Bei uns steht Ihre Gesundheit im Mittelpunkt. Unter der Leitung von Dr. Gunter Riedmüller bieten wir umfassende internistische Betreuung.</p>
+                <p class="size-test-18 text-gray-700">18px: Bei uns steht Ihre Gesundheit im Mittelpunkt. Unter der Leitung von Dr. Gunter Riedmüller bieten wir umfassende internistische Betreuung.</p>
+                <p class="size-test-20 text-gray-700">20px: Bei uns steht Ihre Gesundheit im Mittelpunkt. Unter der Leitung von Dr. Gunter Riedmüller bieten wir umfassende internistische Betreuung.</p>
+            </div>
+        </div>
+        
+        <!-- Kontrast-Tests -->
+        <div class="readability-section bg-white">
+            <h2 class="text-2xl font-bold mb-4 text-primary">3. Kontrast-Test</h2>
+            <div class="space-y-4">
+                <p class="contrast-test-low size-test-16">Niedriger Kontrast (#9CA3AF): Wichtige Patienteninformationen sollten gut lesbar sein.</p>
+                <p class="contrast-test-medium size-test-16">Mittlerer Kontrast (#6B7280): Wichtige Patienteninformationen sollten gut lesbar sein.</p>
+                <p class="contrast-test-high size-test-16">Hoher Kontrast (#374151): Wichtige Patienteninformationen sollten gut lesbar sein.</p>
+                <p class="contrast-test-max size-test-16">Maximaler Kontrast (#111827): Wichtige Patienteninformationen sollten gut lesbar sein.</p>
+            </div>
+        </div>
+        
+        <!-- Service-Karten Lesbarkeitstest -->
+        <div class="readability-section bg-white">
+            <h2 class="text-2xl font-bold mb-4 text-primary">4. Service-Karten Text-Test</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <!-- Original Style -->
+                <div class="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Herzultraschall</h3>
+                    <p class="text-sm text-gray-600">Schnelle, schonende Untersuchung des Herzens zur Überprüfung der Herzkammern, Vorhöfe, Pumpfunktion und Herzklappen.</p>
+                </div>
+                
+                <!-- Optimiert für Lesbarkeit -->
+                <div class="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Herzultraschall</h3>
+                    <p class="text-base text-gray-700 leading-relaxed">Schnelle, schonende Untersuchung des Herzens zur Überprüfung der Herzkammern, Vorhöfe, Pumpfunktion und Herzklappen.</p>
+                </div>
+                
+                <!-- Extra große Version -->
+                <div class="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Herzultraschall</h3>
+                    <p class="text-lg text-gray-800 leading-loose">Schnelle, schonende Untersuchung des Herzens zur Überprüfung der Herzkammern, Vorhöfe, Pumpfunktion und Herzklappen.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Öffnungszeiten Lesbarkeitstest -->
+        <div class="readability-section bg-primary text-white">
+            <h2 class="text-2xl font-bold mb-4">5. Öffnungszeiten - Original vs. Optimiert</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Original -->
+                <div class="bg-gray-50 rounded-lg p-4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3">Original</h3>
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="font-semibold text-gray-800">Montag</span>
+                            <span class="text-gray-700">10:00 - 12:00, 13:00 - 16:00</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="font-semibold text-gray-800">Dienstag</span>
+                            <span class="text-gray-700">08:00 - 12:00, 13:00 - 16:00</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Optimiert -->
+                <div class="bg-gray-50 rounded-lg p-4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3">Optimiert</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center text-base">
+                            <span class="font-semibold text-gray-900">Montag</span>
+                            <span class="text-gray-800">10:00 - 12:00, 13:00 - 16:00</span>
+                        </div>
+                        <div class="flex justify-between items-center text-base">
+                            <span class="font-semibold text-gray-900">Dienstag</span>
+                            <span class="text-gray-800">08:00 - 12:00, 13:00 - 16:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile-spezifische Tests -->
+        <div class="readability-section bg-white">
+            <h2 class="text-2xl font-bold mb-4 text-primary">6. Mobile-spezifische Lesbarkeit</h2>
+            <div class="space-y-6">
+                <!-- Hero Text Mobile -->
+                <div class="bg-secondary p-6 rounded-lg">
+                    <h1 class="text-3xl sm:text-4xl font-bold text-white mb-2">Dr. Gunter Riedmüller</h1>
+                    <h2 class="text-lg sm:text-xl text-white font-medium mb-2">Facharzt für Innere Medizin</h2>
+                    <p class="text-base sm:text-lg text-white opacity-90">Ihre Gesundheit in kompetenten Händen</p>
+                </div>
+                
+                <!-- Lange Texte -->
+                <div class="text-measure">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Praxisbeschreibung (optimierte Zeilenlänge)</h3>
+                    <p class="text-base text-gray-700 leading-relaxed mb-4">
+                        Bei uns steht Ihre Gesundheit im Mittelpunkt. Unter der Leitung von Dr. Gunter Riedmüller, 
+                        Facharzt für Innere Medizin, bieten wir Ihnen eine umfassende internistische Betreuung – 
+                        fundiert, persönlich und auf dem neuesten Stand der medizinischen Erkenntnisse.
+                    </p>
+                    <p class="text-base text-gray-700 leading-relaxed">
+                        In unserer modern ausgestatteten Kassenordination in Gänserndorf erhalten Sie eine 
+                        kompetente medizinische Betreuung mit persönlicher Zuwendung und verständlichen Erklärungen.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Barrierefreiheits-Tests -->
+        <div class="readability-section bg-white">
+            <h2 class="text-2xl font-bold mb-4 text-primary">7. Barrierefreiheit & Zugänglichkeit</h2>
+            <div class="space-y-6">
+                <!-- Focus States -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-3">Focus-Zustände</h3>
+                    <div class="space-y-2">
+                        <button class="px-4 py-2 bg-primary text-white rounded focus:outline-none focus:ring-4 focus:ring-primary focus:ring-opacity-50">Normaler Button</button>
+                        <button class="px-4 py-2 bg-secondary text-white rounded focus:outline-none focus:ring-4 focus:ring-secondary focus:ring-opacity-50">Sekundärer Button</button>
+                    </div>
+                </div>
+                
+                <!-- High Contrast Mode -->
+                <div class="border-2 border-gray-800 p-4 rounded-lg">
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">Hoher Kontrast Modus</h3>
+                    <p class="text-base text-gray-900 leading-relaxed">
+                        Diese Sektion simuliert einen hohen Kontrast-Modus für bessere Lesbarkeit bei Sehschwächen.
+                        Alle wichtigen Informationen sollten auch in diesem Modus gut erkennbar sein.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Empfehlungen -->
+        <div class="readability-section bg-green-50 border-green-200">
+            <h2 class="text-2xl font-bold mb-4 text-green-800">✅ Empfehlungen für optimale Lesbarkeit</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-lg font-semibold text-green-800 mb-3">Schriftgrößen</h3>
+                    <ul class="text-base text-green-700 space-y-1">
+                        <li>• Mindestens 16px für Fließtext</li>
+                        <li>• 18-20px für wichtige Informationen</li>
+                        <li>• 14px nur für Zusatzinformationen</li>
+                        <li>• Mobile: 18px+ für bessere Lesbarkeit</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-green-800 mb-3">Kontrast & Farben</h3>
+                    <ul class="text-base text-green-700 space-y-1">
+                        <li>• Mindestens 4.5:1 Kontrastverhältnis</li>
+                        <li>• Dunkle Texte auf hellen Hintergründen</li>
+                        <li>• Konsistente Farbverwendung</li>
+                        <li>• Nicht nur Farbe für wichtige Info nutzen</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Lesbarkeits-Metriken messen
+        function measureReadability() {
+            const textElements = document.querySelectorAll('p, h1, h2, h3, span');
+            const measurements = {
+                totalElements: textElements.length,
+                fontSizes: [],
+                contrasts: [],
+                lineHeights: []
+            };
+            
+            textElements.forEach(el => {
+                const styles = window.getComputedStyle(el);
+                measurements.fontSizes.push(parseInt(styles.fontSize));
+                measurements.lineHeights.push(parseFloat(styles.lineHeight));
+            });
+            
+            console.log('📊 Lesbarkeits-Analyse:', measurements);
+            console.log('📏 Durchschnittliche Schriftgröße:', 
+                Math.round(measurements.fontSizes.reduce((a,b) => a+b, 0) / measurements.fontSizes.length) + 'px');
+        }
+        
+        // Analyse nach dem Laden ausführen
+        document.addEventListener('DOMContentLoaded', measureReadability);
+        
+        // Viewport-Größe anzeigen
+        function showViewportSize() {
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            console.log(`📱 Viewport: ${width}x${height}px`);
+        }
+        
+        window.addEventListener('resize', showViewportSize);
+        showViewportSize();
+    </script>
+</body>
+</html>

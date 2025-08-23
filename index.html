@@ -157,6 +157,35 @@
             /* Hover effects removed for static display */
         }
         
+
+        
+        /* Hero Section Name Optimization - Harmonious Sizing */
+        @media (min-width: 1024px) {
+            .hero-doctor-name {
+                white-space: nowrap !important;
+                overflow: visible !important;
+                text-overflow: clip !important;
+                display: block !important;
+                font-size: 36px !important;
+                line-height: 1.2 !important;
+                letter-spacing: -0.5px !important;
+            }
+        }
+        
+        @media (min-width: 1280px) {
+            .hero-doctor-name {
+                font-size: 42px !important;
+                letter-spacing: -0.3px !important;
+            }
+        }
+        
+        @media (min-width: 1536px) {
+            .hero-doctor-name {
+                font-size: 48px !important;
+                letter-spacing: 0px !important;
+            }
+        }
+        
         /* Mobile Hero Optimizations */
         @media (max-width: 1023px) {
             .doctor-hero-photo-container {
@@ -248,7 +277,7 @@
                              class="h-12 sm:h-14 lg:h-16 w-auto">
                     </div>
                     <div class="text-center lg:text-left">
-                        <h1 class="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1">Dr. Gunter Riedmüller</h1>
+                        <h1 class="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1 lg:whitespace-nowrap">Dr. Gunter Riedmüller</h1>
                         <p class="text-sm sm:text-base lg:text-lg text-white font-medium">Facharzt für Innere Medizin</p>
                     </div>
                 </div>
@@ -492,13 +521,13 @@
                 <div class="text-center lg:text-left order-2 lg:order-2">
                     <!-- Main Title -->
                     <div class="mb-8">
-                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                        <h1 class="hero-doctor-name text-3xl sm:text-4xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 leading-tight">
                             Dr. Gunter Riedmüller
                         </h1>
-                        <h2 class="text-xl sm:text-2xl lg:text-3xl text-white font-medium mb-4 opacity-95">
+                        <h2 class="text-xl sm:text-2xl lg:text-2xl xl:text-3xl text-white font-medium mb-4 opacity-95">
                             Facharzt für Innere Medizin
                         </h2>
-                        <p class="text-lg sm:text-xl lg:text-2xl text-white opacity-90 mb-8 leading-relaxed">
+                        <p class="text-lg sm:text-xl lg:text-xl xl:text-2xl text-white opacity-90 mb-8 leading-relaxed">
                             Ihre Gesundheit in kompetenten Händen
                         </p>
                     </div>
@@ -1415,14 +1444,14 @@
                     </div>
                 </div>
 
-                <!-- 11. FIT Test (IFOb Test) - Darmkrebs-Früherkennung -->
+                <!-- 11. FIT-Test (IFOb Test) - Darmkrebs-Früherkennung -->
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <!-- Front Side -->
                         <div class="flip-card-front bg-white border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex flex-col items-center justify-center h-full p-4">
                                 <i class="fas fa-search-plus service-icon text-gray-600"></i>
-                                <h3 class="text-2xl font-bold text-gray-800">FIT Test</h3>
+                                <h3 class="text-2xl font-bold text-gray-800">FIT-Test</h3>
                                 <div class="interaction-hint">
                                     <i class="fas fa-hand-pointer mr-1 text-gray-400"></i>
                                     <span class="hint-text text-gray-500">Klicken für mehr Info</span>
@@ -1433,7 +1462,7 @@
                         <div class="flip-card-back bg-white border border-gray-200 shadow-sm">
                             <div class="flex flex-col justify-center h-full p-4">
                                 <div class="border-l-4 border-blue-500 pl-4">
-                                    <h4 class="text-lg font-bold mb-2 text-gray-800">FIT Test</h4>
+                                    <h4 class="text-lg font-bold mb-2 text-gray-800">FIT-Test</h4>
                                     <p class="text-sm opacity-75 mb-3 text-gray-600">(IFOB Test)</p>
                                     <p class="text-sm leading-relaxed text-gray-700 mb-2">Früherkennung von Darmkrebs</p>
                                     <div class="mt-3 inline-block">

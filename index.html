@@ -270,17 +270,17 @@
             <!-- Top Header Bar -->
             <div class="flex flex-col lg:flex-row items-center justify-between py-4 lg:py-6 transition-all duration-300 ease-in-out" id="header-content">
                 <!-- Logo Section -->
-                <div class="flex items-center space-x-4 mb-4 lg:mb-0">
+                <a href="#home" class="flex items-center space-x-4 mb-4 lg:mb-0 hover:opacity-90 transition-all duration-300 cursor-pointer group" title="Zurück zur Startseite">
                     <div class="flex-shrink-0 logo-container">
                         <img src="https://page.gensparksite.com/v1/base64_upload/4ac16172f4aba5b848169bac38fd5dd6" 
                              alt="imed2230 Logo" 
-                             class="h-12 sm:h-14 lg:h-16 w-auto">
+                             class="h-12 sm:h-14 lg:h-16 w-auto group-hover:scale-105 transition-transform duration-300">
                     </div>
                     <div class="text-center lg:text-left">
-                        <h1 class="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1 lg:whitespace-nowrap">Dr. Gunter Riedmüller</h1>
-                        <p class="text-sm sm:text-base lg:text-lg text-white font-medium">Facharzt für Innere Medizin</p>
+                        <h1 class="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1 lg:whitespace-nowrap group-hover:text-opacity-90 transition-all duration-300">Dr. Gunter Riedmüller</h1>
+                        <p class="text-sm sm:text-base lg:text-lg text-white font-medium group-hover:text-opacity-90 transition-all duration-300">Facharzt für Innere Medizin</p>
                     </div>
-                </div>
+                </a>
                 
 
                 <!-- Contact Info -->
@@ -535,20 +535,23 @@
                     <!-- Trust Signals -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                         <!-- Alle Kassen -->
-                        <div class="trust-signal bg-white bg-opacity-90 backdrop-blur-sm rounded-lg px-4 py-3 shadow-md border border-white border-opacity-30 transition-all duration-300 hover:bg-opacity-100">
+                        <a href="#contact" class="trust-signal bg-white bg-opacity-90 backdrop-blur-sm rounded-lg px-4 py-3 shadow-md border border-white border-opacity-30 transition-all duration-300 hover:bg-opacity-100 hover:shadow-lg transform hover:scale-105 cursor-pointer block" title="Mehr zu unseren Kassenlösungen">
                             <div class="flex items-center space-x-3">
                                 <div class="flex items-center justify-center w-10 h-10 bg-primary rounded-full">
                                     <i class="fas fa-shield-alt text-white"></i>
                                 </div>
                                 <div class="text-left">
                                     <div class="text-gray-800 font-semibold">Alle Kassen</div>
-                                    <div class="text-gray-800 text-xs opacity-75">Direkte Abrechnung</div>
+                                    <div class="text-gray-800 text-xs opacity-75">ÖGK, BVAEB, SVA, KFA</div>
+                                </div>
+                                <div class="ml-auto">
+                                    <i class="fas fa-chevron-right text-gray-400 text-sm"></i>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                         
                         <!-- Moderne Diagnostik -->
-                        <div class="trust-signal bg-white bg-opacity-90 backdrop-blur-sm rounded-lg px-4 py-3 shadow-md border border-white border-opacity-30 transition-all duration-300 hover:bg-opacity-100">
+                        <a href="#services" class="trust-signal bg-white bg-opacity-90 backdrop-blur-sm rounded-lg px-4 py-3 shadow-md border border-white border-opacity-30 transition-all duration-300 hover:bg-opacity-100 hover:shadow-lg transform hover:scale-105 cursor-pointer block">
                             <div class="flex items-center space-x-3">
                                 <div class="flex items-center justify-center w-10 h-10 bg-secondary rounded-full">
                                     <i class="fas fa-heartbeat text-white"></i>
@@ -557,8 +560,11 @@
                                     <div class="text-gray-800 font-semibold">Moderne Diagnostik</div>
                                     <div class="text-gray-800 text-xs opacity-75">EKG, Ultraschall & mehr</div>
                                 </div>
+                                <div class="ml-auto">
+                                    <i class="fas fa-chevron-right text-gray-400 text-sm"></i>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     
                     <!-- Call to Action Buttons -->
@@ -1626,15 +1632,19 @@
                         <div class="space-y-4">
                             <div class="flex items-center">
                                 <i class="fas fa-check-circle text-success mr-3"></i>
-                                <span>Alle Krankenkassen</span>
+                                <span>ÖGK (Österreichische Gesundheitskasse)</span>
                             </div>
                             <div class="flex items-center">
                                 <i class="fas fa-check-circle text-success mr-3"></i>
-                                <span>Keine Vorauszahlung</span>
+                                <span>BVAEB (Versicherungsanstalt öffentlich Bediensteter)</span>
                             </div>
                             <div class="flex items-center">
                                 <i class="fas fa-check-circle text-success mr-3"></i>
-                                <span>Direkte Abrechnung</span>
+                                <span>SVA (Sozialversicherung der Selbständigen)</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-success mr-3"></i>
+                                <span>KFA (Krankenfürsorgeanstalt der Bediensteten)</span>
                             </div>
                         </div>
                     </div>
@@ -1840,11 +1850,13 @@
     <footer class="py-8 border-t-2 bg-secondary border-blue-500">
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center">
-                <div class="flex items-center justify-center mb-4">
-                    <img src="https://page.gensparksite.com/v1/base64_upload/4ac16172f4aba5b848169bac38fd5dd6" alt="imed2230 Logo" class="h-16 w-auto">
-                </div>
-                <h3 class="text-lg font-bold mb-2 text-white">Dr. Gunter Riedmüller</h3>
-                <p class="mb-2 text-white">Facharzt für Innere Medizin</p>
+                <a href="#home" class="inline-block mb-4 hover:opacity-90 transition-all duration-300 cursor-pointer group" title="Zurück zur Startseite">
+                    <img src="https://page.gensparksite.com/v1/base64_upload/4ac16172f4aba5b848169bac38fd5dd6" alt="imed2230 Logo" class="h-16 w-auto group-hover:scale-105 transition-transform duration-300">
+                </a>
+                <a href="#home" class="block hover:opacity-90 transition-all duration-300 cursor-pointer group" title="Zurück zur Startseite">
+                    <h3 class="text-lg font-bold mb-2 text-white group-hover:text-opacity-90 transition-all duration-300">Dr. Gunter Riedmüller</h3>
+                    <p class="mb-2 text-white group-hover:text-opacity-90 transition-all duration-300">Facharzt für Innere Medizin</p>
+                </a>
                 <div class="text-sm mb-4 text-white opacity-90">
                     <p>Brunnengasse 9 | 2230 Gänserndorf | T: 02282-52827 | www.imed2230.at</p>
                 </div>

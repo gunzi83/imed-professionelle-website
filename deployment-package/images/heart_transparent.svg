@@ -1,0 +1,20 @@
+<svg width="359" height="359" viewBox="0 0 359 359" xmlns="http://www.w3.org/2000/svg">
+  <!-- Kein Hintergrund - völlig transparent -->
+  <defs>
+    <style>
+      .heart-circle { fill: #79ADBA; }
+      .heart-shape { fill: #E3B497; }
+    </style>
+  </defs>
+  
+  <!-- Kreisförmiger Hintergrund in Praxis-Farben (wie im Original) -->
+  <circle cx="179.5" cy="179.5" r="170" class="heart-circle"/>
+  
+  <!-- Herzsymbol - exakt wie im Original aber mathematisch definiert -->
+  <path d="M179.5,280 
+           C179.5,280 100,200 100,140 
+           C100,80 140,70 179.5,120 
+           C219,70 259,80 259,140 
+           C259,200 179.5,280 179.5,280 Z" 
+        class="heart-shape"/>
+</svg>

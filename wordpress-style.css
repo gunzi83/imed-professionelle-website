@@ -1,0 +1,396 @@
+/*
+Theme Name: imed2230 - Dr. Gunter Riedmüller
+Description: Professionelles WordPress Theme für die Kassenordination Dr. Gunter Riedmüller in Gänserndorf. Spezialisiert auf Innere Medizin, Herz-Kreislauf-Erkrankungen und Diabetes. Vollständig responsive mit modernem Design und SEO-Optimierung.
+Version: 1.0.0
+Author: Dr. Gunter Riedmüller
+Author URI: https://imed2230.at
+License: GPL v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: imed2230
+Domain Path: /languages
+Tags: medical, healthcare, responsive, modern, doctor, clinic, blue, professional
+Requires at least: 5.0
+Tested up to: 6.3
+Requires PHP: 7.4
+Network: false
+
+This theme is designed for medical practices and healthcare professionals.
+It features a clean, professional design with focus on accessibility and SEO.
+*/
+
+/* ===== WORDPRESS THEME SPECIFIC STYLES ===== */
+
+/* WordPress Admin Bar Compatibility */
+.admin-bar #navbar {
+    top: 32px;
+}
+
+@media screen and (max-width: 782px) {
+    .admin-bar #navbar {
+        top: 46px;
+    }
+}
+
+/* WordPress Content Styles */
+.wp-block-image {
+    margin: 1rem 0;
+}
+
+.wp-block-image img {
+    height: auto;
+    max-width: 100%;
+}
+
+.wp-block-quote {
+    border-left: 4px solid #2563eb;
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+}
+
+.wp-block-separator {
+    border: none;
+    border-top: 2px solid #e5e7eb;
+    margin: 2rem 0;
+}
+
+/* WordPress Gallery Styles */
+.wp-block-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.wp-block-gallery .wp-block-image {
+    margin: 0;
+}
+
+/* WordPress Navigation Menu Styles */
+.menu-item a {
+    color: #374151;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    transition: all 0.3s ease;
+}
+
+.menu-item a:hover,
+.menu-item.current-menu-item a {
+    color: #2563eb;
+    background-color: rgba(37, 99, 235, 0.1);
+}
+
+/* Mobile Menu Styles */
+.mobile-nav-menu a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #374151;
+    text-decoration: none;
+    border-bottom: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+.mobile-nav-menu a:hover {
+    color: #2563eb;
+    background-color: rgba(37, 99, 235, 0.05);
+}
+
+/* WordPress Widget Styles */
+.widget {
+    margin-bottom: 2rem;
+}
+
+.widget-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #1f2937;
+}
+
+.widget ul {
+    list-style: none;
+    padding: 0;
+}
+
+.widget ul li {
+    margin-bottom: 0.5rem;
+}
+
+.widget ul li a {
+    color: #6b7280;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.widget ul li a:hover {
+    color: #2563eb;
+}
+
+/* WordPress Comment Styles */
+.comment-list {
+    list-style: none;
+    padding: 0;
+}
+
+.comment {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: #f9fafb;
+    border-radius: 0.5rem;
+}
+
+.comment-meta {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 1rem;
+}
+
+.comment-content {
+    line-height: 1.6;
+}
+
+/* WordPress Form Styles */
+.wp-block-button .wp-block-button__link {
+    background-color: #2563eb;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.wp-block-button .wp-block-button__link:hover {
+    background-color: #1e40af;
+}
+
+/* WordPress Search Widget */
+.search-form {
+    position: relative;
+    display: flex;
+}
+
+.search-field {
+    flex: 1;
+    padding: 0.5rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem 0 0 0.375rem;
+    font-size: 0.875rem;
+}
+
+.search-submit {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0 0.375rem 0.375rem 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-submit:hover {
+    background-color: #1e40af;
+}
+
+/* WordPress Accessibility */
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+/* Skip Links */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 6px;
+    z-index: 999999;
+    text-decoration: none;
+    background: #000;
+    color: #fff;
+    padding: 8px 16px;
+}
+
+.skip-link:focus {
+    left: 6px;
+}
+
+/* WordPress Responsive Embeds */
+.wp-block-embed {
+    margin: 1.5rem 0;
+}
+
+.wp-block-embed__wrapper {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    height: 0;
+}
+
+.wp-block-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ===== IMPORT ORIGINAL STYLES ===== */
+/* Import the original optimized CSS */
+@import url('./css/style.css');
+
+/* ===== THEME CUSTOMIZATIONS ===== */
+
+/* Override any specific WordPress defaults */
+body.wordpress {
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensure proper spacing for WordPress content */
+.wp-content-area {
+    margin-top: 80px; /* Account for fixed header */
+}
+
+/* WordPress-specific animations */
+@keyframes wp-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.wp-fade-in {
+    animation: wp-fade-in 0.5s ease-out;
+}
+
+/* Print Styles */
+@media print {
+    .no-print,
+    #navbar,
+    footer,
+    #back-to-top,
+    .admin-bar {
+        display: none !important;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.4;
+    }
+    
+    h1, h2, h3 {
+        page-break-after: avoid;
+    }
+    
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* WordPress Dark Mode Support (if plugin available) */
+@media (prefers-color-scheme: dark) {
+    .auto-dark-mode {
+        --bg-primary: #1f2937;
+        --text-primary: #f9fafb;
+        --border-color: #374151;
+    }
+}
+
+/* Custom Logo Styles */
+.custom-logo {
+    max-height: 60px;
+    width: auto;
+}
+
+/* WordPress Breadcrumbs (if plugin used) */
+.breadcrumb {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 1rem;
+}
+
+.breadcrumb a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* WordPress Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 2rem 0;
+}
+
+.pagination .page-numbers {
+    padding: 0.5rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    text-decoration: none;
+    color: #374151;
+    transition: all 0.3s ease;
+}
+
+.pagination .page-numbers:hover,
+.pagination .page-numbers.current {
+    background-color: #2563eb;
+    color: white;
+    border-color: #2563eb;
+}
+
+/* WordPress Post Meta */
+.post-meta {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 1rem;
+}
+
+.post-meta a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.post-meta a:hover {
+    text-decoration: underline;
+}
+
+/* WordPress Tag Cloud */
+.wp-tag-cloud {
+    line-height: 2;
+}
+
+.wp-tag-cloud a {
+    display: inline-block;
+    margin: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    background-color: #f3f4f6;
+    color: #374151;
+    text-decoration: none;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+}
+
+.wp-tag-cloud a:hover {
+    background-color: #2563eb;
+    color: white;
+}
+
+/* Ensure theme compatibility */
+.imed2230-theme-loaded {
+    --theme-ready: true;
+}
